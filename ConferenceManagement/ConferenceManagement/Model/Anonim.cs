@@ -27,5 +27,10 @@ namespace ConferenceManagement.Model
                 id = value;
             }
         }
+
+        public string ToString()
+        {
+            return "Anonim{id=" + Id + "}";
+        }
     }
 }

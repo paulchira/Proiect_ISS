@@ -6,27 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
-    public class AbstractArticle
+    public class Article
     {
         private int id;
         private string title;
         private List<string> keywords;
         private string topics;
-        private string author;
-
-        public AbstractArticle()
-        {
-
-        }
-
-        public AbstractArticle(int id, string title, List<string> keywords, string topics, string author)
-        {
-            this.id = id;
-            this.title = title;
-            this.keywords = keywords;
-            this.topics = topics;
-            this.author = author;
-        }
+        private List<Autor> authors;
+        private string extensionFile;
 
         public int Id
         {
@@ -80,22 +67,49 @@ namespace ConferenceManagement.Model
             }
         }
 
-        public string Author
+        public List<Autor> Authors
         {
             get
             {
-                return author;
+                return authors;
             }
 
             set
             {
-                author = value;
+                authors = value;
             }
+        }
+
+        public string ExtensionFile
+        {
+            get
+            {
+                return extensionFile;
+            }
+
+            set
+            {
+                extensionFile = value;
+            }
+        }
+
+        public Article()
+        {
+
+        }
+        public Article(int id, string title, List<string> keywords, string topics, List<Autor> authors, string extensionFile)
+        {
+            this.Id = id;
+            this.Title = title;
+            this.Keywords = keywords;
+            this.Topics = topics;
+            this.Authors = authors;
+            this.ExtensionFile = extensionFile;
         }
 
         public string ToString()
         {
-            return "AbstractArticle{id=" + Id + "title=" + Title + "author=" + Author + "topics="+ Topics +  "}";
+            return "Article{id=" + Id + ", title=" + Title + ", topics=" + Topics + "}";
         }
     }
 }

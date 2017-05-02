@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Model\AbstractArticle.cs" />
     <Compile Include="Model\Anonim.cs" />
+    <Compile Include="Model\Article.cs" />
     <Compile Include="Model\Autor.cs" />
     <Compile Include="Model\Sectiune.cs" />
     <Compile Include="Program.cs" />
