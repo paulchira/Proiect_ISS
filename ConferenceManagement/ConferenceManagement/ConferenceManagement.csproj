@@ -57,6 +57,9 @@
     <Compile Include="Model\Anonim.cs" />
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\Autor.cs" />
+    <Compile Include="Model\Chair.cs" />
+    <Compile Include="Model\CoChair.cs" />
+    <Compile Include="Model\PCMember.cs" />
     <Compile Include="Model\Sectiune.cs" />
     <Compile Include="Persistance\DatabaseConnection.cs" />
     <Compile Include="Program.cs" />
