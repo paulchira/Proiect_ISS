@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5F3DCBAC-D281-4545-B361-F998F5A65F8A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConferenceManagement</RootNamespace>
     <AssemblyName>ConferenceManagement</AssemblyName>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -53,11 +56,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Login.cs" />
     <Compile Include="Model\AbstractArticle.cs" />
     <Compile Include="Model\Anonim.cs" />
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\Autor.cs" />
+    <Compile Include="Model\iUser.cs" />
+    <Compile Include="Model\Listener.cs" />
     <Compile Include="Model\Sectiune.cs" />
+    <Compile Include="Model\SessionChair.cs" />
+    <Compile Include="Model\Speaker.cs" />
     <Compile Include="Persistance\DatabaseConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
