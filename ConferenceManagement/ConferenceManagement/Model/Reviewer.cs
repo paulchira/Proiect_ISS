@@ -12,6 +12,13 @@ namespace ConferenceManagement.Model
         private string firstName;
         private string lastName;
 
+        public Reviewer(int id, string firstName, string lastName)
+        {
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
         public int Id
         {
             get
