@@ -8,108 +8,90 @@ namespace ConferenceManagement.Model
 {
     public class Article
     {
-        private int id;
-        private string title;
-        private List<string> keywords;
-        private string topics;
-        private List<Autor> authors;
-        private string extensionFile;
+        private int idArticle;
+        private string articleTitle;
+        private string articleAbstract;
+        private string articleText;
+        private int sectionId;
 
-        public int Id
+        public Article(int idArticle, string articleTitle, string articleAbstract, string articleText, int sectionId)
         {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
+            this.IdArticle = idArticle;
+            this.ArticleTitle = articleTitle;
+            this.ArticleAbstract = articleAbstract;
+            this.ArticleText = articleText;
+            this.SectionId = sectionId;
         }
-
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-
-            set
-            {
-                title = value;
-            }
-        }
-
-        public List<string> Keywords
-        {
-            get
-            {
-                return keywords;
-            }
-
-            set
-            {
-                keywords = value;
-            }
-        }
-
-        public string Topics
-        {
-            get
-            {
-                return topics;
-            }
-
-            set
-            {
-                topics = value;
-            }
-        }
-
-        public List<Autor> Authors
-        {
-            get
-            {
-                return authors;
-            }
-
-            set
-            {
-                authors = value;
-            }
-        }
-
-        public string ExtensionFile
-        {
-            get
-            {
-                return extensionFile;
-            }
-
-            set
-            {
-                extensionFile = value;
-            }
-        }
-
         public Article()
         {
 
         }
-        public Article(int id, string title, List<string> keywords, string topics, List<Autor> authors, string extensionFile)
+
+        public int IdArticle
         {
-            this.Id = id;
-            this.Title = title;
-            this.Keywords = keywords;
-            this.Topics = topics;
-            this.Authors = authors;
-            this.ExtensionFile = extensionFile;
+            get
+            {
+                return idArticle;
+            }
+
+            set
+            {
+                idArticle = value;
+            }
         }
 
-        public string ToString()
+        public string ArticleTitle
         {
-            return "Article{id=" + Id + ", title=" + Title + ", topics=" + Topics + "}";
+            get
+            {
+                return articleTitle;
+            }
+
+            set
+            {
+                articleTitle = value;
+            }
         }
+
+        public string ArticleAbstract
+        {
+            get
+            {
+                return articleAbstract;
+            }
+
+            set
+            {
+                articleAbstract = value;
+            }
+        }
+
+        public string ArticleText
+        {
+            get
+            {
+                return articleText;
+            }
+
+            set
+            {
+                articleText = value;
+            }
+        }
+
+        public int SectionId
+        {
+            get
+            {
+                return sectionId;
+            }
+
+            set
+            {
+                sectionId = value;
+            }
+        }
+
+       
     }
 }
