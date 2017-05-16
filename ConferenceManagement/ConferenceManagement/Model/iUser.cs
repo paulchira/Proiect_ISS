@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
-    interface iUser
+    public interface iUser
     {
-
+        int ID { get; set; }
+        string firstName { get; set; }
+        string lastName { get; set; }
+        string Username { get; set; }
+        string Password { get; set; }
     }
 }
