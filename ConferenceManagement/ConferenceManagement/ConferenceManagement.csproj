@@ -63,6 +63,7 @@
     <Compile Include="Model\Autor.cs" />
     <Compile Include="Model\iUser.cs" />
     <Compile Include="Model\Listener.cs" />
+    <Compile Include="Model\Reviewer.cs" />
     <Compile Include="Model\Sectiune.cs" />
     <Compile Include="Model\SessionChair.cs" />
     <Compile Include="Model\Speaker.cs" />
