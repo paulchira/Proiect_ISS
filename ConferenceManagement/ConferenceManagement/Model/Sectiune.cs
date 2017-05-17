@@ -6,70 +6,71 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
-    public class Sectiune
+    public class Section
     {
-        private int id;
-        private String tema;
-        private String sala;
-        private int nrParticipanti;
-        public Sectiune(int id, String tema, String sala, int nrParticipanti)
+        private int idSection;
+        private string sectionName;
+        private int idConference;
+
+        public Section(int idSection, string sectionName, int idConference)
         {
-            this.id = id;
-            this.tema = tema;
-            this.sala = sala;
-            this.nrParticipanti = nrParticipanti;
+            this.idSection = idSection;
+            this.sectionName = sectionName;
+            this.idConference = idConference;
         }
 
-        public int Id
+        public Section(string sectionName)
+        {
+            this.sectionName = sectionName;
+        }
+
+        public Section(string sectionName, int idConference)
+        {
+            this.sectionName = sectionName;
+            this.idConference = idConference;
+        }
+
+        public int IdSection
         {
             get
             {
-                return id;
+                return idSection;
             }
 
             set
             {
-                id = value;
+                idSection = value;
             }
         }
 
-        public string Tema
+        public string SectionName
         {
             get
             {
-                return tema;
+                return sectionName;
             }
 
             set
             {
-                tema = value;
+                sectionName = value;
             }
         }
 
-        public string Sala
+        public int IdConference
         {
             get
             {
-                return sala;
+                return idConference;
             }
 
             set
             {
-                sala = value;
+                idConference = value;
             }
         }
-
-        public int NrParticipanti
+        public override string ToString()
         {
-            get
-            {
-                return nrParticipanti;
-            }
-
-            set
-            {
-                nrParticipanti = value;
-            }
+            return "Section = { " + idSection + " " + sectionName + " " + idConference + " }";
         }
     }
 }

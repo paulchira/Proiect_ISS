@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
-    public class Autor
+    public class Author
     {
         private int id;
-        private String nume;
-        private String prenume;
-        private String domeniu;
-        private int nrArticole;
-        private int nrPremii;
+        private string firstName;
+        private string lastName;
 
-        public Autor(int id, String nume, String prenume, String domeniu, int nrArticole, int nrPremii)
+        public Author(int id, string firstName, string lastName)
         {
-            this.id = id;
-            this.nume = nume;
-            this.prenume = prenume;
-            this.domeniu = domeniu;
-            this.NrArticole = nrArticole;
-            this.NrPremii = nrPremii;
+            this.Id = id;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
+
+        public Author(string firstName, string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+        }
+
         public int Id
         {
             get
@@ -37,56 +38,35 @@ namespace ConferenceManagement.Model
             }
         }
 
-        public string Nume
+        public string FirstName
         {
             get
             {
-                return nume;
+                return firstName;
             }
 
             set
             {
-                nume = value;
+                firstName = value;
             }
         }
 
-        public string Domeniu
+        public string LastName
         {
             get
             {
-                return domeniu;
+                return lastName;
             }
 
             set
             {
-                domeniu = value;
+                lastName = value;
             }
         }
 
-        public int NrArticole
+        public override string ToString()
         {
-            get
-            {
-                return nrArticole;
-            }
-
-            set
-            {
-                nrArticole = value;
-            }
-        }
-
-        public int NrPremii
-        {
-            get
-            {
-                return nrPremii;
-            }
-
-            set
-            {
-                nrPremii = value;
-            }
+            return "Author = { " + Id + " " + firstName + " " + lastName + " }";
         }
     }
 }
