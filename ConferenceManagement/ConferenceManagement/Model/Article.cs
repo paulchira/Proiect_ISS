@@ -12,7 +12,7 @@ namespace ConferenceManagement.Model
         private string title;
         private List<string> keywords;
         private string topics;
-        private List<Autor> authors;
+        private List<Author> authors;
         private string extensionFile;
 
         public int Id
@@ -67,7 +67,7 @@ namespace ConferenceManagement.Model
             }
         }
 
-        public List<Autor> Authors
+        public List<Author> Authors
         {
             get
             {
@@ -97,7 +97,7 @@ namespace ConferenceManagement.Model
         {
 
         }
-        public Article(int id, string title, List<string> keywords, string topics, List<Autor> authors, string extensionFile)
+        public Article(int id, string title, List<string> keywords, string topics, List<Author> authors, string extensionFile)
         {
             this.Id = id;
             this.Title = title;
