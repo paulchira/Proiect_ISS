@@ -59,7 +59,7 @@
     <Compile Include="Login\Login.cs" />
     <Compile Include="Model\Anonim.cs" />
     <Compile Include="Model\Article.cs" />
-    <Compile Include="Model\Autor.cs" />
+    <Compile Include="Model\Author.cs" />
     <Compile Include="Model\Chair.cs" />
     <Compile Include="Model\CoChair.cs" />
     <Compile Include="Model\iUser.cs" />
@@ -71,7 +71,9 @@
     <Compile Include="Model\Speaker.cs" />
     <Compile Include="Persistance\DatabaseConnection.cs" />
     <Compile Include="Persistance\ICrudRepository.cs" />
+    <Compile Include="Persistance\IRepositoryAuthor.cs" />
     <Compile Include="Persistance\IRepositoryPCMember.cs" />
+    <Compile Include="Persistance\RepositoryAuthor.cs" />
     <Compile Include="Persistance\RepositoryException.cs" />
     <Compile Include="Persistance\RepositoryPCMember.cs" />
     <Compile Include="Program.cs" />
