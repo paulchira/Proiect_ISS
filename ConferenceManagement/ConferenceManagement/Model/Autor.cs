@@ -8,10 +8,11 @@ namespace ConferenceManagement.Model
 {
     public class Author
     {
+        //just for test
         private int id;
         private string firstName;
         private string lastName;
-
+        
         public Author(int id, string firstName, string lastName)
         {
             this.Id = id;
