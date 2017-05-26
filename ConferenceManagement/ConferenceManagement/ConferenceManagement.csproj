@@ -64,7 +64,9 @@
     <Compile Include="Model\CoChair.cs" />
     <Compile Include="Model\iUser.cs" />
     <Compile Include="Model\Listener.cs" />
+    <Compile Include="Model\Participant.cs" />
     <Compile Include="Model\PCMember.cs" />
+    <Compile Include="Model\PreConference.cs" />
     <Compile Include="Model\Reviewer.cs" />
     <Compile Include="Model\Sectiune.cs" />
     <Compile Include="Model\SessionChair.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Persistance\ICrudRepository.cs" />
     <Compile Include="Persistance\IRepositoryPCMember.cs" />
     <Compile Include="Persistance\RepositoryException.cs" />
+    <Compile Include="Persistance\RepositoryParticipant.cs" />
     <Compile Include="Persistance\RepositoryPCMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
