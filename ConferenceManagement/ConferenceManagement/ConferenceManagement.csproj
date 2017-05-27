@@ -76,6 +76,63 @@
     <Compile Include="Persistance\RepositoryPCMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AuthorView\AuthorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AuthorView\AuthorForm.Designer.cs">
+      <DependentUpon>AuthorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AuthorView\MyArticlesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AuthorView\MyArticlesForm.Designer.cs">
+      <DependentUpon>MyArticlesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParticipantView\ParticipantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ParticipantView\ParticipantForm.Designer.cs">
+      <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PCMemberView\ParticipantsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PCMemberView\ParticipantsListForm.Designer.cs">
+      <DependentUpon>ParticipantsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PCMemberView\PCMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PCMemberView\PCMemberForm.Designer.cs">
+      <DependentUpon>PCMemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PCMemberView\SubmittedArticlesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PCMemberView\SubmittedArticlesForm.Designer.cs">
+      <DependentUpon>SubmittedArticlesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReviewerView\ReviewArticleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReviewerView\ReviewArticleForm.Designer.cs">
+      <DependentUpon>ReviewArticleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReviewerView\ReviewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReviewerView\ReviewerForm.Designer.cs">
+      <DependentUpon>ReviewerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +142,33 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AuthorView\AuthorForm.resx">
+      <DependentUpon>AuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AuthorView\MyArticlesForm.resx">
+      <DependentUpon>MyArticlesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ParticipantView\ParticipantForm.resx">
+      <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PCMemberView\ParticipantsListForm.resx">
+      <DependentUpon>ParticipantsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PCMemberView\PCMemberForm.resx">
+      <DependentUpon>PCMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PCMemberView\SubmittedArticlesForm.resx">
+      <DependentUpon>SubmittedArticlesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReviewerView\ReviewArticleForm.resx">
+      <DependentUpon>ReviewArticleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReviewerView\ReviewerForm.resx">
+      <DependentUpon>ReviewerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
