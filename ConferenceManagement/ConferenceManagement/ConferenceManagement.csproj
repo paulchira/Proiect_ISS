@@ -68,12 +68,13 @@
     <Compile Include="Model\Speaker.cs" />
     <Compile Include="Persistance\DatabaseConnection.cs" />
     <Compile Include="Persistance\ICrudRepository.cs" />
-    <Compile Include="Persistance\RepositoryArticol.cs" />
+    <Compile Include="Persistance\RepositoryArticle.cs" />
     <Compile Include="Persistance\RepositoryAuthor.cs" />
     <Compile Include="Persistance\RepositoryConference.cs" />
     <Compile Include="Persistance\RepositoryException.cs" />
     <Compile Include="Persistance\RepositoryParticipant.cs" />
     <Compile Include="Persistance\RepositoryPCMember.cs" />
+    <Compile Include="Persistance\RepositorySection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Persistance\RepositoryUser.cs" />

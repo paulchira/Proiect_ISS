@@ -5,38 +5,33 @@ using System.Data;
 
 namespace ConferenceManagement.Persistance
 {
-    public class RepositoryConference : ICrudRepository<Conference>
+    public class RepositorySection : ICrudRepository<Section>
     {
-        public RepositoryConference()
+        public RepositorySection()
         {
 
         }
 
-        public void add(Conference entity)
+        public void add(Section entity)
         {
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Conference(conferenceName,conferenceDate,conferenceEdition) values (@name,@date,@edition)";
+                comm.CommandText = "insert into Section(sectionName,idConference) values (@name,@idConf)";
 
                 var paramName = comm.CreateParameter();
                 paramName.ParameterName = "@name";
-                paramName.Value = entity.Name;
+                paramName.Value = entity.SectionName;
                 comm.Parameters.Add(paramName);
 
-                var paramDate = comm.CreateParameter();
-                paramDate.ParameterName = "@date";
-                paramDate.Value = entity.Date;
-                comm.Parameters.Add(paramDate);
-
-                var paramEdition = comm.CreateParameter();
-                paramEdition.ParameterName = "@edition";
-                paramEdition.Value = entity.Edition;
-                comm.Parameters.Add(paramEdition);
+                var paramIdConf = comm.CreateParameter();
+                paramIdConf.ParameterName = "@idConf";
+                paramIdConf.Value = entity.IdConference;
+                comm.Parameters.Add(paramIdConf);
 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
-                    throw new RepositoryException("Conference not added");
+                    throw new RepositoryException("Section not added");
             }
         }
 
@@ -45,24 +40,24 @@ namespace ConferenceManagement.Persistance
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "delete from Conference where idConference=@id";
+                comm.CommandText = "delete from Section where idSection=@id";
                 IDbDataParameter paramId = comm.CreateParameter();
                 paramId.ParameterName = "@id";
                 paramId.Value = id;
                 comm.Parameters.Add(paramId);
                 var dataR = comm.ExecuteNonQuery();
                 if (dataR == 0)
-                    throw new RepositoryException("No conference deleted!");
+                    throw new RepositoryException("No section deleted!");
             }
         }
 
-        public Conference findOne(int id)
+        public Section findOne(int id)
         {
             IDbConnection con = DatabaseConnection.getConnection();
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select * from Conference where idConference=@id";
+                comm.CommandText = "select * from Section where idSection=@id";
                 var param = comm.CreateParameter();
                 param.ParameterName = "@id";
                 param.Value = id;
@@ -74,24 +69,23 @@ namespace ConferenceManagement.Persistance
                     {
                         int ID = dataR.GetInt16(0);
                         string name = dataR.GetString(1);
-                        DateTime date = dataR.GetDateTime(2);
-                        string edition = dataR.GetString(3);
-                        Conference conf = new Conference(ID, name, date, edition);
-                        return conf;
+                        int idS = dataR.GetInt16(2);
+                        Section sec = new Section(ID, name, idS);
+                        return sec;
                     }
                 }
             }
             return null;
         }
 
-        public IEnumerable<Conference> getAll()
+        public IEnumerable<Section> getAll()
         {
             IDbConnection con = DatabaseConnection.getConnection();
-            List<Conference> conferences = new List<Conference>();
+            List<Section> sections = new List<Section>();
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select * from Conference";
+                comm.CommandText = "select * from Section";
 
                 using (var dataR = comm.ExecuteReader())
                 {
@@ -99,48 +93,41 @@ namespace ConferenceManagement.Persistance
                     {
                         int ID = dataR.GetInt16(0);
                         string name = dataR.GetString(1);
-                        DateTime date = dataR.GetDateTime(2);
-                        string edition = dataR.GetString(3);
-                        Conference conf = new Conference(ID, name, date, edition);
-                        conferences.Add(conf);
+                        int idS = dataR.GetInt16(2);
+                        Section sec = new Section(ID, name, idS);
+                        sections.Add(sec);
                     }
                 }
             }
-            return conferences;
+            return sections;
         }
 
-        public void update(Conference oldV, Conference newV)
+        public void update(Section oldV, Section newV)
         {
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "Update Conference set conferenceName = @name, conferenceDate = @date, conferenceEdition = @edition where idConference = @ID";
+                comm.CommandText = "Update Section set sectionName = @name, idConference = @idConf where idSection = @ID";
 
                 var paramName = comm.CreateParameter();
                 paramName.ParameterName = "@name";
-                paramName.Value = newV.Name;
+                paramName.Value = newV.SectionName;
                 comm.Parameters.Add(paramName);
 
-                var paramDate = comm.CreateParameter();
-                paramDate.ParameterName = "@date";
-                paramDate.Value = newV.Date;
-                comm.Parameters.Add(paramDate);
-
-                var paramEdition = comm.CreateParameter();
-                paramEdition.ParameterName = "@edition";
-                paramEdition.Value = newV.Edition;
-                comm.Parameters.Add(paramEdition);
+                var paramIdConf = comm.CreateParameter();
+                paramIdConf.ParameterName = "@idConf";
+                paramIdConf.Value = newV.IdConference;
+                comm.Parameters.Add(paramIdConf);
 
                 var paramID = comm.CreateParameter();
                 paramID.ParameterName = "@ID";
-                paramID.Value = oldV.Id;
+                paramID.Value = oldV.IdSection;
                 comm.Parameters.Add(paramID);
 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
-                    throw new RepositoryException("Conference not updated");
+                    throw new RepositoryException("Section not updated");
             }
-
         }
     }
 }
