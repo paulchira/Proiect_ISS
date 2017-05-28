@@ -28,9 +28,5 @@ namespace ConferenceManagement.Model
             }
         }
 
-        public string ToString()
-        {
-            return "Anonim{id=" + Id + "}";
-        }
     }
 }

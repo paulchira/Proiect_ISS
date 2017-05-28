@@ -58,7 +58,7 @@
     <Compile Include="Model\Chair.cs" />
     <Compile Include="Model\CoChair.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Listener.cs" />
+    <Compile Include="Model\Participant.cs" />
     <Compile Include="Model\PCMember.cs" />
     <Compile Include="Model\PreConference.cs" />
     <Compile Include="Model\Reviewer.cs" />

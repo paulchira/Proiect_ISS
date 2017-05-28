@@ -17,8 +17,8 @@ namespace ConferenceManagement.Model
         public User(int id, string firstName, string lastName, string username, string pass)
         {
             ID = id;
-            FirstName = firstName;
-            LastName = lastName;
+            this.FirstName = firstName;
+            this.LastName = lastName;
             Username = username;
             Password = pass;
         }

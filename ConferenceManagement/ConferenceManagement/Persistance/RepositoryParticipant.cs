@@ -22,12 +22,12 @@ namespace ConferenceManagement.Persistance
                 comm.CommandText = "insert into Participant(username, password,firstName, lastName) values(@username, @password,@firstName, @lastName)";
                 var paramFirstName = comm.CreateParameter();
                 paramFirstName.ParameterName = "@firstName";
-                paramFirstName.Value = entity.firstName;
+                paramFirstName.Value = entity.FirstName;
                 comm.Parameters.Add(paramFirstName);
 
                 var paramLastName = comm.CreateParameter();
                 paramLastName.ParameterName = "@lastName";
-                paramLastName.Value = entity.lastName;
+                paramLastName.Value = entity.LastName;
                 comm.Parameters.Add(paramLastName);
 
                 var paramUsername = comm.CreateParameter();
