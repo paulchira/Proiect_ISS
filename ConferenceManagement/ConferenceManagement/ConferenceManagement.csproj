@@ -68,6 +68,7 @@
     <Compile Include="Model\Speaker.cs" />
     <Compile Include="Persistance\DatabaseConnection.cs" />
     <Compile Include="Persistance\ICrudRepository.cs" />
+    <Compile Include="Persistance\RepositoryArticol.cs" />
     <Compile Include="Persistance\RepositoryAuthor.cs" />
     <Compile Include="Persistance\RepositoryConference.cs" />
     <Compile Include="Persistance\RepositoryException.cs" />
