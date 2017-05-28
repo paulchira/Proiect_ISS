@@ -44,7 +44,7 @@ namespace ConferenceManagement.Persistance
 
             }
             var cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT MAX(idUser) FROM USERS";
+            cmd.CommandText = "SELECT MAX(idUser) FROM Users";
 
             int idUser = Convert.ToInt32(cmd.ExecuteScalar());
 
