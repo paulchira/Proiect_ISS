@@ -59,7 +59,7 @@ namespace ConferenceManagement.Persistance
                 comm.CommandText = "insert into Users_Role(idUser,idRole) values(@idUser,@idRole)";
                 var paramUser = comm.CreateParameter();
                 paramUser.ParameterName = "@idUser";
-                paramUser.Value = idUser + 1;
+                paramUser.Value = idUser;
                 comm.Parameters.Add(paramUser);
 
                 var paramPass = comm.CreateParameter();
@@ -79,7 +79,18 @@ namespace ConferenceManagement.Persistance
         //TODO:
         public void delete(int id)
         {
-            throw new NotImplementedException();
+            IDbConnection con = DatabaseConnection.getConnection();
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "delete from Users_Role where idUser=@id and idRole=(select idRole from Roles where roleName='Author') ";
+                IDbDataParameter paramId = comm.CreateParameter();
+                paramId.ParameterName = "@id";
+                paramId.Value = id;
+                comm.Parameters.Add(paramId);
+                var dataR = comm.ExecuteNonQuery();
+                if (dataR == 0)
+                    throw new RepositoryException("No author deleted!");
+            }
         }
 
         //TODO:
@@ -98,13 +109,13 @@ namespace ConferenceManagement.Persistance
 
             using (var comm = connection.CreateCommand())
             {
-                comm.CommandText = "select (Users.idUser,Users.username,Users.password,Users.firstName,Users.lastName) from Users inner join Users_Role on Users.idUser=Users_Role.idUser inner join Roles on Users_Role.idRole=Roles.idRole where Roles.roleName='Author'"; // or another name of table
+                comm.CommandText = "select Users.idUser,Users.username,Users.password,Users.firstName,Users.lastName from Users inner join Users_Role on Users.idUser=Users_Role.idUser inner join Roles on Users_Role.idRole=Roles.idRole where Roles.roleName='Author'"; // or another name of table
 
                 using (var dataR = comm.ExecuteReader())
                 {
                     while (dataR.Read())
                     {
-                        int id = dataR.GetInt32(0);
+                        int id = dataR.GetInt16(0);
                         string username = dataR.GetString(1);
                         string password = dataR.GetString(2);
                         string firstName = dataR.GetString(3);
