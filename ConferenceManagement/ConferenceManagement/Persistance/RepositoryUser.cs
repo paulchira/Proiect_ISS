@@ -49,7 +49,7 @@ namespace ConferenceManagement
                         {
                             return new Reviewer(idUser, firstName, lastName, username, password);
                         }
-                        if (idRole == 5)
+                        if (idRole == 4)
                         {
                             return new PCMember(idUser, firstName, lastName, username, password);
                         }
