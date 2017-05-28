@@ -75,6 +75,7 @@
     <Compile Include="Persistance\RepositoryPCMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persistance\RepositoryUser.cs" />
     <Compile Include="Server\IServiceAuthor.cs" />
     <Compile Include="Server\IServiceParticipant.cs" />
     <Compile Include="Server\IServicePCMember.cs" />
