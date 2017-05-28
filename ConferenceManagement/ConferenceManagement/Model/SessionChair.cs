@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
-    class SessionChair
+    public class SessionChair
     {
         // No idea ce trebuie sa contina aceste clase mai exact :).
         private int id;
