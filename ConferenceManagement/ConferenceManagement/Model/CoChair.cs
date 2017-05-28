@@ -8,5 +8,6 @@ namespace ConferenceManagement.Model
 {
     public class CoChair : PCMember
     {
+        public CoChair(int id, string firstName, string lastName, string username, string pass) : base(id, firstName, lastName, username, pass) { }
     }
 }

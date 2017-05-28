@@ -73,7 +73,7 @@
             // 
             this.login_button.BackColor = System.Drawing.Color.SkyBlue;
             this.login_button.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_button.Location = new System.Drawing.Point(222, 216);
+            this.login_button.Location = new System.Drawing.Point(172, 220);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(96, 35);
             this.login_button.TabIndex = 4;

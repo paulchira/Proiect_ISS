@@ -57,14 +57,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs" />
+    <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Anonim.cs" />
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\Author.cs" />
     <Compile Include="Model\Chair.cs" />
     <Compile Include="Model\CoChair.cs" />
-    <Compile Include="Model\iUser.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Model\Listener.cs" />
-    <Compile Include="Model\Participant.cs" />
     <Compile Include="Model\PCMember.cs" />
     <Compile Include="Model\PreConference.cs" />
     <Compile Include="Model\Reviewer.cs" />
