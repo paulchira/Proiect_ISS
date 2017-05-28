@@ -1,4 +1,5 @@
-﻿using ConferenceManagement.Persistance;
+﻿using ConferenceManagement.Model;
+using ConferenceManagement.Persistance;
 using ConferenceManagement.View;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,22 @@ namespace ConferenceManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+
+
+ /*           RepositoryUser rep = new RepositoryUser();
+            User u = rep.validateAccount("dcaspriac", "abc");
+            if(u is Participant)
+            {
+                Console.WriteLine("da");
+            }
+            if (u is PCMember)
+            {
+                Console.WriteLine("dada");
+            }*/
             Application.Run(new LoginForm());
 
-           
         }
     }
 }
