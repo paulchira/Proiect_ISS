@@ -87,6 +87,7 @@
     <Compile Include="View\AuthorView\AuthorForm.Designer.cs">
       <DependentUpon>AuthorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AuthorView\ControllerAuthor.cs" />
     <Compile Include="View\AuthorView\MyArticlesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +100,14 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ParticipantView\ControllerParticipant.cs" />
     <Compile Include="View\ParticipantView\ParticipantForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ParticipantView\ParticipantForm.Designer.cs">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PCMemberView\ControllerPCMember.cs" />
     <Compile Include="View\PCMemberView\ParticipantsListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +126,7 @@
     <Compile Include="View\PCMemberView\SubmittedArticlesForm.Designer.cs">
       <DependentUpon>SubmittedArticlesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ReviewerView\ControllerReviewer.cs" />
     <Compile Include="View\ReviewerView\ReviewArticleForm.cs">
       <SubType>Form</SubType>
     </Compile>
