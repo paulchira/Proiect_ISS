@@ -8,7 +8,7 @@ using System.Data;
 
 namespace ConferenceManagement.Persistance
 {
-    public class RepositoryAuthor : IRepositoryAuthor
+    public class RepositoryAuthor : ICrudRepository<Author>
     {
         //ADD AUTHOR IN DB
         public void add(Author entity)

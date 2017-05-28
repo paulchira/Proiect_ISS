@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Persistance
 {
-    public class RepositoryPCMember : IRepositoryPCMember
+    public class RepositoryPCMember : ICrudRepository<PCMember>
     {
         /* Default constructor */
         public RepositoryPCMember()
