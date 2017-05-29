@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
+    [Serializable]
     public class Reviewer : User
     {
         public Reviewer(int id, string firstName, string lastName, string username, string pass) : base(id, firstName, lastName, username, pass) { }

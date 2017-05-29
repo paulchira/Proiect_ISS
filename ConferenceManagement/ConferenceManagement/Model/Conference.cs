@@ -2,6 +2,7 @@
 
 namespace ConferenceManagement.Model
 {
+    [Serializable]
     public class Conference
     {
         public int Id { set; get; }

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConferenceManagement.Login
+namespace ConferenceManagement.Persistance
 {
-    class Login
+    public class Login
     {
         SqlConnection cs = new SqlConnection("Data Source=localhost;Initial Catalog=Conference_Management;Integrated Security=True");
 

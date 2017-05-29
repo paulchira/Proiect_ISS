@@ -52,6 +52,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConferenceManagement\ConferenceManagement.csproj">
+      <Project>{5f3dcbac-d281-4545-b361-f998f5a65f8a}</Project>
+      <Name>ConferenceManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

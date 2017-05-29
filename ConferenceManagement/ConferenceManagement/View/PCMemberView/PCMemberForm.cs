@@ -7,27 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConferenceManagement.Client;
+using ConferenceManagement.Model;
 
 namespace ConferenceManagement.View.PCMemberView
 {
     public partial class PCMemberForm : Form
     {
-        public PCMemberForm()
+        ClientController ctrl;
+        public PCMemberForm(ClientController ctr)
         {
             InitializeComponent();
+            ctrl = ctr;
         }
 
         // Opens the window with the list of the articles for this conference.
         private void SubmittedArticles_button_Click(object sender, EventArgs e)
         {
-            SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm();
+            SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm(ctrl);
             submittedArticlesForm.Show();
         }
 
         // Opens the window with the list of the participants for this conference.
         private void Participants_button_Click(object sender, EventArgs e)
         {
-            ParticipantsListForm participantsList = new ParticipantsListForm();
+            ParticipantsListForm participantsList = new ParticipantsListForm(ctrl);
             participantsList.Show();
         }
     }

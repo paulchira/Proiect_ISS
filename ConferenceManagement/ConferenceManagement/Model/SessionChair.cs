@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
+    [Serializable]
     public class SessionChair
     {
         // No idea ce trebuie sa contina aceste clase mai exact :).

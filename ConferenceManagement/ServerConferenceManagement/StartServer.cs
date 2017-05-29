@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
-using System.Text;
-using System.Threading.Tasks;
+using ConferenceManagement.Persistance;
+using ConferenceManagement.Model;
 
 namespace ServerConferenceManagement
 {
@@ -14,7 +12,16 @@ namespace ServerConferenceManagement
     {
         static void Main(string[] args)
         {
-            // net remoting
+            RepositoryConference repoConf = new RepositoryConference();
+            //repoConf.add(new Conference("nume1", DateTime.Now, "ed1"));
+            //repoConf.add(new Conference("nume2", DateTime.Now, "ed1"));
+            //repoConf.add(new Conference("nume3", DateTime.Now, "ed1"));
+            RepositoryArticle repoArticle = new RepositoryArticle();
+            RepositoryAuthor repoAuthor = new RepositoryAuthor();
+            RepositoryPCMember repoPCM = new RepositoryPCMember();
+            RepositorySection repoSection = new RepositorySection();
+            RepositoryUser repoUser = new RepositoryUser();
+            var serviceServer = new ServiceServerImpl(repoConf,repoArticle,repoSection,repoUser,repoAuthor,repoPCM);
             BinaryServerFormatterSinkProvider serverProv = new BinaryServerFormatterSinkProvider();
             serverProv.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
             BinaryClientFormatterSinkProvider clientProv = new BinaryClientFormatterSinkProvider();
@@ -24,8 +31,8 @@ namespace ServerConferenceManagement
             TcpChannel channel = new TcpChannel(props, clientProv, serverProv);
             ChannelServices.RegisterChannel(channel, false);
 
-            var server = new ServiceServerImpl();
-            RemotingServices.Marshal(server, "ConferenceManagement Server");
+            RemotingServices.Marshal(serviceServer, "Conference");
+
             Console.WriteLine("Server started ...");
             Console.WriteLine("Press <enter> to exit...");
             Console.ReadLine();

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Model
 {
+    [Serializable]
     public class User
     {
         public int ID { get; set; }

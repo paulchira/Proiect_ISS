@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConferenceManagement.Client;
+using ConferenceManagement.Model;
 
 namespace ConferenceManagement.View.PCMemberView
 {
     public partial class ParticipantsListForm : Form
     {
-        public ParticipantsListForm()
+        ClientController ctrl;
+
+        public ParticipantsListForm(ClientController ctr)
         {
             InitializeComponent();
+            ctrl = ctr;
         }
     }
 }

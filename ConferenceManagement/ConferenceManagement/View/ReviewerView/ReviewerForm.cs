@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConferenceManagement.Client;
+using ConferenceManagement.Model;
 
 namespace ConferenceManagement.View
 {
     public partial class ReviewerForm : Form
     {
-        public ReviewerForm()
+        ClientController ctrl;
+        public ReviewerForm(ClientController ctr)
         {
             InitializeComponent();
+            ctrl = ctr;
         }
     }
 }

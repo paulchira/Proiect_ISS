@@ -1,5 +1,5 @@
 ﻿using ConferenceManagement.Model;
-using ConferenceManagement.Server;
+using ConferenceManagement.Service;
 using ConferenceManagement.View.PCMemberView;
 using System;
 using System.Collections.Generic;
@@ -10,16 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConferenceManagement.Client;
 
 namespace ConferenceManagement.View
 {
     public partial class LoginForm : Form
     {
-        private RepositoryUser repUser;
-        public LoginForm()
+        ClientController ctrl;
+        public LoginForm(ClientController ctr)
         {
             InitializeComponent();
-            repUser = new RepositoryUser();
+            ctrl = ctr;
         }
 
         private void login_button_Click(object sender, EventArgs e)
@@ -29,11 +30,11 @@ namespace ConferenceManagement.View
 
             try
             {
-                User user = repUser.validateAccount(username, password);
+                User user = ctrl.validateAccount(username, password);
 
                 if (user is Author)
                 {
-                    AuthorForm authorForm = new AuthorForm();
+                    AuthorForm authorForm = new AuthorForm(ctrl);
                     this.Owner = authorForm;
                     this.Hide();
 
@@ -42,7 +43,7 @@ namespace ConferenceManagement.View
 
                 if (user is Participant)
                 {
-                    ParticipantForm participantForm = new ParticipantForm();
+                    ParticipantForm participantForm = new ParticipantForm(ctrl);
                     this.Owner = participantForm;
                     this.Hide();
 
@@ -51,7 +52,7 @@ namespace ConferenceManagement.View
 
                 if (user is PCMember)
                 {
-                    PCMemberForm pcMemberForm = new PCMemberForm();
+                    PCMemberForm pcMemberForm = new PCMemberForm(ctrl);
                     this.Owner = pcMemberForm;
                     this.Hide();
 
@@ -60,7 +61,7 @@ namespace ConferenceManagement.View
 
                 if (user is Reviewer)
                 {
-                    ReviewerForm reviewerForm = new ReviewerForm();
+                    ReviewerForm reviewerForm = new ReviewerForm(ctrl);
                     this.Owner = reviewerForm;
                     this.Hide();
 

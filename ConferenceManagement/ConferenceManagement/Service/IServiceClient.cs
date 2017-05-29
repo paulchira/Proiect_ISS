@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConferenceManagement.Server
+namespace ConferenceManagement.Service
 {
-    public interface IServiceAuthor
+    public interface IServiceClient
     {
     }
 }
