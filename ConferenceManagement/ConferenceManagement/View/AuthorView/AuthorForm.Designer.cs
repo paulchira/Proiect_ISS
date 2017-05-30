@@ -64,6 +64,7 @@
             this.submitArticle_button.TabIndex = 4;
             this.submitArticle_button.Text = "Submit an article";
             this.submitArticle_button.UseVisualStyleBackColor = false;
+            this.submitArticle_button.Click += new System.EventHandler(this.submitArticle_button_Click);
             // 
             // myArticles_button
             // 

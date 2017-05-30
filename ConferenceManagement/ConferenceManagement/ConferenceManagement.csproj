@@ -84,6 +84,12 @@
     <Compile Include="Persistance\RepositoryUser.cs" />
     <Compile Include="Service\IServiceClient.cs" />
     <Compile Include="Service\IServiceServer.cs" />
+    <Compile Include="View\AuthorView\AddAbstract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AuthorView\AddAbstract.Designer.cs">
+      <DependentUpon>AddAbstract.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AuthorView\AuthorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AuthorView\AddAbstract.resx">
+      <DependentUpon>AddAbstract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AuthorView\AuthorForm.resx">
       <DependentUpon>AuthorForm.cs</DependentUpon>
     </EmbeddedResource>

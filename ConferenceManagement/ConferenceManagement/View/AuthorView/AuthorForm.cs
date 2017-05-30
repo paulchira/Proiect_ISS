@@ -37,5 +37,11 @@ namespace ConferenceManagement.View
             MyArticlesForm myArticlesForm = new MyArticlesForm();
             myArticlesForm.Show();
         }
+
+        private void submitArticle_button_Click(object sender, EventArgs e)
+        {
+            AddAbstract addAbstract = new AddAbstract();
+            addAbstract.Show();
+        }
     }
 }
