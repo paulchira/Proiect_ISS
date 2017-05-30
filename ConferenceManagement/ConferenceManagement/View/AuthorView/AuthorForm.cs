@@ -16,11 +16,13 @@ namespace ConferenceManagement.View
     public partial class AuthorForm : Form
     {
         ClientController ctrl;
+        AuthorForm currentAuthorForm;
         public AuthorForm(ClientController ctr)
         {
             InitializeComponent();
             ctrl = ctr;
             setDataGrid();
+            currentAuthorForm = this;
         }
 
         private void setDataGrid()
@@ -35,12 +37,20 @@ namespace ConferenceManagement.View
         private void myArticles_button_Click(object sender, EventArgs e)
         {
             MyArticlesForm myArticlesForm = new MyArticlesForm();
+            myArticlesForm.ParentFormAuthor = this;
+            this.Owner = myArticlesForm;
+            this.Hide();
+
             myArticlesForm.Show();
         }
 
         private void submitArticle_button_Click(object sender, EventArgs e)
         {
             AddAbstract addAbstract = new AddAbstract();
+            addAbstract.ParentFormAuthor = this;
+            this.Owner = addAbstract;
+            this.Hide();
+
             addAbstract.Show();
         }
     }
