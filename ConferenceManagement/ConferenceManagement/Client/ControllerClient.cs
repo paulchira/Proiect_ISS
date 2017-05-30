@@ -37,5 +37,10 @@ namespace ConferenceManagement.Client
         {
             return serviceServer.validateAccount(username, password);
         }
+
+        public List<Section> getAllSections()
+        {
+            return serviceServer.getAllSections();
+        }
     }
 }

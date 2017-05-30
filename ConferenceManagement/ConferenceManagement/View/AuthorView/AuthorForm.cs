@@ -37,7 +37,9 @@ namespace ConferenceManagement.View
         private void myArticles_button_Click(object sender, EventArgs e)
         {
             MyArticlesForm myArticlesForm = new MyArticlesForm();
+            myArticlesForm.Ctrl = this.ctrl;
             myArticlesForm.ParentFormAuthor = this;
+            myArticlesForm.initializeAuthorComponents();
             this.Owner = myArticlesForm;
             this.Hide();
 
@@ -47,10 +49,12 @@ namespace ConferenceManagement.View
         private void submitArticle_button_Click(object sender, EventArgs e)
         {
             AddAbstract addAbstract = new AddAbstract();
+            addAbstract.Ctrl = this.ctrl;
             addAbstract.ParentFormAuthor = this;
+            addAbstract.initializeAuthorComponents();
             this.Owner = addAbstract;
             this.Hide();
-
+           
             addAbstract.Show();
         }
     }

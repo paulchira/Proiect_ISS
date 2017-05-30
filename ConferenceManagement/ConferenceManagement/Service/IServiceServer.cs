@@ -10,9 +10,13 @@ namespace ConferenceManagement.Service
     public interface IServiceServer
     {
         void login(string username, string password);
+
         void logout(string username, string password);
+
         User validateAccount(string username, string password);
 
         List<Conference> getAllConferences();
+
+        List<Section> getAllSections();
     }
 }

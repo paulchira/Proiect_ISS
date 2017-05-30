@@ -16,7 +16,6 @@ namespace ServerConferenceManagement
         RepositoryPCMember repoPCMember;
         RepositorySection repoSection;
 
-
         public ServiceServerImpl(RepositoryConference repoConf, RepositoryArticle repoArticle, RepositorySection repoSection, RepositoryUser repoUser,
             RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember)
         {
@@ -28,16 +27,10 @@ namespace ServerConferenceManagement
             this.repoSection = repoSection;
         }
 
-
-
         public List<Conference> getAllConferences()
         {
             return repoConf.getAll().ToList();
         }
-
-
-
-
 
         public void login(string username, string password)
         {
@@ -52,6 +45,11 @@ namespace ServerConferenceManagement
         public User validateAccount(string username, string password)
         {
             return repoUser.validateAccount(username, password);
+        }
+
+        public List<Section> getAllSections()
+        {
+            return repoSection.getAll().ToList();
         }
     }
 }

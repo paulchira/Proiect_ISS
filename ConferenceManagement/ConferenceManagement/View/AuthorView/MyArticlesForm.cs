@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConferenceManagement.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,17 @@ namespace ConferenceManagement.View.AuthorView
     // Manages the articles of an author
     public partial class MyArticlesForm : Form
     {
-        AuthorForm parentFormAuthor;
+        private AuthorForm parentFormAuthor;
+        private ClientController ctrl;
 
         public MyArticlesForm()
         {
             InitializeComponent();
+        }
+
+        public void initializeAuthorComponents()
+        {
+
         }
 
         public AuthorForm ParentFormAuthor
@@ -30,6 +37,19 @@ namespace ConferenceManagement.View.AuthorView
             set
             {
                 parentFormAuthor = value;
+            }
+        }
+
+        public ClientController Ctrl
+        {
+            get
+            {
+                return ctrl;
+            }
+
+            set
+            {
+                ctrl = value;
             }
         }
 
