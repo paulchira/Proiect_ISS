@@ -21,7 +21,9 @@ namespace ConferenceManagement.View.ParticipantView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Succes!");      
+            MessageBox.Show("Succes!");
+            this.Close();
+            parent.Show();
         }
     }
 }

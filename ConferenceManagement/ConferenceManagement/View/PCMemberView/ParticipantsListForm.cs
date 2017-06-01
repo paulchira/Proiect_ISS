@@ -15,11 +15,17 @@ namespace ConferenceManagement.View.PCMemberView
     public partial class ParticipantsListForm : Form
     {
         ClientController ctrl;
-
-        public ParticipantsListForm(ClientController ctr)
+        Conference conference;
+        public ParticipantsListForm(ClientController ctr, Conference conf)
         {
             InitializeComponent();
             ctrl = ctr;
+            conference = conf;
+
+            dataGridView1.DataSource = ctrl.getAllParticipantsByConference(conf.Id);
+            dataGridView1.Columns[4].Visible = false; // hide password column
+            noParticpants_textBox.Text = ctrl.getAllParticipantsByConference(conf.Id).Count+ "";
+
         }
     }
 }

@@ -73,7 +73,7 @@
             // 
             // login_button
             // 
-            this.login_button.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.login_button.BackColor = System.Drawing.Color.SkyBlue;
             this.login_button.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_button.Location = new System.Drawing.Point(172, 220);
             this.login_button.Name = "login_button";
@@ -85,7 +85,7 @@
             // 
             // button_SignUp
             // 
-            this.button_SignUp.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button_SignUp.BackColor = System.Drawing.Color.SkyBlue;
             this.button_SignUp.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SignUp.Location = new System.Drawing.Point(350, 288);
             this.button_SignUp.Name = "button_SignUp";

@@ -47,7 +47,7 @@
             // 
             // conferences_dataGridView
             // 
-            this.conferences_dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.conferences_dataGridView.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.conferences_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.conferences_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.conferences_dataGridView.Location = new System.Drawing.Point(33, 93);
@@ -57,7 +57,7 @@
             // 
             // submitArticle_button
             // 
-            this.submitArticle_button.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.submitArticle_button.BackColor = System.Drawing.Color.SkyBlue;
             this.submitArticle_button.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitArticle_button.Location = new System.Drawing.Point(33, 306);
             this.submitArticle_button.Name = "submitArticle_button";
@@ -69,7 +69,7 @@
             // 
             // myArticles_button
             // 
-            this.myArticles_button.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.myArticles_button.BackColor = System.Drawing.Color.SkyBlue;
             this.myArticles_button.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myArticles_button.Location = new System.Drawing.Point(434, 12);
             this.myArticles_button.Name = "myArticles_button";
