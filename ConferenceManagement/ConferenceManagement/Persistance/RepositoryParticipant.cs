@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConferenceManagement.Persistance
 {
-    class RepositoryParticipant : ICrudRepository<Participant>
+    public class RepositoryParticipant : ICrudRepository<Participant>
     {
         public RepositoryParticipant() { }
 
@@ -155,6 +155,36 @@ namespace ConferenceManagement.Persistance
         public void update(Participant oldV, Participant newV)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Participant> getAllByConference(int idConf)
+        {
+            List<Participant> res = new List<Participant>();
+            IDbConnection connection = DatabaseConnection.getConnection();
+
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "select Users.idUser,Users.username,Users.password,Users.firstName,Users.lastName from Users inner join Users_Role on Users.idUser=Users_Role.idUser inner join Roles on Users_Role.idRole=Roles.idRole inner join Participant_Conference on Participant_Conference.idUser=Users.idUser where Roles.roleName='Participant' and  Participant_Conference.idConference=@idConf";
+                var paramID = comm.CreateParameter();
+                paramID.ParameterName = "@idConf";
+                paramID.Value = idConf;
+                comm.Parameters.Add(paramID);
+
+                using (var dataR = comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        int id = dataR.GetInt16(0);
+                        string username = dataR.GetString(1);
+                        string password = dataR.GetString(2);
+                        string firstName = dataR.GetString(3);
+                        string lastName = dataR.GetString(4);
+                        Participant a = new Participant(id, username, password, firstName, lastName);
+                        res.Add(a);
+                    }
+                }
+            }
+            return res;
         }
     }
 }

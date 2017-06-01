@@ -45,5 +45,7 @@ namespace ConferenceManagement.Service
         Article findOneArticle(int idArticle);
 
         void updateArticle(Article oldA, Article newA);
+
+        List<Participant> getAllParticipantsByConference(int idConf);
     }
 }
