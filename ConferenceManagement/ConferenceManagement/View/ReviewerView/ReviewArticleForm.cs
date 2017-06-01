@@ -28,7 +28,7 @@ namespace ConferenceManagement.View.ReviewerView
 
         private void SubmitReview_button_Click(object sender, EventArgs e)
         {
-            // RepositoryPCMember.add()
+            
         }
 
         private void SubmitReview_button_Click_1(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace ConferenceManagement.View.ReviewerView
             if (checkBox6.Checked) calificativ = 6;
             if (checkBox7.Checked) calificativ = 7;
 
-            ctrl.insertReviewer()
+            ctrl.insertReview(reviewer.ID, article.IdArticle, richTextBox1.Text, calificativ);
         }
     }
 }
