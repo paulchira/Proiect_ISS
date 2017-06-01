@@ -91,6 +91,7 @@ namespace ConferenceManagement.Client
         public List<Article> getAllArticles(int idReviewer)
         {
             return serviceServer.getAllArticles(idReviewer);
+           
         }
 
         public void insertReview(int idUser, int idArticle, string comment, int calificativ)
