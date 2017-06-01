@@ -51,7 +51,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 263);
             this.dataGridView1.Name = "dataGridView1";
@@ -70,7 +71,8 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 54);
             this.dataGridView2.Name = "dataGridView2";
@@ -79,7 +81,7 @@
             // 
             // SubmittedArticles_button
             // 
-            this.SubmittedArticles_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.SubmittedArticles_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.SubmittedArticles_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmittedArticles_button.Location = new System.Drawing.Point(400, 54);
             this.SubmittedArticles_button.Name = "SubmittedArticles_button";
@@ -91,7 +93,7 @@
             // 
             // Participants_button
             // 
-            this.Participants_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.Participants_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.Participants_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Participants_button.Location = new System.Drawing.Point(400, 263);
             this.Participants_button.Name = "Participants_button";
@@ -103,7 +105,7 @@
             // 
             // createConference
             // 
-            this.createConference.BackColor = System.Drawing.Color.SkyBlue;
+            this.createConference.BackColor = System.Drawing.Color.PaleTurquoise;
             this.createConference.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createConference.Location = new System.Drawing.Point(400, 439);
             this.createConference.Name = "createConference";
@@ -117,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(601, 515);
             this.Controls.Add(this.createConference);
             this.Controls.Add(this.Participants_button);

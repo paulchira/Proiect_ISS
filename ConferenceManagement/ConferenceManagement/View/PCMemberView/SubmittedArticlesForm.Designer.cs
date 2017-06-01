@@ -57,7 +57,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(22, 95);
             this.dataGridView1.Name = "dataGridView1";
@@ -94,7 +95,7 @@
             // 
             // requireReview_button
             // 
-            this.requireReview_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.requireReview_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.requireReview_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requireReview_button.Location = new System.Drawing.Point(112, 361);
             this.requireReview_button.Name = "requireReview_button";
@@ -107,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(536, 459);
             this.Controls.Add(this.requireReview_button);
             this.Controls.Add(this.label3);
