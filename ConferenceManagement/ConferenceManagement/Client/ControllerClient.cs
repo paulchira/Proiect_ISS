@@ -68,7 +68,7 @@ namespace ConferenceManagement.Client
             return serviceServer.getConferenceId(name);
 	}
         
-	public void addArticle(Article article)
+	    public void addArticle(Article article)
         {
             serviceServer.addArticle(article);
         }
@@ -81,6 +81,16 @@ namespace ConferenceManagement.Client
         public List<Article> getAllArticles()
         {
             return serviceServer.getAllArticles();
+        }
+
+        public List<Article> getAllArticles(int idReviewer)
+        {
+            return serviceServer.getAllArticles(idReviewer);
+        }
+
+        public void insertReviewer(int idUser, int idArticle, string comment, int calificativ)
+        {
+            serviceServer.insertReviewer(idUser, idArticle, comment, calificativ);
         }
     }
 }

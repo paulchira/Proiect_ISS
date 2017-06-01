@@ -15,9 +15,10 @@ namespace ServerConferenceManagement
         RepositoryAuthor repoAuthor;
         RepositoryPCMember repoPCMember;
         RepositorySection repoSection;
+        RepositoryReviewer repoReviewer;
 
         public ServiceServerImpl(RepositoryConference repoConf, RepositoryArticle repoArticle, RepositorySection repoSection, RepositoryUser repoUser,
-            RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember)
+            RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember, RepositoryReviewer repoReviewer)
         {
             this.repoConf = repoConf;
             this.repoArticle = repoArticle;
@@ -25,6 +26,7 @@ namespace ServerConferenceManagement
             this.repoAuthor = repoAuthor;
             this.repoPCMember = repoPCMember;
             this.repoSection = repoSection;
+            this.repoReviewer = repoReviewer;
         }
 
         public List<Conference> getAllConferences()
@@ -89,6 +91,16 @@ namespace ServerConferenceManagement
         public List<Article> getAllArticles()
         {
             return repoArticle.getAll().ToList();
+        }
+
+        public List<Article> getAllArticles(int idReviewer)
+        {
+            return repoReviewer.getAllArticles(idReviewer).ToList();
+        }
+
+        public void insertReviewer(int idUser, int idArticle, string comment, int calificativ)
+        {
+            repoReviewer.insertReview(idUser, idArticle, comment, calificativ);
         }
     }
 }

@@ -16,10 +16,12 @@ namespace ConferenceManagement.View.ReviewerView
     {
         ClientController ctrl;
         Article article;
-        public ReviewArticleForm(ClientController ctr, Article article)
+        Reviewer reviewer;
+        public ReviewArticleForm(ClientController ctr, Reviewer reviewer, Article article)
         {
             InitializeComponent();
             ctrl = ctr;
+            this.reviewer = reviewer;
             this.article = article;
             textBox_ArticleTitle.Text = article.ArticleTitle;
         }

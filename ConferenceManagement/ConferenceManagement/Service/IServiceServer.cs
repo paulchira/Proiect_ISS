@@ -30,10 +30,14 @@ namespace ConferenceManagement.Service
         int getConferenceId(string nconferenceName);
 
         
-	void addArticle(Article article);
+	    void addArticle(Article article);
 
         void addArticleAuthor(int idArticle, int idAuthor);
 
         List<Article> getAllArticles();
+
+        List<Article> getAllArticles(int idReviewer);
+
+        void insertReviewer(int idUser, int idArticle, string comment, int calificativ);
     }
 }
