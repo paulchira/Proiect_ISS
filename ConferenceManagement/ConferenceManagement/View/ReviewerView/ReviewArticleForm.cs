@@ -23,5 +23,10 @@ namespace ConferenceManagement.View.ReviewerView
             this.article = article;
             textBox_ArticleTitle.Text = article.ArticleTitle;
         }
+
+        private void SubmitReview_button_Click(object sender, EventArgs e)
+        {
+            // RepositoryPCMember.add()
+        }
     }
 }
