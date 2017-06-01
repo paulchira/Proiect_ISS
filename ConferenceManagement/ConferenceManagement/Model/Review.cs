@@ -14,7 +14,7 @@ namespace ConferenceManagement.Model
 
         public Review(int idArticle, int idUser, int calificativ, string comment)
         {
-            this.IdArticle = idArticle;
+            this.idArticle = idArticle;
             this.idUser = idUser;
             this.calificativ = calificativ;
             this.comment = comment;
