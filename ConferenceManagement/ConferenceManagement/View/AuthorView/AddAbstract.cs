@@ -118,6 +118,7 @@ namespace ConferenceManagement.View.AuthorView
                 ctrl.addArticle(article);
                 
                 ctrl.addArticleAuthor(getIdArticle(articleTitle), author.ID);
+                MessageBox.Show("Abstract Article succesfully added");
             }catch(Exception e)
             {
                 MessageBox.Show(e.Message);

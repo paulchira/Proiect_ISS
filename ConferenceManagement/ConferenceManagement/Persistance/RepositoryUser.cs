@@ -122,10 +122,10 @@ namespace ConferenceManagement.Persistance
                 paramUser.Value = idUser;
                 comm.Parameters.Add(paramUser);
 
-                var paramPass = comm.CreateParameter();
-                paramPass.ParameterName = "@idConference";
-                paramPass.Value = idConference;
-                comm.Parameters.Add(paramPass);
+                var paramConf = comm.CreateParameter();
+                paramConf.ParameterName = "@idconf";
+                paramConf.Value = idConference;
+                comm.Parameters.Add(paramConf);
 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
