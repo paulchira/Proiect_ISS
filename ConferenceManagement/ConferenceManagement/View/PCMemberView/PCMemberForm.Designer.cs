@@ -34,6 +34,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.SubmittedArticles_button = new System.Windows.Forms.Button();
             this.Participants_button = new System.Windows.Forms.Button();
+            this.createConference = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -100,12 +101,25 @@
             this.Participants_button.UseVisualStyleBackColor = false;
             this.Participants_button.Click += new System.EventHandler(this.Participants_button_Click);
             // 
+            // createConference
+            // 
+            this.createConference.BackColor = System.Drawing.Color.SkyBlue;
+            this.createConference.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createConference.Location = new System.Drawing.Point(400, 439);
+            this.createConference.Name = "createConference";
+            this.createConference.Size = new System.Drawing.Size(174, 64);
+            this.createConference.TabIndex = 6;
+            this.createConference.Text = "Create New Conference";
+            this.createConference.UseVisualStyleBackColor = false;
+            this.createConference.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PCMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(601, 460);
+            this.ClientSize = new System.Drawing.Size(601, 515);
+            this.Controls.Add(this.createConference);
             this.Controls.Add(this.Participants_button);
             this.Controls.Add(this.SubmittedArticles_button);
             this.Controls.Add(this.dataGridView2);
@@ -129,5 +143,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button SubmittedArticles_button;
         private System.Windows.Forms.Button Participants_button;
+        private System.Windows.Forms.Button createConference;
     }
 }

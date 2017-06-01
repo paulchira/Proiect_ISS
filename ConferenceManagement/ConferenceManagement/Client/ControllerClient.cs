@@ -48,7 +48,22 @@ namespace ConferenceManagement.Client
             serviceServer.attendToConference(idUser, idConference);
         }
 
-        public void addArticle(Article article)
+        public void addConference(Conference conf)
+        {
+            serviceServer.addConference(conf);
+        }
+
+        public void addSection(Section section)
+        {
+            serviceServer.addSection(section);
+        }
+
+        public int getConferenceIdFromName(string name)
+        {
+            return serviceServer.getConferenceId(name);
+	}
+        
+	public void addArticle(Article article)
         {
             serviceServer.addArticle(article);
         }

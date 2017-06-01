@@ -57,6 +57,20 @@ namespace ServerConferenceManagement
             repoUser.attendToCoference(idUser, idConference);
         }
 
+        public void addConference(Conference conf)
+        {
+            repoConf.add(conf);
+        }
+
+        public void addSection(Section section)
+        {
+            repoSection.add(section);
+        }
+
+        public int getConferenceId(string conferenceName)
+        {
+            return repoConf.getId(conferenceName);
+	}
         public void addArticle(Article article)
         {
             repoArticle.add(article);

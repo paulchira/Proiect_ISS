@@ -21,7 +21,13 @@ namespace ConferenceManagement.Service
 
         void attendToConference(int idUser, int idConference);
 
-        void addArticle(Article article);
+        void addConference(Conference conf);
+
+        void addSection(Section section);
+
+        int getConferenceId(string nconferenceName);
+        
+	void addArticle(Article article);
 
         void addArticleAuthor(int idArticle, int idAuthor);
 
