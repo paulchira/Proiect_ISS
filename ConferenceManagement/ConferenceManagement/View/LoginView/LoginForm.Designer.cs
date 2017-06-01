@@ -85,19 +85,21 @@
             // 
             // button_SignUp
             // 
-            this.button_SignUp.Location = new System.Drawing.Point(331, 296);
+            this.button_SignUp.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_SignUp.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SignUp.Location = new System.Drawing.Point(350, 288);
             this.button_SignUp.Name = "button_SignUp";
-            this.button_SignUp.Size = new System.Drawing.Size(75, 23);
+            this.button_SignUp.Size = new System.Drawing.Size(85, 36);
             this.button_SignUp.TabIndex = 5;
             this.button_SignUp.Text = "Sign up";
-            this.button_SignUp.UseVisualStyleBackColor = true;
+            this.button_SignUp.UseVisualStyleBackColor = false;
             this.button_SignUp.Click += new System.EventHandler(this.button_SignUp_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(447, 336);
             this.Controls.Add(this.button_SignUp);
             this.Controls.Add(this.login_button);
