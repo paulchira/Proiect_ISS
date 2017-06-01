@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs271E.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\IoanaC\AppData\Local\Temp\vsE951.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs271E.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\IoanaC\AppData\Local\Temp\vsE951.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -131,6 +131,12 @@
     <Compile Include="View\ParticipantView\ParticipantForm.Designer.cs">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ParticipantView\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ParticipantView\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PCMemberView\CreateConferenceView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ParticipantView\ParticipantForm.resx">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ParticipantView\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PCMemberView\CreateConferenceView.resx">
       <DependentUpon>CreateConferenceView.cs</DependentUpon>
