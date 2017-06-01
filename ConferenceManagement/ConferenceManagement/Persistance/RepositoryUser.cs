@@ -8,6 +8,11 @@ namespace ConferenceManagement.Persistance
 {
     public class RepositoryUser : ICrudRepository<User>
     {
+
+        public void add(User u)
+        {
+            //Not implemented
+        }
         //get idUser from Users
         public User validateAccount(String username, String password)
         {
@@ -85,9 +90,61 @@ namespace ConferenceManagement.Persistance
         }
 
 
-        public void add(User entity)
+        public void add(User entity, int idRole)
         {
-            throw new NotImplementedException();
+            IDbConnection connection = DatabaseConnection.getConnection();
+
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "insert into Users(username,password,firstName, lastName) values(@username,@password,@firstName, @lastName)";
+                var paramUsername = comm.CreateParameter();
+                paramUsername.ParameterName = "@username";
+                paramUsername.Value = entity.Username;
+                comm.Parameters.Add(paramUsername);
+
+                var paramPass = comm.CreateParameter();
+                paramPass.ParameterName = "@password";
+                paramPass.Value = entity.Password;
+                comm.Parameters.Add(paramPass);
+
+                var paramFirstName = comm.CreateParameter();
+                paramFirstName.ParameterName = "@firstName";
+                paramFirstName.Value = entity.FirstName;
+                comm.Parameters.Add(paramFirstName);
+
+                var paramLastName = comm.CreateParameter();
+                paramLastName.ParameterName = "@lastName";
+                paramLastName.Value = entity.LastName;
+                comm.Parameters.Add(paramLastName);
+
+                var result = comm.ExecuteNonQuery();
+                if (result == 0)
+                    throw new RepositoryException("User not added");
+
+            }
+            var cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT MAX(idUser) FROM Users";
+
+            int idUser = Convert.ToInt32(cmd.ExecuteScalar());
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "insert into Users_Role(idUser,idRole) values(@idUser,@idRole)";
+                var paramUser = comm.CreateParameter();
+                paramUser.ParameterName = "@idUser";
+                paramUser.Value = idUser;
+                comm.Parameters.Add(paramUser);
+
+                var paramPass = comm.CreateParameter();
+                paramPass.ParameterName = "@idRole";
+                paramPass.Value = idRole;
+                comm.Parameters.Add(paramPass);
+
+
+                var result = comm.ExecuteNonQuery();
+                if (result == 0)
+                    throw new RepositoryException("Could not add in relationship table Users_Role");
+
+            }
         }
 
         public void delete(int id)

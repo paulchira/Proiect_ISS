@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConferenceManagement.Client;
+using ConferenceManagement.View.LoginView;
 
 namespace ConferenceManagement.View
 {
@@ -71,6 +72,12 @@ namespace ConferenceManagement.View
             {
                 MessageBox.Show("Error:" + ex.Message);
             }
+        }
+
+        private void button_SignUp_Click(object sender, EventArgs e)
+        {
+            SignUpForm signup = new SignUpForm(ctrl);
+            signup.Show();
         }
     }
 }
