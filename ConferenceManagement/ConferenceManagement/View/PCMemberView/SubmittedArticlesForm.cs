@@ -22,6 +22,19 @@ namespace ConferenceManagement.View.PCMemberView
             conferenceName_textBox.Text = name;
             dataGridView1.DataSource = ctrl.getUnreviewedArticles(id);
             reviewerList_comboBox.DataSource = ctrl.getAvailableReviewers();
+            reviewerList_comboBox.DisplayMember="FirstName";
+            reviewerList_comboBox.ValueMember = "ID";
+
+        }
+
+        private void requireReview_button_Click(object sender, EventArgs e)
+        {
+            int idReviewer = (int)reviewerList_comboBox.SelectedValue;
+            string sidArticle = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            int idArticle = Int16.Parse(sidArticle);
+            
+            ctrl.addReview(new Review(idArticle, idReviewer));
+            MessageBox.Show("Succesfully added User " + reviewerList_comboBox.Text + " to review article " + dataGridView1.CurrentRow.Cells[1].Value.ToString());
         }
     }
 }

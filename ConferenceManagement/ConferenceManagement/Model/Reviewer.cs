@@ -16,6 +16,8 @@ namespace ConferenceManagement.Model
             
         }
 
+       
+
         public override string ToString()
         {
             return this.FirstName + " " + this.LastName;

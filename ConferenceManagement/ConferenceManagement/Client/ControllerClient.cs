@@ -129,5 +129,10 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllParticipantsByConference(idConf);
         }
 
+        public void addReview(Review r)
+        {
+            serviceServer.addReview(r);
+        }
+
     }
 }

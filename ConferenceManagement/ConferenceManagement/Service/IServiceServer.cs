@@ -53,5 +53,7 @@ namespace ConferenceManagement.Service
         List<Article> getUnreviewedArticles(int id);
 
         List<Reviewer> getAvailableReviewers();
+
+        void addReview(Review r);
     }
 }
