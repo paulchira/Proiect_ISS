@@ -61,6 +61,21 @@ namespace ConferenceManagement.Client
         public int getConferenceIdFromName(string name)
         {
             return serviceServer.getConferenceId(name);
+	}
+        
+	public void addArticle(Article article)
+        {
+            serviceServer.addArticle(article);
+        }
+
+        public void addArticleAuthor(int idArticle, int idAuthor)
+        {
+            serviceServer.addArticleAuthor(idArticle, idAuthor);
+        }
+
+        public List<Article> getAllArticles()
+        {
+            return serviceServer.getAllArticles();
         }
     }
 }

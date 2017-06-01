@@ -26,5 +26,11 @@ namespace ConferenceManagement.Service
         void addSection(Section section);
 
         int getConferenceId(string nconferenceName);
+        
+	void addArticle(Article article);
+
+        void addArticleAuthor(int idArticle, int idAuthor);
+
+        List<Article> getAllArticles();
     }
 }

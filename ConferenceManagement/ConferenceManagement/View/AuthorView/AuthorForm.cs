@@ -54,6 +54,7 @@ namespace ConferenceManagement.View
             AddAbstract addAbstract = new AddAbstract();
             addAbstract.Ctrl = this.ctrl;
             addAbstract.ParentFormAuthor = this;
+            addAbstract.Author = this.author;
             addAbstract.initializeAuthorComponents();
             this.Owner = addAbstract;
             this.Hide();
