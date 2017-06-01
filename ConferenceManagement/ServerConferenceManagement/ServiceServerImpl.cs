@@ -51,5 +51,20 @@ namespace ServerConferenceManagement
         {
             return repoSection.getAll().ToList();
         }
+
+        public void addConference(Conference conf)
+        {
+            repoConf.add(conf);
+        }
+
+        public void addSection(Section sect)
+        {
+            repoSection.add(sect);
+        }
+
+        public int getConferenceId(string conferenceName)
+        {
+            return repoConf.getId(conferenceName);
+        }
     }
 }

@@ -18,5 +18,12 @@ namespace ConferenceManagement.Service
         List<Conference> getAllConferences();
 
         List<Section> getAllSections();
+
+        void addConference(Conference conf);
+
+        void addSection(Section section);
+
+        int getConferenceId(string conferenceName);
+        
     }
 }

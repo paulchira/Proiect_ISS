@@ -34,5 +34,11 @@ namespace ConferenceManagement.View.PCMemberView
             ParticipantsListForm participantsList = new ParticipantsListForm(ctrl);
             participantsList.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateConferenceView conferenceView = new CreateConferenceView(this.ctrl);
+            conferenceView.Show();
+        }
     }
 }

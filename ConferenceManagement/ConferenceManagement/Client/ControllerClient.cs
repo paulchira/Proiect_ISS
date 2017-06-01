@@ -42,5 +42,22 @@ namespace ConferenceManagement.Client
         {
             return serviceServer.getAllSections();
         }
+
+        public void addConference(Conference conf)
+        {
+            serviceServer.addConference(conf);
+        }
+
+        public void addSection(Section section)
+        {
+            serviceServer.addSection(section);
+        }
+
+        public int getConferenceIdFromName(string conferenceName)
+        {
+            return serviceServer.getConferenceId(conferenceName);
+        }
+
+        
     }
 }
