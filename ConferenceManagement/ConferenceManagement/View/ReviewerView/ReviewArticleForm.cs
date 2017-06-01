@@ -26,11 +26,6 @@ namespace ConferenceManagement.View.ReviewerView
             textBox_ArticleTitle.Text = article.ArticleTitle;
         }
 
-        private void SubmitReview_button_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void SubmitReview_button_Click_1(object sender, EventArgs e)
         {
             int calificativ = 0;
