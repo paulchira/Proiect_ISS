@@ -33,6 +33,11 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllConferences();
         }
 
+        public List<Conference> getAllPlannedConferences()
+        {
+            return serviceServer.getAllPlannedConferences();
+        }
+
         public User validateAccount(string username, string password)
         {
             return serviceServer.validateAccount(username, password);

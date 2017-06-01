@@ -32,6 +32,11 @@ namespace ServerConferenceManagement
             return repoConf.getAll().ToList();
         }
 
+        public List<Conference> getAllPlannedConferences()
+        {
+            return repoConf.getPlannedConferences().ToList();
+        }
+
         public void login(string username, string password)
         {
             throw new NotImplementedException();
