@@ -88,9 +88,9 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllArticles(idReviewer);
         }
 
-        public void insertReviewer(int idUser, int idArticle, string comment, int calificativ)
+        public void insertReview(int idUser, int idArticle, string comment, int calificativ)
         {
-            serviceServer.insertReviewer(idUser, idArticle, comment, calificativ);
+            serviceServer.insertReview(idUser, idArticle, comment, calificativ);
         }
     }
 }

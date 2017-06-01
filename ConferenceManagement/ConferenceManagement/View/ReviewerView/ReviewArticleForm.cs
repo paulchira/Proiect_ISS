@@ -42,7 +42,7 @@ namespace ConferenceManagement.View.ReviewerView
             if (checkBox6.Checked) calificativ = 6;
             if (checkBox7.Checked) calificativ = 7;
 
-            Review r = new Review(1, 1, calificativ, richTextBox1.Text);
+            ctrl.insertReviewer()
         }
     }
 }

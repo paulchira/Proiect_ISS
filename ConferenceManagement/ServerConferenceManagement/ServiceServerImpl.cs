@@ -98,7 +98,7 @@ namespace ServerConferenceManagement
             return repoReviewer.getAllArticles(idReviewer).ToList();
         }
 
-        public void insertReviewer(int idUser, int idArticle, string comment, int calificativ)
+        public void insertReview(int idUser, int idArticle, string comment, int calificativ)
         {
             repoReviewer.insertReview(idUser, idArticle, comment, calificativ);
         }
