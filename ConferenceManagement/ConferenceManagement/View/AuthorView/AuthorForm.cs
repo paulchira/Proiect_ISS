@@ -16,11 +16,14 @@ namespace ConferenceManagement.View
     public partial class AuthorForm : Form
     {
         ClientController ctrl;
+        Author author;
         AuthorForm currentAuthorForm;
-        public AuthorForm(ClientController ctr)
+
+        public AuthorForm(ClientController ctr,Author au)
         {
             InitializeComponent();
             ctrl = ctr;
+            author = au;
             setDataGrid();
             currentAuthorForm = this;
         }

@@ -15,10 +15,13 @@ namespace ConferenceManagement.View
     public partial class ReviewerForm : Form
     {
         ClientController ctrl;
-        public ReviewerForm(ClientController ctr)
+        Reviewer reviewer;
+
+        public ReviewerForm(ClientController ctr, Reviewer reviewer)
         {
             InitializeComponent();
             ctrl = ctr;
+            this.reviewer = reviewer;
         }
     }
 }

@@ -51,5 +51,10 @@ namespace ServerConferenceManagement
         {
             return repoSection.getAll().ToList();
         }
+
+        public void attendToConference(int idUser, int idConference)
+        {
+            repoUser.attendToCoference(idUser, idConference);
+        }
     }
 }

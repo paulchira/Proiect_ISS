@@ -42,5 +42,10 @@ namespace ConferenceManagement.Client
         {
             return serviceServer.getAllSections();
         }
+
+        public void attendToConference(int idUser, int idConference)
+        {
+            serviceServer.attendToConference(idUser, idConference);
+        }
     }
 }

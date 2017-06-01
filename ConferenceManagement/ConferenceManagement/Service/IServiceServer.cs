@@ -18,5 +18,7 @@ namespace ConferenceManagement.Service
         List<Conference> getAllConferences();
 
         List<Section> getAllSections();
+
+        void attendToConference(int idUser, int idConference);
     }
 }
