@@ -62,5 +62,20 @@ namespace ConferenceManagement.Client
         {
             return serviceServer.getAllArticles();
         }
+
+        public List<Int16> getAllArticlesforAuthor(int idAuthor)
+        {
+            return serviceServer.getAllArticlesforAuthor(idAuthor);
+        }
+
+        public Article findOneArticle(int idArticle)
+        {
+            return serviceServer.findOneArticle(idArticle);
+        }
+
+        public void updateArticle(Article oldA, Article newA)
+        {
+            serviceServer.updateArticle(oldA, newA);
+        }
     }
 }

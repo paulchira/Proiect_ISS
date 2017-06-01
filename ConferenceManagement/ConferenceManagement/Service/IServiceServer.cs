@@ -26,5 +26,11 @@ namespace ConferenceManagement.Service
         void addArticleAuthor(int idArticle, int idAuthor);
 
         List<Article> getAllArticles();
+
+        List<Int16> getAllArticlesforAuthor(int idAuthor);
+
+        Article findOneArticle(int idArticle);
+
+        void updateArticle(Article oldA, Article newA);
     }
 }

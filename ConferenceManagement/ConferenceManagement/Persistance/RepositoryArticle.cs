@@ -191,5 +191,29 @@ namespace ConferenceManagement.Persistance
                     throw new RepositoryException("Article_Authors not added");
             }
         }
+
+        public IEnumerable<Int16> getAllArticleforAuthor(int idAuthor)
+        {
+            IDbConnection con = DatabaseConnection.getConnection();
+            List<Int16> articles = new List<Int16>();
+
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "select * from Article_Autors where idAuthor = @idAuthor";
+
+                var paramAuthor = comm.CreateParameter();
+                paramAuthor.ParameterName = "@idAuthor";
+                paramAuthor.Value = idAuthor;
+                comm.Parameters.Add(paramAuthor);
+                using (var dataR = comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        articles.Add(dataR.GetInt16(0));
+                    }
+                }
+            }
+            return articles;
+        }
     }
 }
