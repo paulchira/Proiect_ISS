@@ -36,6 +36,7 @@ namespace ServerConferenceManagement
             return repoConf.getAll().ToList();
         }
 
+        
         public List<Conference> getAllPlannedConferences()
         {
             return repoConf.getPlannedConferences().ToList();
@@ -123,6 +124,11 @@ namespace ServerConferenceManagement
         public List<Participant> getAllParticipantsByConference(int idConf)
         {
             return repoParticipant.getAllByConference(idConf);
+        }
+
+        public void signUpUser(User u, int idRole)
+        {
+            repoUser.add(u, idRole);
         }
     }
 }

@@ -17,11 +17,19 @@ namespace ConferenceManagement.Model
 
         public User(int id, string firstName, string lastName, string username, string pass)
         {
-            ID = id;
+            this.ID = id;
             this.FirstName = firstName;
             this.LastName = lastName;
             Username = username;
             Password = pass;
         }
+        public User( string firstName, string lastName, string username, string pass)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            Username = username;
+            Password = pass;
+        }
+
     }
 }
