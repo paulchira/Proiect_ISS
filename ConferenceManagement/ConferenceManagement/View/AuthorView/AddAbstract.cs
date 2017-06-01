@@ -112,7 +112,7 @@ namespace ConferenceManagement.View.AuthorView
 
         private int getIdArticle(string articleTitle)
         {
-            List<Article> articles = ctrl.getAllArticle();
+            List<Article> articles = ctrl.getAllArticles();
             int idArticle = -1;
             foreach(Article article in articles)
             {

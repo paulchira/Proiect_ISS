@@ -20,5 +20,11 @@ namespace ConferenceManagement.Service
         List<Section> getAllSections();
 
         void attendToConference(int idUser, int idConference);
+
+        void addArticle(Article article);
+
+        void addArticleAuthor(int idArticle, int idAuthor);
+
+        List<Article> getAllArticles();
     }
 }
