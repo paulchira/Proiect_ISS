@@ -30,12 +30,37 @@ namespace ConferenceManagement.Persistance
                
             }
         }
+
+        public IEnumerable<Conference> getPlannedConferences()
+        {
+            IDbConnection con = DatabaseConnection.getConnection();
+            List<Conference> conferences = new List<Conference>();
+
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "select * from Planned_Conference";
+
+                using (var dataR = comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        int ID = dataR.GetInt16(0);
+                        string name = dataR.GetString(1);
+                        string date = dataR.GetString(2);
+                        string edition = dataR.GetString(3);
+                        Conference conf = new Conference(ID, name, date, edition);
+                        conferences.Add(conf);
+                    }
+                }
+            }
+            return conferences;
+        }
         public void add(Conference entity)
         {
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Conference(conferenceName,conferenceDate,conferenceEdition) values (@name,@date,@edition)";
+                comm.CommandText = "insert into Planned_Conference(conferenceName,conferenceDate,conferenceEdition) values (@name,@date,@edition)";
 
                 var paramName = comm.CreateParameter();
                 paramName.ParameterName = "@name";
