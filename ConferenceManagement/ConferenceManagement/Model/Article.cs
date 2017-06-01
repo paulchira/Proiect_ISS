@@ -16,6 +16,10 @@ namespace ConferenceManagement.Model
         private string upload;
         private int sectionId;
 
+        public Article()
+        {
+
+        }
         public Article(int idArticle, string articleTitle, string articleAbstract, string articleText, string upload, int sectionId)
         {
             this.IdArticle = idArticle;

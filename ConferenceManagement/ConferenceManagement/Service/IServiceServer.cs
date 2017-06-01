@@ -38,6 +38,16 @@ namespace ConferenceManagement.Service
 
         List<Article> getAllArticles(int idReviewer);
 
-        void insertReviewer(int idUser, int idArticle, string comment, int calificativ);
+        void insertReview(int idUser, int idArticle, string comment, int calificativ);
+
+        List<Int16> getAllArticlesforAuthor(int idAuthor);
+
+        Article findOneArticle(int idArticle);
+
+        void updateArticle(Article oldA, Article newA);
+
+        List<Participant> getAllParticipantsByConference(int idConf);
+
+        void signUpUser(User u,int idRole);
     }
 }

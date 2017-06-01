@@ -42,6 +42,7 @@ namespace ConferenceManagement.View
             MyArticlesForm myArticlesForm = new MyArticlesForm();
             myArticlesForm.Ctrl = this.ctrl;
             myArticlesForm.ParentFormAuthor = this;
+            myArticlesForm.Author = author;
             myArticlesForm.initializeAuthorComponents();
             this.Owner = myArticlesForm;
             this.Hide();

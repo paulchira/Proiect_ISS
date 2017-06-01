@@ -28,6 +28,11 @@ namespace ConferenceManagement.Client
             Console.WriteLine("Update Event called");
         }
 
+        public void signUp(User u, int idRole)
+        {
+            this.serviceServer.signUpUser(u, idRole);
+        }
+
         public List<Conference> getAllConferences()
         {
             return serviceServer.getAllConferences();
@@ -89,9 +94,24 @@ namespace ConferenceManagement.Client
            
         }
 
-        public void insertReviewer(int idUser, int idArticle, string comment, int calificativ)
+        public void insertReview(int idUser, int idArticle, string comment, int calificativ)
         {
-            serviceServer.insertReviewer(idUser, idArticle, comment, calificativ);
+            serviceServer.insertReview(idUser, idArticle, comment, calificativ);
+        }
+
+        public List<Int16> getAllArticlesforAuthor(int idAuthor)
+        {
+            return serviceServer.getAllArticlesforAuthor(idAuthor);
+        }
+
+        public Article findOneArticle(int idArticle)
+        {
+            return serviceServer.findOneArticle(idArticle);
+        }
+
+        public void updateArticle(Article oldA, Article newA)
+        {
+            serviceServer.updateArticle(oldA, newA);
         }
     }
 }
