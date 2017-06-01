@@ -19,11 +19,6 @@ namespace ConferenceManagement.Service
 
         List<Section> getAllSections();
 
-        List<Article> getAllArticles();
-
-        void addArticle(Article article);
-
-        void addArticleAuthor(int idArticle, int idAuthor);
-
+        void attendToConference(int idUser, int idConference);
     }
 }

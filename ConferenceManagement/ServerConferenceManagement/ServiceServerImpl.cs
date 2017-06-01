@@ -52,20 +52,9 @@ namespace ServerConferenceManagement
             return repoSection.getAll().ToList();
         }
 
-        public void addArticle(Article article)
+        public void attendToConference(int idUser, int idConference)
         {
-            repoArticle.add(article);
-        }
-
-        public void addArticleAuthor(int idArticle, int idAuthor)
-        {
-            //repoArticle.addArticle_Author(idArticle, idAuthor);
-        }
-
-        public List<Article> getAllArticles()
-        {
-            //return repoArticle.getAll().ToList();
-            return null;
+            repoUser.attendToCoference(idUser, idConference);
         }
     }
 }

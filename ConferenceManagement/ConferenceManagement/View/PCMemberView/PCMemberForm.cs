@@ -15,10 +15,12 @@ namespace ConferenceManagement.View.PCMemberView
     public partial class PCMemberForm : Form
     {
         ClientController ctrl;
-        public PCMemberForm(ClientController ctr)
+        PCMember pcMember;
+        public PCMemberForm(ClientController ctr, PCMember pcMem)
         {
             InitializeComponent();
             ctrl = ctr;
+            pcMember = pcMem;
         }
 
         // Opens the window with the list of the articles for this conference.

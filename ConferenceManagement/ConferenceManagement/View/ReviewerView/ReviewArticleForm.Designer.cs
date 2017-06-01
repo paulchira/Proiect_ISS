@@ -33,6 +33,7 @@
             this.downloadArticle_button = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SubmitReview_button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -66,7 +67,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.PowderBlue;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 88);
+            this.richTextBox1.Location = new System.Drawing.Point(103, 99);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(410, 236);
             this.richTextBox1.TabIndex = 3;
@@ -83,12 +84,23 @@
             this.SubmitReview_button.Text = "Submit my review";
             this.SubmitReview_button.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Comments:";
+            // 
             // ReviewArticleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(562, 460);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.SubmitReview_button);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.downloadArticle_button);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button downloadArticle_button;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button SubmitReview_button;
+        private System.Windows.Forms.Label label2;
     }
 }
