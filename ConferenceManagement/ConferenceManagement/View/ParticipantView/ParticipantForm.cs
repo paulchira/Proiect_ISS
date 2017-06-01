@@ -15,11 +15,13 @@ namespace ConferenceManagement.View
     public partial class ParticipantForm : Form
     {
         ClientController ctrl;
+        Participant participant;
 
-        public ParticipantForm(ClientController ctr)
+        public ParticipantForm(ClientController ctr,Participant part)
         {
             InitializeComponent();
             ctrl = ctr;
+            participant = part;
             setDataGrid();
         }
 
@@ -29,5 +31,19 @@ namespace ConferenceManagement.View
             Conferences_dataGridView.DataSource = bindingList;
         }
 
+        private void attendConference_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedrowindex = Conferences_dataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = Conferences_dataGridView.Rows[selectedrowindex];
+                int idConf = Convert.ToInt16(selectedRow.Cells["Id"].Value);
+                ctrl.attendToConference(participant.ID, idConf);
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Exceptie!");
+            }
+        }
     }
 }

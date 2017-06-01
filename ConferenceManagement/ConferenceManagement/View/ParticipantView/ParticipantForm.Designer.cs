@@ -64,6 +64,7 @@
             this.attendConference_button.TabIndex = 2;
             this.attendConference_button.Text = "Attend conference";
             this.attendConference_button.UseVisualStyleBackColor = false;
+            this.attendConference_button.Click += new System.EventHandler(this.attendConference_button_Click);
             // 
             // submitArticle_button
             // 

@@ -34,7 +34,7 @@ namespace ConferenceManagement.View
 
                 if (user is Author)
                 {
-                    AuthorForm authorForm = new AuthorForm(ctrl);
+                    AuthorForm authorForm = new AuthorForm(ctrl, (Author)user);
                     this.Owner = authorForm;
                     this.Hide();
 
@@ -43,7 +43,7 @@ namespace ConferenceManagement.View
 
                 if (user is Participant)
                 {
-                    ParticipantForm participantForm = new ParticipantForm(ctrl);
+                    ParticipantForm participantForm = new ParticipantForm(ctrl,(Participant)user);
                     this.Owner = participantForm;
                     this.Hide();
 
@@ -52,7 +52,7 @@ namespace ConferenceManagement.View
 
                 if (user is PCMember)
                 {
-                    PCMemberForm pcMemberForm = new PCMemberForm(ctrl);
+                    PCMemberForm pcMemberForm = new PCMemberForm(ctrl,(PCMember)user);
                     this.Owner = pcMemberForm;
                     this.Hide();
 
@@ -61,7 +61,7 @@ namespace ConferenceManagement.View
 
                 if (user is Reviewer)
                 {
-                    ReviewerForm reviewerForm = new ReviewerForm(ctrl);
+                    ReviewerForm reviewerForm = new ReviewerForm(ctrl, (Reviewer)user);
                     this.Owner = reviewerForm;
                     this.Hide();
 

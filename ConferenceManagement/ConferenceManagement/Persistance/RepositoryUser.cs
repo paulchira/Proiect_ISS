@@ -109,5 +109,28 @@ namespace ConferenceManagement.Persistance
         {
             throw new NotImplementedException();
         }
+
+        public void attendToCoference(int idUser, int idConference)
+        {
+            IDbConnection connection = DatabaseConnection.getConnection();
+
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "insert into Participant_Conference(idUser, idConference) values(@iduser,@idconf)";
+                var paramUser = comm.CreateParameter();
+                paramUser.ParameterName = "@iduser";
+                paramUser.Value = idUser;
+                comm.Parameters.Add(paramUser);
+
+                var paramPass = comm.CreateParameter();
+                paramPass.ParameterName = "@idConference";
+                paramPass.Value = idConference;
+                comm.Parameters.Add(paramPass);
+
+                var result = comm.ExecuteNonQuery();
+                if (result == 0)
+                    throw new RepositoryException("User cannot attend to conference");
+            }
+        }
     }
 }

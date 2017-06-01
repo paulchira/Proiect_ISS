@@ -33,22 +33,29 @@ namespace ConferenceManagement.View.PCMemberView
 
             string conferenceName = textBoxConferenceName.Text;
             string conferenceDate = textBoxConferenceDate.Text;
-            var date = DateTime.Parse(conferenceDate, new CultureInfo("en-US", true));
 
             string conferenceEdition = textBoxConferenceEdition.Text;
             string sections = richTextBoxConferenceSection.Text;
 
-            ctrl.addConference(new Conference(conferenceName, date, conferenceEdition));
+            ctrl.addConference(new Conference(conferenceName, conferenceDate, conferenceEdition));
 
+            
             int ID = ctrl.getConferenceIdFromName(conferenceName);
 
-            string[] stringSeparators = new string[] { "\r\n" };
+            string[] stringSeparators = new string[] { "," };
             string[] lines = sections.Split(stringSeparators, StringSplitOptions.None);
             foreach (string s in lines)
             {
                 Section section = new Section(s, ID);
                 ctrl.addSection(section);
             }
+            MessageBox.Show("Conference created!");
+            this.Close();
+
+        }
+
+        private void richTextBoxConferenceSection_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

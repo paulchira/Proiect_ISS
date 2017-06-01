@@ -43,6 +43,11 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllSections();
         }
 
+        public void attendToConference(int idUser, int idConference)
+        {
+            serviceServer.attendToConference(idUser, idConference);
+        }
+
         public void addConference(Conference conf)
         {
             serviceServer.addConference(conf);
@@ -53,11 +58,9 @@ namespace ConferenceManagement.Client
             serviceServer.addSection(section);
         }
 
-        public int getConferenceIdFromName(string conferenceName)
+        public int getConferenceIdFromName(string name)
         {
-            return serviceServer.getConferenceId(conferenceName);
+            return serviceServer.getConferenceId(name);
         }
-
-        
     }
 }

@@ -24,13 +24,10 @@ namespace ConferenceManagement.Persistance
                 paramName.Value = name;
                 comm.Parameters.Add(paramName);
 
-                using (var dataR = comm.ExecuteReader())
-                {
-
-                    int ID = dataR.GetInt16(0);
-                    return ID;
-
-                }
+           
+                int idUser = Convert.ToInt32(comm.ExecuteScalar());
+                return idUser;
+               
             }
         }
         public void add(Conference entity)
@@ -95,7 +92,7 @@ namespace ConferenceManagement.Persistance
                     {
                         int ID = dataR.GetInt16(0);
                         string name = dataR.GetString(1);
-                        DateTime date = dataR.GetDateTime(2);
+                        String date = dataR.GetString(2);
                         string edition = dataR.GetString(3);
                         Conference conf = new Conference(ID, name, date, edition);
                         return conf;
@@ -120,7 +117,7 @@ namespace ConferenceManagement.Persistance
                     {
                         int ID = dataR.GetInt16(0);
                         string name = dataR.GetString(1);
-                        DateTime date = dataR.GetDateTime(2);
+                        string date = dataR.GetString(2);
                         string edition = dataR.GetString(3);
                         Conference conf = new Conference(ID, name, date, edition);
                         conferences.Add(conf);

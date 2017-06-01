@@ -52,14 +52,19 @@ namespace ServerConferenceManagement
             return repoSection.getAll().ToList();
         }
 
+        public void attendToConference(int idUser, int idConference)
+        {
+            repoUser.attendToCoference(idUser, idConference);
+        }
+
         public void addConference(Conference conf)
         {
             repoConf.add(conf);
         }
 
-        public void addSection(Section sect)
+        public void addSection(Section section)
         {
-            repoSection.add(sect);
+            repoSection.add(section);
         }
 
         public int getConferenceId(string conferenceName)

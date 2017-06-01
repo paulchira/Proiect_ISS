@@ -19,11 +19,12 @@ namespace ConferenceManagement.Service
 
         List<Section> getAllSections();
 
+        void attendToConference(int idUser, int idConference);
+
         void addConference(Conference conf);
 
         void addSection(Section section);
 
-        int getConferenceId(string conferenceName);
-        
+        int getConferenceId(string nconferenceName);
     }
 }

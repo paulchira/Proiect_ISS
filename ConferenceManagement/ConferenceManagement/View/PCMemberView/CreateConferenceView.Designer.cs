@@ -63,6 +63,7 @@
             this.richTextBoxConferenceSection.Size = new System.Drawing.Size(269, 118);
             this.richTextBoxConferenceSection.TabIndex = 2;
             this.richTextBoxConferenceSection.Text = "";
+            this.richTextBoxConferenceSection.TextChanged += new System.EventHandler(this.richTextBoxConferenceSection_TextChanged);
             // 
             // label1
             // 

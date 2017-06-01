@@ -19,7 +19,7 @@ namespace ConferenceManagement.Persistance
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Article(articleTitle,articleAbstract,articleText,sectionId) values (@title,@abstract,@text,@sectionid)";
+                comm.CommandText = "insert into Article(articleTitle,articleAbstract,articleText,upload, sectionId) values (@title,@abstract,@text,@upload,@sectionid)";
 
                 var paramTitle = comm.CreateParameter();
                 paramTitle.ParameterName = "@title";
@@ -35,6 +35,11 @@ namespace ConferenceManagement.Persistance
                 paramText.ParameterName = "@text";
                 paramText.Value = entity.ArticleText;
                 comm.Parameters.Add(paramText);
+
+                var paramUpload = comm.CreateParameter();
+                paramUpload.ParameterName = "@upload";
+                paramUpload.Value = entity.Upload;
+                comm.Parameters.Add(paramUpload);
 
                 var paramID = comm.CreateParameter();
                 paramID.ParameterName = "@sectionid";
@@ -84,8 +89,9 @@ namespace ConferenceManagement.Persistance
                         string articleTitle = dataR.GetString(1);
                         string articleAbstract = dataR.GetString(2);
                         string articleText = dataR.GetString(3);
-                        int sectioid = dataR.GetInt16(4);
-                        Article art = new Article(ID, articleTitle, articleAbstract, articleText, sectioid);
+                        string upload = dataR.GetString(4);
+                        int sectioid = dataR.GetInt16(5);
+                        Article art = new Article(ID, articleTitle, articleAbstract, articleText, upload, sectioid);
                         return art;
                     }
                 }
@@ -110,8 +116,9 @@ namespace ConferenceManagement.Persistance
                         string articleTitle = dataR.GetString(1);
                         string articleAbstract = dataR.GetString(2);
                         string articleText = dataR.GetString(3);
-                        int sectioid = dataR.GetInt16(4);
-                        Article art = new Article(ID, articleTitle, articleAbstract, articleText, sectioid);
+                        string articleUpload = dataR.GetString(4);
+                        int sectioid = dataR.GetInt16(5);
+                        Article art = new Article(ID, articleTitle, articleAbstract, articleText, articleUpload, sectioid);
                         articles.Add(art);
                     }
                 }
@@ -124,7 +131,7 @@ namespace ConferenceManagement.Persistance
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "Update Article set articleTitle = @title, articleAbstract = @artAbstract, articleText = @text, sectionId = @sectionid where idArticle = @ID";
+                comm.CommandText = "Update Article set articleTitle = @title, articleAbstract = @artAbstract, articleText = @text, upload = @upload, sectionId = @sectionid where idArticle = @ID";
 
                 var paramTitle = comm.CreateParameter();
                 paramTitle.ParameterName = "@title";
@@ -140,6 +147,11 @@ namespace ConferenceManagement.Persistance
                 paramText.ParameterName = "@text";
                 paramText.Value = newV.ArticleText;
                 comm.Parameters.Add(paramText);
+
+                var paramUpload = comm.CreateParameter();
+                paramUpload.ParameterName = "@upload";
+                paramUpload.Value = newV.Upload;
+                comm.Parameters.Add(paramUpload);
 
                 var paramsecID = comm.CreateParameter();
                 paramsecID.ParameterName = "@sectionid";
