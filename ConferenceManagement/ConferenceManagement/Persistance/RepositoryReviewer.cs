@@ -16,11 +16,14 @@ namespace ConferenceManagement.Persistance
             IList<Article> articles = new List<Article>();
 
             using (var comm = connection.CreateCommand())
-            { comm.CommandText = "select * from Article where idArticle = (select idArticle from Reviewer_Article where idUser = @idReviewer)";
+            {
+                comm.CommandText = "select * from Article where idArticle in (select idArticle from Reviewer_Article where idUser = @idReviewer and comment ='')";
                 var paramIdR = comm.CreateParameter();
                 paramIdR.ParameterName = "idReviewer";
                 paramIdR.Value = idReviewer;
                 comm.Parameters.Add(paramIdR);
+
+           
 
                 using (var dataR = comm.ExecuteReader())
                 {
@@ -45,7 +48,7 @@ namespace ConferenceManagement.Persistance
             IDbConnection connection = DatabaseConnection.getConnection();
             using (var comm = connection.CreateCommand())
             {
-                comm.CommandText = "insert into Reviewer_Article(idUser,idArticle,comment,calificativ) values(@idUser,@idArticle,@comment, @calificativ)";
+                comm.CommandText = "update Reviewer_Article set comment = @comment, calificativ = @calificativ where idUser = @idUser and idArticle = @idArticle";
                 var paramIdU = comm.CreateParameter();
                 paramIdU.ParameterName = "@idUser";
                 paramIdU.Value = idUser;

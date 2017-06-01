@@ -44,5 +44,10 @@ namespace ConferenceManagement.View.ReviewerView
 
             Review r = new Review(1, 1, calificativ, richTextBox1.Text);
         }
+
+        private void ReviewArticleForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
