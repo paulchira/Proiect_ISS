@@ -31,7 +31,7 @@ namespace ConferenceManagement.Model
             this.IdArticle = idArticle;
             this.ArticleTitle = articleTitle;
             this.ArticleAbstract = articleAbstract;
-            this.ArticleText = null;
+            this.ArticleText = "";
             this.Upload = "NO";
             this.SectionId = sectionId;
         }

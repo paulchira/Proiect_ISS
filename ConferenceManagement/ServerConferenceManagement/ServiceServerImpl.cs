@@ -56,5 +56,20 @@ namespace ServerConferenceManagement
         {
             repoUser.attendToCoference(idUser, idConference);
         }
+
+        public void addArticle(Article article)
+        {
+            repoArticle.add(article);
+        }
+
+        public void addArticleAuthor(int idArticle, int idAuthor)
+        {
+            repoArticle.addArticle_Author(idArticle, idAuthor);
+        }
+
+        public List<Article> getAllArticles()
+        {
+            return repoArticle.getAll().ToList();
+        }
     }
 }
