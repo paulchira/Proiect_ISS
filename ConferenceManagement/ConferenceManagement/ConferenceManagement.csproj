@@ -78,6 +78,7 @@
     <Compile Include="Persistance\RepositoryException.cs" />
     <Compile Include="Persistance\RepositoryParticipant.cs" />
     <Compile Include="Persistance\RepositoryPCMember.cs" />
+    <Compile Include="Persistance\RepositoryReviewer.cs" />
     <Compile Include="Persistance\RepositorySection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
