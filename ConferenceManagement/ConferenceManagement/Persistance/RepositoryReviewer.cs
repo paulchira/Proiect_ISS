@@ -41,6 +41,39 @@ namespace ConferenceManagement.Persistance
 
         }
 
+        public void insertReview(int idUser,int idArticle,string comment, int calificativ) {
+            IDbConnection connection = DatabaseConnection.getConnection();
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "insert into Reviewer_Article(idUser,idArticle,comment,calificativ) values(@idUser,@idArticle,@comment, @calificativ)";
+                var paramIdU = comm.CreateParameter();
+                paramIdU.ParameterName = "@idUser";
+                paramIdU.Value = idUser;
+                comm.Parameters.Add(paramIdU);
+
+                var paramIdA = comm.CreateParameter();
+                paramIdA.ParameterName = "@idArticle";
+                paramIdA.Value = idArticle;
+                comm.Parameters.Add(paramIdA);
+
+                var paramComm = comm.CreateParameter();
+                paramComm.ParameterName = "@comment";
+                paramComm.Value = comment;
+                comm.Parameters.Add(paramComm);
+
+                var paramCalificativ = comm.CreateParameter();
+                paramCalificativ.ParameterName = "@calificativ";
+                paramCalificativ.Value = calificativ;
+                comm.Parameters.Add(paramCalificativ);
+
+                var result = comm.ExecuteNonQuery();
+                if (result == 0)
+                    throw new RepositoryException("Review not added");
+
+            }
+
+        }
+
        
     }
 }
