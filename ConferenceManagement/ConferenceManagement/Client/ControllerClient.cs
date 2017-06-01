@@ -112,5 +112,15 @@ namespace ConferenceManagement.Client
         {
             serviceServer.updateArticle(oldA, newA);
         }
+
+        public List<Article> getUnreviewedArticles(int id)
+        {
+            return serviceServer.getUnreviewedArticles(id);
+        }
+
+        public List<Reviewer> getAvailableReviewers()
+        {
+            return serviceServer.getAvailableReviewers();
+        }
     }
 }

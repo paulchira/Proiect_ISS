@@ -41,6 +41,34 @@ namespace ConferenceManagement.Persistance
 
         }
 
+        public IEnumerable<Reviewer> getAvailableReviewers()
+        {
+            IDbConnection connection = DatabaseConnection.getConnection();
+            IList<Reviewer> articles = new List<Reviewer>();
+
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "select * from Users where Users.idUser in ( select idUser from (select idUser, count(*) as Nr from Reviewer_Article group by idUser) a where Nr < 2)";
+
+                using (var dataR = comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        int idReviewer = dataR.GetInt16(0);
+                        string username = dataR.GetString(1);
+                        string  pass= dataR.GetString(2);
+                        string firstN = dataR.GetString(3);
+                        string lastN = dataR.GetString(4);
+                        
+                        Reviewer a = new Reviewer(idReviewer,firstN,lastN);
+                        articles.Add(a);
+                    }
+                }
+            }
+            return articles;
+
+        }
+
         public void insertReview(int idUser,int idArticle,string comment, int calificativ) {
             IDbConnection connection = DatabaseConnection.getConnection();
             using (var comm = connection.CreateCommand())

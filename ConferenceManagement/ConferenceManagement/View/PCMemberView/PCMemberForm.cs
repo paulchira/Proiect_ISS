@@ -28,7 +28,10 @@ namespace ConferenceManagement.View.PCMemberView
         // Opens the window with the list of the articles for this conference.
         private void SubmittedArticles_button_Click(object sender, EventArgs e)
         {
-            SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm(ctrl);
+            string id = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            int ID = Int16.Parse(id);
+            string name = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm(ctrl,ID,name);
             submittedArticlesForm.Show();
         }
 

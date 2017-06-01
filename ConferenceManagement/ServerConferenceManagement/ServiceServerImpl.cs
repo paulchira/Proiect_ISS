@@ -130,5 +130,15 @@ namespace ServerConferenceManagement
         {
             repoUser.add(u, idRole);
         }
+
+        public List<Article> getUnreviewedArticles(int id)
+        {
+            return repoArticle.unreviewedArticles(id).ToList();
+        }
+
+        public List<Reviewer> getAvailableReviewers()
+        {
+            return repoReviewer.getAvailableReviewers().ToList();
+        }
     }
 }

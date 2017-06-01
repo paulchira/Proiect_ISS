@@ -49,5 +49,9 @@ namespace ConferenceManagement.Service
         List<Participant> getAllParticipantsByConference(int idConf);
 
         void signUpUser(User u,int idRole);
+
+        List<Article> getUnreviewedArticles(int id);
+
+        List<Reviewer> getAvailableReviewers();
     }
 }
