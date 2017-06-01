@@ -16,14 +16,11 @@ namespace ConferenceManagement.Persistance
             IList<Article> articles = new List<Article>();
 
             using (var comm = connection.CreateCommand())
-            {
-                comm.CommandText = "select * from Article where idArticle in (select idArticle from Reviewer_Article where idUser = @idReviewer and comment ='')";
+            { comm.CommandText = "select * from Article where idArticle = (select idArticle from Reviewer_Article where idUser = @idReviewer)";
                 var paramIdR = comm.CreateParameter();
                 paramIdR.ParameterName = "idReviewer";
                 paramIdR.Value = idReviewer;
                 comm.Parameters.Add(paramIdR);
-
-           
 
                 using (var dataR = comm.ExecuteReader())
                 {
@@ -44,40 +41,11 @@ namespace ConferenceManagement.Persistance
 
         }
 
-        public IEnumerable<Reviewer> getAvailableReviewers()
-        {
-            IDbConnection connection = DatabaseConnection.getConnection();
-            IList<Reviewer> articles = new List<Reviewer>();
-
-            using (var comm = connection.CreateCommand())
-            {
-                //trebuie modificat acest select
-                comm.CommandText = "select * from Users inner join Users_Role on Users.idUser=Users_Role.idUser where Users.idUser in ( select idUser from (select idUser, count(*) as Nr from Reviewer_Article group by idUser) a where Nr < 2) or Users_Role.idRole=3";
-
-                using (var dataR = comm.ExecuteReader())
-                {
-                    while (dataR.Read())
-                    {
-                        int idReviewer = dataR.GetInt16(0);
-                        string username = dataR.GetString(1);
-                        string  pass= dataR.GetString(2);
-                        string firstN = dataR.GetString(3);
-                        string lastN = dataR.GetString(4);
-                        
-                        Reviewer a = new Reviewer(idReviewer,firstN,lastN);
-                        articles.Add(a);
-                    }
-                }
-            }
-            return articles;
-
-        }
-
         public void insertReview(int idUser,int idArticle,string comment, int calificativ) {
             IDbConnection connection = DatabaseConnection.getConnection();
             using (var comm = connection.CreateCommand())
             {
-                comm.CommandText = "update Reviewer_Article set comment = @comment, calificativ = @calificativ where idUser = @idUser and idArticle = @idArticle";
+                comm.CommandText = "insert into Reviewer_Article(idUser,idArticle,comment,calificativ) values(@idUser,@idArticle,@comment, @calificativ)";
                 var paramIdU = comm.CreateParameter();
                 paramIdU.ParameterName = "@idUser";
                 paramIdU.Value = idUser;

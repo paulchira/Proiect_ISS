@@ -94,7 +94,6 @@ namespace ConferenceManagement.View.AuthorView
             ctrl.updateArticle(article,newA);
             listBox.DataSource = getAllArticlesforAuthor();
             MessageBox.Show("Succes");
-            this.Hide();
         }
 
         private List<string> getAllArticlesforAuthor()

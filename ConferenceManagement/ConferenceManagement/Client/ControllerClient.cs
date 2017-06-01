@@ -91,7 +91,6 @@ namespace ConferenceManagement.Client
         public List<Article> getAllArticles(int idReviewer)
         {
             return serviceServer.getAllArticles(idReviewer);
-           
         }
 
         public void insertReview(int idUser, int idArticle, string comment, int calificativ)
@@ -113,26 +112,5 @@ namespace ConferenceManagement.Client
         {
             serviceServer.updateArticle(oldA, newA);
         }
-
-        public List<Article> getUnreviewedArticles(int id)
-        {
-            return serviceServer.getUnreviewedArticles(id);
-        }
-
-        public List<Reviewer> getAvailableReviewers()
-        {
-            return serviceServer.getAvailableReviewers();
-        }
-
-        public List<Participant> getAllParticipantsByConference(int idConf)
-        {
-            return serviceServer.getAllParticipantsByConference(idConf);
-        }
-
-        public void addReview(Review r)
-        {
-            serviceServer.addReview(r);
-        }
-
     }
 }

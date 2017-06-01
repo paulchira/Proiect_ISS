@@ -99,35 +99,6 @@ namespace ConferenceManagement.Persistance
             return null;
         }
 
-        public IEnumerable<Article> unreviewedArticles(int id)
-        {
-            IDbConnection con = DatabaseConnection.getConnection();
-            List<Article> articles = new List<Article>();
-
-            using (var comm = con.CreateCommand())
-            {
-                comm.CommandText = "select * from Article inner join Section on Article.sectionId=Section.idSection where idArticle not in (select idArticle from Reviewer_Article) and Section.idConference = @id";
-                var param = comm.CreateParameter();
-                param.ParameterName = "@id";
-                param.Value = id;
-                comm.Parameters.Add(param);
-                using (var dataR = comm.ExecuteReader())
-                {
-                    while (dataR.Read())
-                    {
-                        int ID = dataR.GetInt16(0);
-                        string articleTitle = dataR.GetString(1);
-                        string articleAbstract = dataR.GetString(2);
-                        string articleText = dataR.GetString(3);
-                        string articleUpload = dataR.GetString(4);
-                        int sectioid = dataR.GetInt16(5);
-                        Article art = new Article(ID, articleTitle, articleAbstract, articleText, articleUpload, sectioid);
-                        articles.Add(art);
-                    }
-                }
-            }
-            return articles;
-        }
         public IEnumerable<Article> getAll()
         {
             IDbConnection con = DatabaseConnection.getConnection();
