@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConferenceManagement.Client;
 using ConferenceManagement.Model;
-using ConferenceManagement.View.ParticipantView;
 
 namespace ConferenceManagement.View
 {
@@ -40,9 +39,9 @@ namespace ConferenceManagement.View
                 DataGridViewRow selectedRow = Conferences_dataGridView.Rows[selectedrowindex];
                 int idConf = Convert.ToInt16(selectedRow.Cells["Id"].Value);
                 ctrl.attendToConference(participant.ID, idConf);
-                PaymentForm payment = new PaymentForm();
-                this.Hide();
-                payment.Show();
+                //PaymentForm payment = new PaymentForm();
+                //this.Hide();
+                //payment.Show();
 
             }
             catch(Exception ex)
