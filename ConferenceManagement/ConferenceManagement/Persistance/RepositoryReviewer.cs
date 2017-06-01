@@ -10,7 +10,7 @@ namespace ConferenceManagement.Persistance
 {
     public class RepositoryReviewer
     {
-        IEnumerable<Article> getAllArticles(int idReviewer)
+        public IEnumerable<Article> getAllArticles(int idReviewer)
         {
             IDbConnection connection = DatabaseConnection.getConnection();
             IList<Article> articles = new List<Article>();
