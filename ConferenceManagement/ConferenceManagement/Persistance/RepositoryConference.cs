@@ -12,6 +12,24 @@ namespace ConferenceManagement.Persistance
 
         }
 
+        public int getId(string name)
+        {
+            IDbConnection con = DatabaseConnection.getConnection();
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "select idConference from Conference where conferenceName=@name";
+
+                var paramName = comm.CreateParameter();
+                paramName.ParameterName = "@name";
+                paramName.Value = name;
+                comm.Parameters.Add(paramName);
+
+           
+                int idUser = Convert.ToInt32(comm.ExecuteScalar());
+                return idUser;
+               
+            }
+        }
         public void add(Conference entity)
         {
             IDbConnection con = DatabaseConnection.getConnection();
