@@ -33,6 +33,11 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllConferences();
         }
 
+        public List<Conference> getAllPlannedConferences()
+        {
+            return serviceServer.getAllPlannedConferences();
+        }
+
         public User validateAccount(string username, string password)
         {
             return serviceServer.validateAccount(username, password);
@@ -48,7 +53,22 @@ namespace ConferenceManagement.Client
             serviceServer.attendToConference(idUser, idConference);
         }
 
-        public void addArticle(Article article)
+        public void addConference(Conference conf)
+        {
+            serviceServer.addConference(conf);
+        }
+
+        public void addSection(Section section)
+        {
+            serviceServer.addSection(section);
+        }
+
+        public int getConferenceIdFromName(string name)
+        {
+            return serviceServer.getConferenceId(name);
+	}
+        
+	    public void addArticle(Article article)
         {
             serviceServer.addArticle(article);
         }
@@ -61,6 +81,16 @@ namespace ConferenceManagement.Client
         public List<Article> getAllArticles()
         {
             return serviceServer.getAllArticles();
+        }
+
+        public List<Article> getAllArticles(int idReviewer)
+        {
+            return serviceServer.getAllArticles(idReviewer);
+        }
+
+        public void insertReview(int idUser, int idArticle, string comment, int calificativ)
+        {
+            serviceServer.insertReview(idUser, idArticle, comment, calificativ);
         }
 
         public List<Int16> getAllArticlesforAuthor(int idAuthor)

@@ -21,6 +21,8 @@ namespace ConferenceManagement.View.PCMemberView
             InitializeComponent();
             ctrl = ctr;
             pcMember = pcMem;
+            List<Conference> cfs = ctrl.getAllPlannedConferences();
+            dataGridView2.DataSource = ctrl.getAllPlannedConferences();
         }
 
         // Opens the window with the list of the articles for this conference.
@@ -35,6 +37,12 @@ namespace ConferenceManagement.View.PCMemberView
         {
             ParticipantsListForm participantsList = new ParticipantsListForm(ctrl);
             participantsList.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateConferenceView conferenceView = new CreateConferenceView(this.ctrl);
+            conferenceView.Show();
         }
     }
 }

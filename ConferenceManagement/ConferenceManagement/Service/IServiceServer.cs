@@ -17,15 +17,28 @@ namespace ConferenceManagement.Service
 
         List<Conference> getAllConferences();
 
+        List<Conference> getAllPlannedConferences();
+
         List<Section> getAllSections();
 
         void attendToConference(int idUser, int idConference);
 
-        void addArticle(Article article);
+        void addConference(Conference conf);
+
+        void addSection(Section section);
+
+        int getConferenceId(string nconferenceName);
+
+        
+	    void addArticle(Article article);
 
         void addArticleAuthor(int idArticle, int idAuthor);
 
         List<Article> getAllArticles();
+
+        List<Article> getAllArticles(int idReviewer);
+
+        void insertReview(int idUser, int idArticle, string comment, int calificativ);
 
         List<Int16> getAllArticlesforAuthor(int idAuthor);
 

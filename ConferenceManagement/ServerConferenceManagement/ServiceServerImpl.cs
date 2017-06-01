@@ -15,9 +15,10 @@ namespace ServerConferenceManagement
         RepositoryAuthor repoAuthor;
         RepositoryPCMember repoPCMember;
         RepositorySection repoSection;
+        RepositoryReviewer repoReviewer;
 
         public ServiceServerImpl(RepositoryConference repoConf, RepositoryArticle repoArticle, RepositorySection repoSection, RepositoryUser repoUser,
-            RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember)
+            RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember, RepositoryReviewer repoReviewer)
         {
             this.repoConf = repoConf;
             this.repoArticle = repoArticle;
@@ -25,11 +26,17 @@ namespace ServerConferenceManagement
             this.repoAuthor = repoAuthor;
             this.repoPCMember = repoPCMember;
             this.repoSection = repoSection;
+            this.repoReviewer = repoReviewer;
         }
 
         public List<Conference> getAllConferences()
         {
             return repoConf.getAll().ToList();
+        }
+
+        public List<Conference> getAllPlannedConferences()
+        {
+            return repoConf.getPlannedConferences().ToList();
         }
 
         public void login(string username, string password)
@@ -57,6 +64,20 @@ namespace ServerConferenceManagement
             repoUser.attendToCoference(idUser, idConference);
         }
 
+        public void addConference(Conference conf)
+        {
+            repoConf.add(conf);
+        }
+
+        public void addSection(Section section)
+        {
+            repoSection.add(section);
+        }
+
+        public int getConferenceId(string conferenceName)
+        {
+            return repoConf.getId(conferenceName);
+	}
         public void addArticle(Article article)
         {
             repoArticle.add(article);
@@ -70,6 +91,16 @@ namespace ServerConferenceManagement
         public List<Article> getAllArticles()
         {
             return repoArticle.getAll().ToList();
+        }
+
+        public List<Article> getAllArticles(int idReviewer)
+        {
+            return repoReviewer.getAllArticles(idReviewer).ToList();
+        }
+
+        public void insertReview(int idUser, int idArticle, string comment, int calificativ)
+        {
+            repoReviewer.insertReview(idUser, idArticle, comment, calificativ);
         }
 
         public List<short> getAllArticlesforAuthor(int idAuthor)

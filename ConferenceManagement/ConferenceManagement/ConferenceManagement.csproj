@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Client\ClientEvents.cs" />
     <Compile Include="Client\ControllerClient.cs" />
+    <Compile Include="Model\Review.cs" />
     <Compile Include="Persistance\Login.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Anonim.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Persistance\RepositoryException.cs" />
     <Compile Include="Persistance\RepositoryParticipant.cs" />
     <Compile Include="Persistance\RepositoryPCMember.cs" />
+    <Compile Include="Persistance\RepositoryReviewer.cs" />
     <Compile Include="Persistance\RepositorySection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +121,12 @@
     </Compile>
     <Compile Include="View\ParticipantView\ParticipantForm.Designer.cs">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PCMemberView\CreateConferenceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PCMemberView\CreateConferenceView.Designer.cs">
+      <DependentUpon>CreateConferenceView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PCMemberView\ParticipantsListForm.cs">
       <SubType>Form</SubType>
@@ -176,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ParticipantView\ParticipantForm.resx">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PCMemberView\CreateConferenceView.resx">
+      <DependentUpon>CreateConferenceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PCMemberView\ParticipantsListForm.resx">
       <DependentUpon>ParticipantsListForm.cs</DependentUpon>
