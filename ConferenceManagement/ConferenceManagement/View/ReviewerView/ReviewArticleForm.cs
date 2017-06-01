@@ -39,5 +39,10 @@ namespace ConferenceManagement.View.ReviewerView
 
             ctrl.insertReview(reviewer.ID, article.IdArticle, richTextBox1.Text, calificativ);
         }
+
+        private void ReviewArticleForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
