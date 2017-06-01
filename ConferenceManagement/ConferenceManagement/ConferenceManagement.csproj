@@ -98,6 +98,12 @@
     <Compile Include="View\AuthorView\AuthorForm.Designer.cs">
       <DependentUpon>AuthorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AuthorView\MyArticleFormUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AuthorView\MyArticleFormUpload.Designer.cs">
+      <DependentUpon>MyArticleFormUpload.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AuthorView\MyArticlesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AuthorView\AuthorForm.resx">
       <DependentUpon>AuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AuthorView\MyArticleFormUpload.resx">
+      <DependentUpon>MyArticleFormUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AuthorView\MyArticlesForm.resx">
       <DependentUpon>MyArticlesForm.cs</DependentUpon>

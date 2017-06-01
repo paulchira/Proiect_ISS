@@ -102,5 +102,20 @@ namespace ServerConferenceManagement
         {
             repoReviewer.insertReview(idUser, idArticle, comment, calificativ);
         }
+
+        public List<short> getAllArticlesforAuthor(int idAuthor)
+        {
+            return repoArticle.getAllArticleforAuthor(idAuthor).ToList();
+        }
+
+        public Article findOneArticle(int idArticle)
+        {
+            return repoArticle.findOne(idArticle);
+        }
+
+        public void updateArticle(Article oldA, Article newA)
+        {
+            repoArticle.update(oldA, newA);
+        }
     }
 }
