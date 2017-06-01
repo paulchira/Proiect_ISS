@@ -69,8 +69,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(586, 315);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(570, 316);
             this.Controls.Add(this.attendConference_button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Conferences_dataGridView);
