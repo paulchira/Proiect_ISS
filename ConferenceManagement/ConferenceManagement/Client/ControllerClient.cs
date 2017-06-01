@@ -42,5 +42,20 @@ namespace ConferenceManagement.Client
         {
             return serviceServer.getAllSections();
         }
+
+        public void addArticle(Article article)
+        {
+            serviceServer.addArticle(article);
+        }
+
+        public void addArticleAuthor(int idArticle, int idAuthor)
+        {
+            serviceServer.addArticleAuthor(idArticle, idAuthor);
+        }
+
+        public List<Article> getAllArticle()
+        {
+            return serviceServer.getAllArticles();
+        }
     }
 }

@@ -168,5 +168,28 @@ namespace ConferenceManagement.Persistance
                     throw new RepositoryException("Article not updated");
             }
         }
+
+        public void addArticle_Author(int idArticle, int idAuthor)
+        {
+            IDbConnection con = DatabaseConnection.getConnection();
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "insert into Article_Autors(idArticle, idAuthor) values (@idArticle,@idAuthor)";
+
+                var paramArticle = comm.CreateParameter();
+                paramArticle.ParameterName = "@idArticle";
+                paramArticle.Value = idArticle;
+                comm.Parameters.Add(paramArticle);
+
+                var paramAuthor = comm.CreateParameter();
+                paramAuthor.ParameterName = "@idAuthor";
+                paramAuthor.Value = idAuthor;
+                comm.Parameters.Add(paramAuthor);
+
+                var result = comm.ExecuteNonQuery();
+                if (result == 0)
+                    throw new RepositoryException("Article_Authors not added");
+            }
+        }
     }
 }
