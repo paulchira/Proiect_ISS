@@ -28,6 +28,11 @@ namespace ConferenceManagement.Client
             Console.WriteLine("Update Event called");
         }
 
+        public void signUp(User u, int idRole)
+        {
+            this.serviceServer.signUpUser(u, idRole);
+        }
+
         public List<Conference> getAllConferences()
         {
             return serviceServer.getAllConferences();
