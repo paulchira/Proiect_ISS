@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Client\ClientEvents.cs" />
     <Compile Include="Client\ControllerClient.cs" />
+    <Compile Include="Model\Review.cs" />
     <Compile Include="Persistance\Login.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Anonim.cs" />
