@@ -15,9 +15,11 @@ namespace ServerConferenceManagement
         RepositoryAuthor repoAuthor;
         RepositoryPCMember repoPCMember;
         RepositorySection repoSection;
+        RepositoryReviewer repoReviewer;
+        RepositoryParticipant repoParticipant;
 
         public ServiceServerImpl(RepositoryConference repoConf, RepositoryArticle repoArticle, RepositorySection repoSection, RepositoryUser repoUser,
-            RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember)
+            RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember, RepositoryReviewer repoReviewer, RepositoryParticipant repoParticipant)
         {
             this.repoConf = repoConf;
             this.repoArticle = repoArticle;
@@ -25,6 +27,8 @@ namespace ServerConferenceManagement
             this.repoAuthor = repoAuthor;
             this.repoPCMember = repoPCMember;
             this.repoSection = repoSection;
+            this.repoReviewer = repoReviewer;
+            this.repoParticipant = repoParticipant;
         }
 
         public List<Conference> getAllConferences()
@@ -90,6 +94,36 @@ namespace ServerConferenceManagement
         public List<Article> getAllArticles()
         {
             return repoArticle.getAll().ToList();
+        }
+
+        public List<Article> getAllArticles(int idReviewer)
+        {
+            return repoReviewer.getAllArticles(idReviewer).ToList();
+        }
+
+        public void insertReview(int idUser, int idArticle, string comment, int calificativ)
+        {
+            repoReviewer.insertReview(idUser, idArticle, comment, calificativ);
+        }
+
+        public List<short> getAllArticlesforAuthor(int idAuthor)
+        {
+            return repoArticle.getAllArticleforAuthor(idAuthor).ToList();
+        }
+
+        public Article findOneArticle(int idArticle)
+        {
+            return repoArticle.findOne(idArticle);
+        }
+
+        public void updateArticle(Article oldA, Article newA)
+        {
+            repoArticle.update(oldA, newA);
+        }
+
+        public List<Participant> getAllParticipantsByConference(int idConf)
+        {
+            return repoParticipant.getAllByConference(idConf);
         }
 
         public void signUpUser(User u, int idRole)

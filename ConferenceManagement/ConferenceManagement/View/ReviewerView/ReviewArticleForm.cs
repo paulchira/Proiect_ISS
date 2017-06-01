@@ -16,17 +16,19 @@ namespace ConferenceManagement.View.ReviewerView
     {
         ClientController ctrl;
         Article article;
-        public ReviewArticleForm(ClientController ctr, Article article)
+        Reviewer reviewer;
+        public ReviewArticleForm(ClientController ctr, Reviewer reviewer, Article article)
         {
             InitializeComponent();
             ctrl = ctr;
+            this.reviewer = reviewer;
             this.article = article;
             textBox_ArticleTitle.Text = article.ArticleTitle;
         }
 
         private void SubmitReview_button_Click(object sender, EventArgs e)
         {
-            // RepositoryPCMember.add()
+            
         }
 
         private void SubmitReview_button_Click_1(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace ConferenceManagement.View.ReviewerView
             if (checkBox6.Checked) calificativ = 6;
             if (checkBox7.Checked) calificativ = 7;
 
-            Review r = new Review(1, 1, calificativ, richTextBox1.Text);
+            ctrl.insertReview(reviewer.ID, article.IdArticle, richTextBox1.Text, calificativ);
         }
     }
 }

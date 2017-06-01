@@ -21,7 +21,9 @@ namespace ServerConferenceManagement
             RepositoryPCMember repoPCM = new RepositoryPCMember();
             RepositorySection repoSection = new RepositorySection();
             RepositoryUser repoUser = new RepositoryUser();
-            var serviceServer = new ServiceServerImpl(repoConf,repoArticle,repoSection,repoUser,repoAuthor,repoPCM);
+            RepositoryReviewer repoReviewer = new RepositoryReviewer();
+            RepositoryParticipant repoParticipant = new RepositoryParticipant();
+            var serviceServer = new ServiceServerImpl(repoConf,repoArticle,repoSection,repoUser,repoAuthor,repoPCM, repoReviewer, repoParticipant);
             BinaryServerFormatterSinkProvider serverProv = new BinaryServerFormatterSinkProvider();
             serverProv.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
             BinaryClientFormatterSinkProvider clientProv = new BinaryClientFormatterSinkProvider();
