@@ -35,5 +35,7 @@ namespace ConferenceManagement.Service
         void addArticleAuthor(int idArticle, int idAuthor);
 
         List<Article> getAllArticles();
+
+        void signUpUser(User u,int idRole);
     }
 }
