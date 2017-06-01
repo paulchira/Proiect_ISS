@@ -16,6 +16,7 @@ namespace ConferenceManagement.View.AuthorView
     {
         private AuthorForm parentFormAuthor;
         private ClientController ctrl;
+        private Author author;
 
         public AddAbstract()
         {
@@ -50,6 +51,19 @@ namespace ConferenceManagement.View.AuthorView
             set
             {
                 ctrl = value;
+            }
+        }
+
+        public Author Author
+        {
+            get
+            {
+                return author;
+            }
+
+            set
+            {
+                author = value;
             }
         }
 
@@ -103,7 +117,7 @@ namespace ConferenceManagement.View.AuthorView
                 Article article = new Article(-1,articleTitle,articleAbastract,getIdSection(section));
                 ctrl.addArticle(article);
                 
-                ctrl.addArticleAuthor(-1, -1);
+                ctrl.addArticleAuthor(getIdArticle(articleTitle), author.ID);
             }catch(Exception e)
             {
                 MessageBox.Show(e.Message);
