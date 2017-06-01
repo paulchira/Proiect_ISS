@@ -58,7 +58,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.OrangeRed;
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.Location = new System.Drawing.Point(364, 25);
             this.button_back.Name = "button_back";
@@ -81,8 +81,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(490, 438);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(463, 354);
             this.Controls.Add(this.listBox_myArticles);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.uploadArticle_button);

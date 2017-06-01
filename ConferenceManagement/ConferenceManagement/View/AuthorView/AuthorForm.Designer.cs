@@ -48,6 +48,7 @@
             // conferences_dataGridView
             // 
             this.conferences_dataGridView.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.conferences_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.conferences_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.conferences_dataGridView.Location = new System.Drawing.Point(33, 93);
             this.conferences_dataGridView.Name = "conferences_dataGridView";
@@ -82,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(573, 370);
             this.Controls.Add(this.myArticles_button);
             this.Controls.Add(this.submitArticle_button);

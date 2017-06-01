@@ -51,7 +51,7 @@
             // richTextBox_abstract
             // 
             this.richTextBox_abstract.BackColor = System.Drawing.Color.PowderBlue;
-            this.richTextBox_abstract.Location = new System.Drawing.Point(75, 95);
+            this.richTextBox_abstract.Location = new System.Drawing.Point(87, 95);
             this.richTextBox_abstract.Name = "richTextBox_abstract";
             this.richTextBox_abstract.Size = new System.Drawing.Size(246, 176);
             this.richTextBox_abstract.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.button_addAbstract.BackColor = System.Drawing.Color.SkyBlue;
             this.button_addAbstract.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_addAbstract.Location = new System.Drawing.Point(311, 277);
+            this.button_addAbstract.Location = new System.Drawing.Point(326, 286);
             this.button_addAbstract.Name = "button_addAbstract";
             this.button_addAbstract.Size = new System.Drawing.Size(89, 33);
             this.button_addAbstract.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 22);
+            this.label2.Location = new System.Drawing.Point(4, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 23);
             this.label2.TabIndex = 3;
@@ -81,16 +81,16 @@
             // 
             // textBox_title
             // 
-            this.textBox_title.Location = new System.Drawing.Point(75, 22);
+            this.textBox_title.Location = new System.Drawing.Point(87, 22);
             this.textBox_title.Name = "textBox_title";
-            this.textBox_title.Size = new System.Drawing.Size(100, 20);
+            this.textBox_title.Size = new System.Drawing.Size(121, 20);
             this.textBox_title.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 59);
+            this.label3.Location = new System.Drawing.Point(4, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 23);
             this.label3.TabIndex = 5;
@@ -99,14 +99,14 @@
             // comboBox_section
             // 
             this.comboBox_section.FormattingEnabled = true;
-            this.comboBox_section.Location = new System.Drawing.Point(75, 59);
+            this.comboBox_section.Location = new System.Drawing.Point(87, 59);
             this.comboBox_section.Name = "comboBox_section";
             this.comboBox_section.Size = new System.Drawing.Size(121, 21);
             this.comboBox_section.TabIndex = 6;
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.DarkViolet;
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
             this.button_back.Location = new System.Drawing.Point(326, 9);
@@ -121,8 +121,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(412, 322);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(437, 331);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.comboBox_section);
             this.Controls.Add(this.label3);
