@@ -16,9 +16,7 @@ namespace ConferenceManagement.Persistance
             IList<Article> articles = new List<Article>();
 
             using (var comm = connection.CreateCommand())
-            {
-                //comm.CommandText = "select Reviewer_Article.idArticle from Reviewer_Article inner join Users_Role on Users.idUser=Users_Role.idUser inner join Roles on Users_Role.idRole=Roles.idRole where Roles.roleName='Participant'"; // or another name of table
-                comm.CommandText = "select * from Article where idArticle = (select idArticle from Reviewer_Article where idUser = @idReviewer)";
+            { comm.CommandText = "select * from Article where idArticle = (select idArticle from Reviewer_Article where idUser = @idReviewer)";
                 var paramIdR = comm.CreateParameter();
                 paramIdR.ParameterName = "idReviewer";
                 paramIdR.Value = idReviewer;
