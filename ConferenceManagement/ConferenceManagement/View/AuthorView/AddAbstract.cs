@@ -71,5 +71,10 @@ namespace ConferenceManagement.View.AuthorView
             }
             return sectionsName;
         }
+
+        private void button_addAbstract_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

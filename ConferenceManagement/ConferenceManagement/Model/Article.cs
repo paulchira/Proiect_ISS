@@ -13,21 +13,28 @@ namespace ConferenceManagement.Model
         private string articleTitle;
         private string articleAbstract;
         private string articleText;
+        private string upload;
         private int sectionId;
 
-        public Article(int idArticle, string articleTitle, string articleAbstract, string articleText, int sectionId)
+        public Article(int idArticle, string articleTitle, string articleAbstract, string articleText, string upload, int sectionId)
         {
             this.IdArticle = idArticle;
             this.ArticleTitle = articleTitle;
             this.ArticleAbstract = articleAbstract;
             this.ArticleText = articleText;
+            this.Upload = upload;
             this.SectionId = sectionId;
         }
-        public Article()
+
+        public Article(int idArticle, string articleTitle, string articleAbstract, int sectionId)
         {
-
+            this.IdArticle = idArticle;
+            this.ArticleTitle = articleTitle;
+            this.ArticleAbstract = articleAbstract;
+            this.ArticleText = null;
+            this.Upload = "NO";
+            this.SectionId = sectionId;
         }
-
         public int IdArticle
         {
             get
@@ -77,6 +84,19 @@ namespace ConferenceManagement.Model
             set
             {
                 articleText = value;
+            }
+        }
+
+        public string Upload
+        {
+            get
+            {
+                return upload;
+            }
+
+            set
+            {
+                upload = value;
             }
         }
 

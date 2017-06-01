@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox_abstract = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_addAbstract = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_title = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,16 +57,17 @@
             this.richTextBox_abstract.TabIndex = 1;
             this.richTextBox_abstract.Text = "";
             // 
-            // button1
+            // button_addAbstract
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(311, 277);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add abstract";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_addAbstract.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_addAbstract.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addAbstract.Location = new System.Drawing.Point(311, 277);
+            this.button_addAbstract.Name = "button_addAbstract";
+            this.button_addAbstract.Size = new System.Drawing.Size(89, 33);
+            this.button_addAbstract.TabIndex = 2;
+            this.button_addAbstract.Text = "Add abstract";
+            this.button_addAbstract.UseVisualStyleBackColor = false;
+            this.button_addAbstract.Click += new System.EventHandler(this.button_addAbstract_Click);
             // 
             // label2
             // 
@@ -127,7 +128,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_title);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_addAbstract);
             this.Controls.Add(this.richTextBox_abstract);
             this.Controls.Add(this.label1);
             this.Name = "AddAbstract";
@@ -141,7 +142,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox_abstract;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_addAbstract;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_title;
         private System.Windows.Forms.Label label3;
