@@ -15,10 +15,13 @@ namespace ConferenceManagement.View.ReviewerView
     public partial class ReviewArticleForm : Form
     {
         ClientController ctrl;
-        public ReviewArticleForm(ClientController ctr)
+        Article article;
+        public ReviewArticleForm(ClientController ctr, Article article)
         {
             InitializeComponent();
             ctrl = ctr;
+            this.article = article;
+            textBox_ArticleTitle.Text = article.ArticleTitle;
         }
     }
 }
