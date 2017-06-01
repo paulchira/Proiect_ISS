@@ -112,5 +112,11 @@ namespace ConferenceManagement.Client
         {
             serviceServer.updateArticle(oldA, newA);
         }
+
+        public List<Participant> getAllParticipantsByConference(int idConf)
+        {
+            return serviceServer.getAllParticipantsByConference(idConf);
+        }
+
     }
 }
