@@ -70,7 +70,7 @@
             // 
             // button_signUp
             // 
-            this.button_signUp.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_signUp.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_signUp.Location = new System.Drawing.Point(76, 277);
             this.button_signUp.Name = "button_signUp";
             this.button_signUp.Size = new System.Drawing.Size(103, 36);

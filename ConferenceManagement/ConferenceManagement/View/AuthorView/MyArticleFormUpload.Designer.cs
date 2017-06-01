@@ -34,7 +34,7 @@
             // 
             // richTextBox_upload
             // 
-            this.richTextBox_upload.BackColor = System.Drawing.Color.PowderBlue;
+            this.richTextBox_upload.BackColor = System.Drawing.Color.WhiteSmoke;
             this.richTextBox_upload.Location = new System.Drawing.Point(51, 37);
             this.richTextBox_upload.Name = "richTextBox_upload";
             this.richTextBox_upload.Size = new System.Drawing.Size(297, 155);
@@ -43,7 +43,7 @@
             // 
             // button_upload
             // 
-            this.button_upload.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_upload.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_upload.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_upload.Location = new System.Drawing.Point(150, 224);
             this.button_upload.Name = "button_upload";

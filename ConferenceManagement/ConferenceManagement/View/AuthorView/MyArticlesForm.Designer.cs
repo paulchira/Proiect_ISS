@@ -46,7 +46,7 @@
             // 
             // uploadArticle_button
             // 
-            this.uploadArticle_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.uploadArticle_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.uploadArticle_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadArticle_button.Location = new System.Drawing.Point(91, 287);
             this.uploadArticle_button.Name = "uploadArticle_button";
@@ -58,7 +58,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.Location = new System.Drawing.Point(364, 25);
             this.button_back.Name = "button_back";
@@ -70,6 +70,7 @@
             // 
             // listBox_myArticles
             // 
+            this.listBox_myArticles.BackColor = System.Drawing.Color.WhiteSmoke;
             this.listBox_myArticles.FormattingEnabled = true;
             this.listBox_myArticles.Location = new System.Drawing.Point(12, 78);
             this.listBox_myArticles.Name = "listBox_myArticles";

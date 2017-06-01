@@ -50,7 +50,7 @@
             // 
             // richTextBox_abstract
             // 
-            this.richTextBox_abstract.BackColor = System.Drawing.Color.PowderBlue;
+            this.richTextBox_abstract.BackColor = System.Drawing.Color.WhiteSmoke;
             this.richTextBox_abstract.Location = new System.Drawing.Point(87, 95);
             this.richTextBox_abstract.Name = "richTextBox_abstract";
             this.richTextBox_abstract.Size = new System.Drawing.Size(246, 176);
@@ -59,7 +59,7 @@
             // 
             // button_addAbstract
             // 
-            this.button_addAbstract.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_addAbstract.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_addAbstract.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addAbstract.Location = new System.Drawing.Point(326, 286);
             this.button_addAbstract.Name = "button_addAbstract";
@@ -106,7 +106,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
             this.button_back.Location = new System.Drawing.Point(326, 9);
