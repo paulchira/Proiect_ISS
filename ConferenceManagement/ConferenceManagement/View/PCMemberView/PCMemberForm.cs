@@ -23,20 +23,39 @@ namespace ConferenceManagement.View.PCMemberView
             pcMember = pcMem;
             List<Conference> cfs = ctrl.getAllPlannedConferences();
             dataGridView2.DataSource = ctrl.getAllPlannedConferences();
+            dataGridView1.DataSource = ctrl.getAllConferences();
+
+
         }
 
         // Opens the window with the list of the articles for this conference.
         private void SubmittedArticles_button_Click(object sender, EventArgs e)
         {
-            SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm(ctrl);
+            string id = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            int ID = Int16.Parse(id);
+            string name = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm(ctrl,ID,name);
             submittedArticlesForm.Show();
         }
 
         // Opens the window with the list of the participants for this conference.
         private void Participants_button_Click(object sender, EventArgs e)
         {
-            ParticipantsListForm participantsList = new ParticipantsListForm(ctrl);
-            participantsList.Show();
+            try
+            {
+                DataGridViewRow row = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex];
+                int idConf = Int16.Parse(row.Cells[0].Value.ToString());
+                string cofName = row.Cells[1].Value.ToString();
+                string confDate = row.Cells[2].Value.ToString();
+                string confEd = row.Cells[3].Value.ToString();
+                Conference conference = new Conference(idConf, cofName, confDate, confEd);
+                ParticipantsListForm participantsList = new ParticipantsListForm(ctrl, conference);
+
+                participantsList.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

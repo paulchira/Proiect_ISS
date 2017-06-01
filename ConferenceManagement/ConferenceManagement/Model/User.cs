@@ -31,5 +31,13 @@ namespace ConferenceManagement.Model
             Password = pass;
         }
 
+        public User(int id,string firstName, string lastName)
+        {
+            this.ID = id;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            
+        }
+
     }
 }

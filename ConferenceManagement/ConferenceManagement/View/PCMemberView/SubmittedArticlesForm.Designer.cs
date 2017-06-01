@@ -103,6 +103,7 @@
             this.requireReview_button.TabIndex = 6;
             this.requireReview_button.Text = "Require review";
             this.requireReview_button.UseVisualStyleBackColor = false;
+            this.requireReview_button.Click += new System.EventHandler(this.requireReview_button_Click);
             // 
             // SubmittedArticlesForm
             // 

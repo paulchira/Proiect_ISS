@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Laura\AppData\Local\Temp\vs23DB.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs271E.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Laura\AppData\Local\Temp\vs23DB.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs271E.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -81,6 +81,7 @@
     <Compile Include="Persistance\RepositoryException.cs" />
     <Compile Include="Persistance\RepositoryParticipant.cs" />
     <Compile Include="Persistance\RepositoryPCMember.cs" />
+    <Compile Include="Persistance\RepositoryReview.cs" />
     <Compile Include="Persistance\RepositoryReviewer.cs" />
     <Compile Include="Persistance\RepositorySection.cs" />
     <Compile Include="Program.cs" />
@@ -129,12 +130,6 @@
     </Compile>
     <Compile Include="View\ParticipantView\ParticipantForm.Designer.cs">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ParticipantView\PaymentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ParticipantView\PaymentForm.Designer.cs">
-      <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PCMemberView\CreateConferenceView.cs">
       <SubType>Form</SubType>
@@ -202,9 +197,6 @@
     <EmbeddedResource Include="View\ParticipantView\ParticipantForm.resx">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ParticipantView\PaymentForm.resx">
-      <DependentUpon>PaymentForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\PCMemberView\CreateConferenceView.resx">
       <DependentUpon>CreateConferenceView.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,7 +226,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
