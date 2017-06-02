@@ -42,6 +42,7 @@ namespace ConferenceManagement.View
                 //PaymentForm payment = new PaymentForm();
                 //this.Hide();
                 //payment.Show();
+                MessageBox.Show("Succes!");
 
             }
             catch(Exception ex)
