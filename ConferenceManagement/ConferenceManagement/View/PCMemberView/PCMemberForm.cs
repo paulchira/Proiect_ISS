@@ -75,6 +75,7 @@ namespace ConferenceManagement.View.PCMemberView
 
         private void button_back_Click(object sender, EventArgs e)
         {
+            ctrl.logout(pcMember.Username);
             this.Hide();
             parentForm.Show();
         }

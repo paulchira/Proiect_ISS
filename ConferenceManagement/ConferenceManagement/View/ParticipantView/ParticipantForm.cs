@@ -55,6 +55,7 @@ namespace ConferenceManagement.View
 
         private void button_back_Click(object sender, EventArgs e)
         {
+            ctrl.logout(participant.Username);
             this.Hide();
             parentLoginForm.Show();
         }

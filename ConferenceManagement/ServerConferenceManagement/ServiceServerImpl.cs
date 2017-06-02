@@ -53,8 +53,10 @@ namespace ServerConferenceManagement
 
         public void login(string username, IServiceClient client)
         {
-            if (!loggedClients.ContainsKey(username))
-                loggedClients.Add(username,client);
+            if (loggedClients.ContainsKey(username))
+                throw new Exception("User already logged in.");
+            else
+                loggedClients.Add(username, client);
         }
 
         public void logout(string username, IServiceClient client)

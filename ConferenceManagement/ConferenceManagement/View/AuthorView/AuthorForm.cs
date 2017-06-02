@@ -67,6 +67,7 @@ namespace ConferenceManagement.View
 
         private void button_back_Click(object sender, EventArgs e)
         {
+            ctrl.logout(author.Username);
             this.Hide();
             parentForm.Show();
         }
