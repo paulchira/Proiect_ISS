@@ -5,7 +5,7 @@ namespace ConferenceManagement.Client
 {
     public enum UserEvent
     {
-        newArticle, newConference, newAuthor
+        newArticle, newConference, newAuthor, newUser
     };
 
     public class ClientEvents : System.EventArgs

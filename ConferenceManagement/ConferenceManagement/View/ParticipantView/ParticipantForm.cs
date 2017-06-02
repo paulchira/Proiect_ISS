@@ -29,6 +29,7 @@ namespace ConferenceManagement.View
         {
             var bindingList = new BindingList<Conference>(ctrl.getAllConferences());
             Conferences_dataGridView.DataSource = bindingList;
+            Conferences_dataGridView.Columns[4].Visible = false;
         }
 
         private void attendConference_button_Click(object sender, EventArgs e)

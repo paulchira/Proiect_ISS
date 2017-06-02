@@ -4,6 +4,7 @@ using System.Linq;
 using ConferenceManagement.Model;
 using ConferenceManagement.Service;
 using ConferenceManagement.Persistance;
+using System.Threading.Tasks;
 
 namespace ServerConferenceManagement
 {
@@ -19,6 +20,8 @@ namespace ServerConferenceManagement
         RepositoryParticipant repoParticipant;
         RepositoryReview repoReview;
 
+        private readonly IDictionary<String, IServiceClient> loggedClients;
+
         public ServiceServerImpl(RepositoryConference repoConf, RepositoryArticle repoArticle, RepositorySection repoSection, RepositoryUser repoUser,
             RepositoryAuthor repoAuthor, RepositoryPCMember repoPCMember, RepositoryReviewer repoReviewer, RepositoryParticipant repoParticipant,RepositoryReview repoReview)
         {
@@ -31,7 +34,11 @@ namespace ServerConferenceManagement
             this.repoReviewer = repoReviewer;
             this.repoParticipant = repoParticipant;
             this.repoReview = repoReview;
+
+            loggedClients = new Dictionary<String, IServiceClient>();
         }
+
+        
 
         public List<Conference> getAllConferences()
         {
@@ -44,14 +51,15 @@ namespace ServerConferenceManagement
             return repoConf.getPlannedConferences().ToList();
         }
 
-        public void login(string username, string password)
+        public void login(string username, IServiceClient client)
         {
-            throw new NotImplementedException();
+            if (!loggedClients.ContainsKey(username))
+                loggedClients.Add(username,client);
         }
 
-        public void logout(string username, string password)
+        public void logout(string username, IServiceClient client)
         {
-            throw new NotImplementedException();
+            loggedClients.Remove(username);
         }
 
         public User validateAccount(string username, string password)
@@ -72,6 +80,7 @@ namespace ServerConferenceManagement
         public void addConference(Conference conf)
         {
             repoConf.add(conf);
+            notifyAddedConference(conf);
         }
 
         public void addSection(Section section)
@@ -147,5 +156,14 @@ namespace ServerConferenceManagement
         {
             repoReview.add(r);
         }
+
+        private void notifyAddedConference(Conference conference)
+        {
+            foreach(IServiceClient client in loggedClients.Values)
+            {
+                Task.Run(() => client.conferenceAdded(conference));
+            }
+        }
+
     }
 }

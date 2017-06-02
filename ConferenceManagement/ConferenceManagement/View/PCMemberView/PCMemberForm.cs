@@ -25,8 +25,8 @@ namespace ConferenceManagement.View.PCMemberView
             List<Conference> cfs = ctrl.getAllPlannedConferences();
             dataGridView2.DataSource = ctrl.getAllPlannedConferences();
             dataGridView1.DataSource = ctrl.getAllConferences();
-
-
+            dataGridView2.Columns[4].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
         }
 
         // Opens the window with the list of the articles for this conference.

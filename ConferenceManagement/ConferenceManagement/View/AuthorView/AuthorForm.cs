@@ -33,6 +33,7 @@ namespace ConferenceManagement.View
         {
             var bindingList = new BindingList<Conference>(ctrl.getAllConferences());
             conferences_dataGridView.DataSource = bindingList;
+            conferences_dataGridView.Columns[4].Visible = false;
         }
 
         /// <summary>

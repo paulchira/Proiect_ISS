@@ -145,7 +145,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox conferenceName_textBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox reviewerList_comboBox;
         private System.Windows.Forms.Label label3;

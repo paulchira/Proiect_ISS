@@ -32,7 +32,7 @@ namespace ConferenceManagement.View
             try
             {
                 User user = ctrl.validateAccount(username, password);
-
+                ctrl.login(username);
                 if (user is Author)
                 {
                     AuthorForm authorForm = new AuthorForm(ctrl, (Author)user);

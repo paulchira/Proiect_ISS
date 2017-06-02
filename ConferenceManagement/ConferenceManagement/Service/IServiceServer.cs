@@ -9,9 +9,9 @@ namespace ConferenceManagement.Service
 {
     public interface IServiceServer
     {
-        void login(string username, string password);
+        void login(string username, IServiceClient client);
 
-        void logout(string username, string password);
+        void logout(string username, IServiceClient client);
 
         User validateAccount(string username, string password);
 
@@ -55,5 +55,6 @@ namespace ConferenceManagement.Service
         List<Reviewer> getAvailableReviewers();
 
         void addReview(Review r);
+
     }
 }

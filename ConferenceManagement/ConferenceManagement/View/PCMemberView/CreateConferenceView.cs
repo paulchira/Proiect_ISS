@@ -18,10 +18,30 @@ namespace ConferenceManagement.View.PCMemberView
     {
         ClientController ctrl;
         public PCMemberForm parentForm { set; get; }
+        public delegate void UpdateListBoxCallback(DataGridView list, List<Conference> data);
+
         public CreateConferenceView(ClientController ctrl)
         {
             this.ctrl = ctrl;
+            ctrl.updateEvent += Ctrl_updateEvent; ;
             InitializeComponent();
+        }
+
+        private void Ctrl_updateEvent(object sender, ClientEvents e)
+        {
+            if (e.UserEvent == UserEvent.newConference)
+            {
+                int idConf = int.Parse(e.Data.ToString());
+                List<Conference> listConf = ctrl.getAllPlannedConferences();
+                parentForm.dataGridView2.BeginInvoke(new UpdateListBoxCallback(this.updateListBox), new Object[] {parentForm.dataGridView2, listConf });
+            }
+        }
+
+        private void updateListBox(DataGridView listBox, List<Conference> newData)
+        {
+            listBox.DataSource = null;
+            listBox.DataSource = newData;
+            listBox.Columns[4].Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -51,7 +71,7 @@ namespace ConferenceManagement.View.PCMemberView
                 ctrl.addSection(section);
             }
             MessageBox.Show("Conference created!");
-            this.Close();
+           // this.Close();
 
         }
 
