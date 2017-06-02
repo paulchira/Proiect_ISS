@@ -16,6 +16,7 @@ namespace ConferenceManagement.View.PCMemberView
     {
         ClientController ctrl;
         PCMember pcMember;
+        public LoginForm parentForm { set; get; }
         public PCMemberForm(ClientController ctr, PCMember pcMem)
         {
             InitializeComponent();
@@ -35,6 +36,9 @@ namespace ConferenceManagement.View.PCMemberView
             int ID = Int16.Parse(id);
             string name = dataGridView2.CurrentRow.Cells[1].Value.ToString();
             SubmittedArticlesForm submittedArticlesForm = new SubmittedArticlesForm(ctrl,ID,name);
+            submittedArticlesForm.parentForm = this;
+            this.Owner = submittedArticlesForm;
+            this.Hide();
             submittedArticlesForm.Show();
         }
 
@@ -50,7 +54,9 @@ namespace ConferenceManagement.View.PCMemberView
                 string confEd = row.Cells[3].Value.ToString();
                 Conference conference = new Conference(idConf, cofName, confDate, confEd);
                 ParticipantsListForm participantsList = new ParticipantsListForm(ctrl, conference);
-
+                participantsList.parentForm = this;
+                this.Owner = participantsList;
+                this.Hide();
                 participantsList.Show();
             }catch(Exception ex)
             {
@@ -61,7 +67,16 @@ namespace ConferenceManagement.View.PCMemberView
         private void button1_Click(object sender, EventArgs e)
         {
             CreateConferenceView conferenceView = new CreateConferenceView(this.ctrl);
+            conferenceView.parentForm = this;
+            this.Owner = conferenceView;
+            this.Hide();
             conferenceView.Show();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace ConferenceManagement.View.PCMemberView
     public partial class CreateConferenceView : Form
     {
         ClientController ctrl;
+        public PCMemberForm parentForm { set; get; }
         public CreateConferenceView(ClientController ctrl)
         {
             this.ctrl = ctrl;
@@ -57,6 +58,12 @@ namespace ConferenceManagement.View.PCMemberView
         private void richTextBoxConferenceSection_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

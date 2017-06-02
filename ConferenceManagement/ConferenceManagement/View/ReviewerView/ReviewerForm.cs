@@ -17,7 +17,7 @@ namespace ConferenceManagement.View
     {
         ClientController ctrl;
         Reviewer reviewer;
-
+        public LoginForm parentForm { set; get; }
         public ReviewerForm(ClientController ctr, Reviewer reviewer)
         {
             InitializeComponent();
@@ -48,6 +48,9 @@ namespace ConferenceManagement.View
             Article a = new Article(Int16.Parse(idArticle),articleTitle,articleAbstract,articleText,upload,Int16.Parse(sectionId));
 
             ReviewArticleForm f2 = new ReviewArticleForm(ctrl,reviewer,a);
+            f2.parentForm = this;
+            this.Owner = f2;
+            this.Hide();
             f2.Show();
             
         }
@@ -55,6 +58,12 @@ namespace ConferenceManagement.View
         private void ReviewerForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

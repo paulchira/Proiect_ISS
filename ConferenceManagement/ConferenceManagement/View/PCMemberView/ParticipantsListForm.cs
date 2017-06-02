@@ -16,6 +16,7 @@ namespace ConferenceManagement.View.PCMemberView
     {
         ClientController ctrl;
         Conference conference;
+        public PCMemberForm parentForm { set; get; }
         public ParticipantsListForm(ClientController ctr, Conference conf)
         {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace ConferenceManagement.View.PCMemberView
             dataGridView1.Columns[4].Visible = false; // hide password column
             noParticpants_textBox.Text = ctrl.getAllParticipantsByConference(conf.Id).Count+ "";
 
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

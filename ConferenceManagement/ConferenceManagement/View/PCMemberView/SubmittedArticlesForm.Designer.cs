@@ -35,6 +35,7 @@
             this.reviewerList_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.requireReview_button = new System.Windows.Forms.Button();
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,12 +106,26 @@
             this.requireReview_button.UseVisualStyleBackColor = false;
             this.requireReview_button.Click += new System.EventHandler(this.requireReview_button_Click);
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button_back.Location = new System.Drawing.Point(435, 12);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(89, 33);
+            this.button_back.TabIndex = 10;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // SubmittedArticlesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(536, 459);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.requireReview_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.reviewerList_comboBox);
@@ -135,5 +150,6 @@
         private System.Windows.Forms.ComboBox reviewerList_comboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button requireReview_button;
+        private System.Windows.Forms.Button button_back;
     }
 }

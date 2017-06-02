@@ -16,7 +16,7 @@ namespace ConferenceManagement.View
     {
         ClientController ctrl;
         Participant participant;
-
+        public LoginForm parentLoginForm { set; get; }
         public ParticipantForm(ClientController ctr,Participant part)
         {
             InitializeComponent();
@@ -49,6 +49,12 @@ namespace ConferenceManagement.View
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentLoginForm.Show();
         }
     }
 }

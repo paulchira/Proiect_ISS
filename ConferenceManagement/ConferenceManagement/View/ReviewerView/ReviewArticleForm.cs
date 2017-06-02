@@ -17,6 +17,7 @@ namespace ConferenceManagement.View.ReviewerView
         ClientController ctrl;
         Article article;
         Reviewer reviewer;
+        public ReviewerForm parentForm { set; get; }
         public ReviewArticleForm(ClientController ctr, Reviewer reviewer, Article article)
         {
             InitializeComponent();
@@ -43,6 +44,12 @@ namespace ConferenceManagement.View.ReviewerView
         private void ReviewArticleForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ConferenceManagement.View.PCMemberView
     public partial class SubmittedArticlesForm : Form
     {
         ClientController ctrl;
+        public PCMemberForm parentForm { set; get; }
         public SubmittedArticlesForm(ClientController ctr,int id,string name)
         {
             InitializeComponent();
@@ -35,6 +36,12 @@ namespace ConferenceManagement.View.PCMemberView
             
             ctrl.addReview(new Review(idArticle, idReviewer));
             MessageBox.Show("Succesfully added User " + reviewerList_comboBox.Text + " to review article " + dataGridView1.CurrentRow.Cells[1].Value.ToString());
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

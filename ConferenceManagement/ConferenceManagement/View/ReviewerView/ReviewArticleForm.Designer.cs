@@ -42,12 +42,13 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button_back = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_ArticleTitle
             // 
-            this.textBox_ArticleTitle.Location = new System.Drawing.Point(127, 31);
+            this.textBox_ArticleTitle.Location = new System.Drawing.Point(126, 62);
             this.textBox_ArticleTitle.Name = "textBox_ArticleTitle";
             this.textBox_ArticleTitle.Size = new System.Drawing.Size(211, 20);
             this.textBox_ArticleTitle.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 28);
+            this.label1.Location = new System.Drawing.Point(5, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 23);
             this.label1.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             this.downloadArticle_button.BackColor = System.Drawing.Color.SkyBlue;
             this.downloadArticle_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.downloadArticle_button.Location = new System.Drawing.Point(380, 24);
+            this.downloadArticle_button.Location = new System.Drawing.Point(380, 59);
             this.downloadArticle_button.Name = "downloadArticle_button";
             this.downloadArticle_button.Size = new System.Drawing.Size(120, 32);
             this.downloadArticle_button.TabIndex = 2;
@@ -76,7 +77,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.PowderBlue;
-            this.richTextBox1.Location = new System.Drawing.Point(103, 99);
+            this.richTextBox1.Location = new System.Drawing.Point(102, 134);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(382, 91);
             this.richTextBox1.TabIndex = 3;
@@ -86,7 +87,7 @@
             // 
             this.SubmitReview_button.BackColor = System.Drawing.Color.SkyBlue;
             this.SubmitReview_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitReview_button.Location = new System.Drawing.Point(380, 376);
+            this.SubmitReview_button.Location = new System.Drawing.Point(380, 438);
             this.SubmitReview_button.Name = "SubmitReview_button";
             this.SubmitReview_button.Size = new System.Drawing.Size(170, 38);
             this.SubmitReview_button.TabIndex = 4;
@@ -98,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 96);
+            this.label2.Location = new System.Drawing.Point(12, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 23);
             this.label2.TabIndex = 5;
@@ -113,9 +114,9 @@
             this.groupBox1.Controls.Add(this.checkBox3);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(67, 217);
+            this.groupBox1.Location = new System.Drawing.Point(67, 271);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 127);
+            this.groupBox1.Size = new System.Drawing.Size(452, 140);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Qualifier";
@@ -190,12 +191,26 @@
             this.checkBox1.Text = "Strong accept";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button_back.Location = new System.Drawing.Point(461, 11);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(89, 33);
+            this.button_back.TabIndex = 8;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // ReviewArticleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(562, 460);
+            this.ClientSize = new System.Drawing.Size(566, 499);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SubmitReview_button);
@@ -229,5 +244,6 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button_back;
     }
 }

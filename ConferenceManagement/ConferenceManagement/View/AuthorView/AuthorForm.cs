@@ -18,6 +18,7 @@ namespace ConferenceManagement.View
         ClientController ctrl;
         Author author;
         AuthorForm currentAuthorForm;
+        public LoginForm parentForm { set; get; }
 
         public AuthorForm(ClientController ctr,Author au)
         {
@@ -61,6 +62,12 @@ namespace ConferenceManagement.View
             this.Hide();
            
             addAbstract.Show();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }
