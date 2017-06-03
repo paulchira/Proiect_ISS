@@ -54,15 +54,24 @@ namespace ConferenceManagement.View
 
         private void submitArticle_button_Click(object sender, EventArgs e)
         {
-            AddAbstract addAbstract = new AddAbstract();
-            addAbstract.Ctrl = this.ctrl;
-            addAbstract.ParentFormAuthor = this;
-            addAbstract.Author = this.author;
-            addAbstract.initializeAuthorComponents();
-            this.Owner = addAbstract;
-            this.Hide();
+            if(conferences_dataGridView.CurrentRow.DataBoundItem != null)
+            {
+                Conference conference = (Conference)conferences_dataGridView.CurrentRow.DataBoundItem;
+                AddAbstract addAbstract = new AddAbstract();
+                addAbstract.Ctrl = this.ctrl;
+                addAbstract.ParentFormAuthor = this;
+                addAbstract.Author = this.author;
+                addAbstract.Conference = conference;
+                addAbstract.initializeAuthorComponents();
+                this.Owner = addAbstract;
+                this.Hide();
+                addAbstract.Show();
+
+            }else
+            {
+                MessageBox.Show("Please select a conference!");
+            }
            
-            addAbstract.Show();
         }
 
         private void button_back_Click(object sender, EventArgs e)

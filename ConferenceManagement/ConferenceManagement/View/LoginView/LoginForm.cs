@@ -72,9 +72,14 @@ namespace ConferenceManagement.View
 
                     reviewerForm.Show();
                 }
+
+                if(user == null)
+                {
+                    MessageBox.Show("Username or password are invalid");
+                }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error:" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 

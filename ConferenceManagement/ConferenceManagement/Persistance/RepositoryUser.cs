@@ -29,37 +29,40 @@ namespace ConferenceManagement.Persistance
                 paramPassword.ParameterName = "@password";
                 paramPassword.Value = password;
                 comm.Parameters.Add(paramPassword);
-                using (var result = comm.ExecuteReader())
+                try
                 {
-                    if(result.Read())
+                    using (var result = comm.ExecuteReader())
                     {
-                        int idUser = result.GetInt16(0);
-                        string firstName = result.GetString(3);
-                        string lastName = result.GetString(4);
-                        connection.Close();
-                        int idRole = getUserRole(idUser);
+                        if (result.Read())
+                        {
+                            int idUser = result.GetInt16(0);
+                            string firstName = result.GetString(3);
+                            string lastName = result.GetString(4);
+                            connection.Close();
+                            int idRole = getUserRole(idUser);
 
-                        if (idRole == 1)
-                        {
-                            return new Author(idUser, firstName, lastName, username, password);
-                        }
-                        if (idRole == 2)
-                        {
-                            return new Participant(idUser, firstName, lastName, username, password);
-                        }
-                        if (idRole == 3)
-                        {
-                            return new Reviewer(idUser, firstName, lastName, username, password);
-                        }
-                        if (idRole == 4)
-                        {
-                            return new PCMember(idUser, firstName, lastName, username, password);
+                            if (idRole == 1)
+                            {
+                                return new Author(idUser, firstName, lastName, username, password);
+                            }
+                            if (idRole == 2)
+                            {
+                                return new Participant(idUser, firstName, lastName, username, password);
+                            }
+                            if (idRole == 3)
+                            {
+                                return new Reviewer(idUser, firstName, lastName, username, password);
+                            }
+                            if (idRole == 4)
+                            {
+                                return new PCMember(idUser, firstName, lastName, username, password);
+                            }
                         }
                     }
-                    else
-                    {
-                        throw new RepositoryException("User not found!");
-                    }
+                }
+                catch
+                {
+                    throw new RepositoryException("User not found!");
                 }
 
             }

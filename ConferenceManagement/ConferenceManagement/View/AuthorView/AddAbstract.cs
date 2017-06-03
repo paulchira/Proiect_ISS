@@ -17,6 +17,7 @@ namespace ConferenceManagement.View.AuthorView
         private AuthorForm parentFormAuthor;
         private ClientController ctrl;
         private Author author;
+        private Conference conference;
 
         public AddAbstract()
         {
@@ -67,6 +68,19 @@ namespace ConferenceManagement.View.AuthorView
             }
         }
 
+        public Conference Conference
+        {
+            get
+            {
+                return conference;
+            }
+
+            set
+            {
+                conference = value;
+            }
+        }
+
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -86,7 +100,8 @@ namespace ConferenceManagement.View.AuthorView
             List<String> sectionsName = new List<String>();
             foreach(Section section in sections)
             {
-                sectionsName.Add(section.SectionName);
+                if(section.IdConference == conference.Id)
+                    sectionsName.Add(section.SectionName);
             }
             return sectionsName;
         }
@@ -106,7 +121,7 @@ namespace ConferenceManagement.View.AuthorView
             return idSection;
         }
 
-        //add article(IN ARTICLE TABLE) with upload : not and articleText : null
+        //add article(IN ARTICLE TABLE) with upload column: not and articleText column: null
         private void addAbstractArticle()
         {
             try
