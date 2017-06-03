@@ -1,13 +1,17 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConferenceManagement.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace UnitTests
+namespace ConferenceManagement.Model.Tests
 {
-    [TestClass]
-    public class UnitTestsConferenceManagement
+    [TestClass()]
+    public class PCMemberTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void TestGetPCMember()
         {
             PCMember pcMember = new PCMember(1, "Chiorean", "Adrian", "achiorean", "abc");

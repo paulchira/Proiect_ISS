@@ -5,7 +5,7 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using ConferenceManagement.Persistance;
 using ConferenceManagement.Model;
-using UnitTests;
+using ConferenceManagement.Model.Tests;
 
 namespace ServerConferenceManagement
 {
@@ -13,7 +13,7 @@ namespace ServerConferenceManagement
     {
         static void Main(string[] args)
         {
-            UnitTestsConferenceManagement tests = new UnitTestsConferenceManagement();
+            PCMemberTests tests = new PCMemberTests();
             tests.RunAllTests(); // call all tests 
 
 
