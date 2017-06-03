@@ -148,10 +148,10 @@ namespace ConferenceManagement.Client
             OnUserEvent(events);
         }
 
-        public void participantAdded(User user)
+        public void participantAdded(int idConf)
         {
-            Console.WriteLine("New user" + user.ID);
-            ClientEvents events = new ClientEvents(UserEvent.newUser, user.ID);
+            Console.WriteLine("New user for conference " + idConf);
+            ClientEvents events = new ClientEvents(UserEvent.newUser, idConf);
             OnUserEvent(events);
         }
 
