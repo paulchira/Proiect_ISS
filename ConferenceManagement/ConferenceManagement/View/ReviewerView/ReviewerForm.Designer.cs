@@ -41,13 +41,14 @@
             this.label1.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 33);
+            this.label1.Size = new System.Drawing.Size(201, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "To do:";
+            this.label1.Text = "Articles for review:";
             // 
             // reviewer_dataGridView
             // 
-            this.reviewer_dataGridView.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.reviewer_dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.reviewer_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.reviewer_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reviewer_dataGridView.Location = new System.Drawing.Point(-2, 62);
             this.reviewer_dataGridView.Name = "reviewer_dataGridView";
@@ -57,7 +58,7 @@
             // 
             // submitReview_button
             // 
-            this.submitReview_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.submitReview_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.submitReview_button.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitReview_button.Location = new System.Drawing.Point(113, 290);
             this.submitReview_button.Name = "submitReview_button";
@@ -69,7 +70,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
             this.button_back.Location = new System.Drawing.Point(458, 12);
@@ -84,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(559, 409);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.submitReview_button);
