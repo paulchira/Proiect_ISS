@@ -129,5 +129,41 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllParticipantsByConference(idConf);
         }
 
+        public void addReview(Review r)
+        {
+            serviceServer.addReview(r);
+        }
+
+        public void conferenceAdded(Conference conference)
+        {
+            Console.WriteLine("New conference" + conference.Id);
+            ClientEvents events = new ClientEvents(UserEvent.newConference, conference.Id);
+            OnUserEvent(events);
+        }
+
+        public void articleAdded(Article article)
+        {
+            Console.WriteLine("New article" + article.IdArticle);
+            ClientEvents events = new ClientEvents(UserEvent.newArticle, article.IdArticle);
+            OnUserEvent(events);
+        }
+
+        public void participantAdded(User user)
+        {
+            Console.WriteLine("New user" + user.ID);
+            ClientEvents events = new ClientEvents(UserEvent.newUser, user.ID);
+            OnUserEvent(events);
+        }
+
+        public void login(string username)
+        {
+            serviceServer.login(username, this);
+        }
+
+        public void logout(string username)
+        {
+            serviceServer.logout(username, this);
+        }
+
     }
 }

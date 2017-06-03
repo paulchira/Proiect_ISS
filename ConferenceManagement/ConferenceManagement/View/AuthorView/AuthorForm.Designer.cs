@@ -32,6 +32,7 @@
             this.conferences_dataGridView = new System.Windows.Forms.DataGridView();
             this.submitArticle_button = new System.Windows.Forms.Button();
             this.myArticles_button = new System.Windows.Forms.Button();
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.conferences_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // conferences_dataGridView
             // 
             this.conferences_dataGridView.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.conferences_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.conferences_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.conferences_dataGridView.Location = new System.Drawing.Point(33, 93);
             this.conferences_dataGridView.Name = "conferences_dataGridView";
@@ -58,7 +60,7 @@
             // 
             this.submitArticle_button.BackColor = System.Drawing.Color.SkyBlue;
             this.submitArticle_button.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitArticle_button.Location = new System.Drawing.Point(33, 306);
+            this.submitArticle_button.Location = new System.Drawing.Point(45, 324);
             this.submitArticle_button.Name = "submitArticle_button";
             this.submitArticle_button.Size = new System.Drawing.Size(181, 34);
             this.submitArticle_button.TabIndex = 4;
@@ -70,7 +72,7 @@
             // 
             this.myArticles_button.BackColor = System.Drawing.Color.SkyBlue;
             this.myArticles_button.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myArticles_button.Location = new System.Drawing.Point(434, 12);
+            this.myArticles_button.Location = new System.Drawing.Point(434, 93);
             this.myArticles_button.Name = "myArticles_button";
             this.myArticles_button.Size = new System.Drawing.Size(127, 35);
             this.myArticles_button.TabIndex = 5;
@@ -78,12 +80,26 @@
             this.myArticles_button.UseVisualStyleBackColor = false;
             this.myArticles_button.Click += new System.EventHandler(this.myArticles_button_Click);
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button_back.Location = new System.Drawing.Point(460, 17);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(89, 33);
+            this.button_back.TabIndex = 8;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // AuthorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(573, 370);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.myArticles_button);
             this.Controls.Add(this.submitArticle_button);
             this.Controls.Add(this.conferences_dataGridView);
@@ -102,5 +118,6 @@
         private System.Windows.Forms.DataGridView conferences_dataGridView;
         private System.Windows.Forms.Button submitArticle_button;
         private System.Windows.Forms.Button myArticles_button;
+        private System.Windows.Forms.Button button_back;
     }
 }

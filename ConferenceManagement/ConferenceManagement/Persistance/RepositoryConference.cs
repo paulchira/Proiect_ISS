@@ -31,6 +31,7 @@ namespace ConferenceManagement.Persistance
             }
         }
 
+
         public IEnumerable<Conference> getPlannedConferences()
         {
             IDbConnection con = DatabaseConnection.getConnection();
@@ -38,7 +39,7 @@ namespace ConferenceManagement.Persistance
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select * from Planned_Conference";
+                comm.CommandText = "select * from Conference where planned=1";
 
                 using (var dataR = comm.ExecuteReader())
                 {
@@ -60,7 +61,7 @@ namespace ConferenceManagement.Persistance
             IDbConnection con = DatabaseConnection.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Planned_Conference(conferenceName,conferenceDate,conferenceEdition) values (@name,@date,@edition)";
+                comm.CommandText = "insert into Conference(conferenceName,conferenceDate,conferenceEdition,planned) values (@name,@date,@edition,1)";
 
                 var paramName = comm.CreateParameter();
                 paramName.ParameterName = "@name";
@@ -134,7 +135,7 @@ namespace ConferenceManagement.Persistance
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select * from Conference";
+                comm.CommandText = "select * from Conference where planned=0";
 
                 using (var dataR = comm.ExecuteReader())
                 {

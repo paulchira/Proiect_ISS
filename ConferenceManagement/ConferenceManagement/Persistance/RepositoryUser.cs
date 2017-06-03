@@ -169,6 +169,11 @@ namespace ConferenceManagement.Persistance
 
         public void attendToCoference(int idUser, int idConference)
         {
+            if((checkAttend(idUser, idConference)))
+            {
+                throw new Exception("You are already attending the conference!");
+            }
+
             IDbConnection connection = DatabaseConnection.getConnection();
 
             using (var comm = connection.CreateCommand())
@@ -186,7 +191,31 @@ namespace ConferenceManagement.Persistance
 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
-                    throw new RepositoryException("User cannot attend to conference");
+                    throw new RepositoryException("Cannot attend to conference");
+            }
+        }
+
+        public bool checkAttend(int idUser, int idConference)
+        {
+            IDbConnection connection = DatabaseConnection.getConnection();
+
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "select * from Participant_Conference where idUser=@idUser and idConference=@idConf";
+                var paramUser = comm.CreateParameter();
+                paramUser.ParameterName = "@iduser";
+                paramUser.Value = idUser;
+                comm.Parameters.Add(paramUser);
+
+                var paramConf = comm.CreateParameter();
+                paramConf.ParameterName = "@idconf";
+                paramConf.Value = idConference;
+                comm.Parameters.Add(paramConf);
+
+                int count = Convert.ToInt32(comm.ExecuteScalar());
+                if (count == 0)
+                    return false;
+                return true;
             }
         }
     }

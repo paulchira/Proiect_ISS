@@ -51,7 +51,8 @@ namespace ConferenceManagement.Persistance
 
             using (var comm = connection.CreateCommand())
             {
-                comm.CommandText = "select * from Users where Users.idUser in ( select idUser from (select idUser, count(*) as Nr from Reviewer_Article group by idUser) a where Nr < 2)";
+                //trebuie modificat acest select
+                comm.CommandText = "select * from Users inner join Users_Role on Users.idUser=Users_Role.idUser where Users.idUser in ( select idUser from (select idUser, count(*) as Nr from Reviewer_Article group by idUser) a where Nr < 2) or Users_Role.idRole=3";
 
                 using (var dataR = comm.ExecuteReader())
                 {

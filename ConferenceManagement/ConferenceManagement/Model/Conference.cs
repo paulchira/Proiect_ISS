@@ -9,6 +9,7 @@ namespace ConferenceManagement.Model
         public String Name { set; get; }
         public String Date { set; get; }
         public String Edition { set; get; }
+        public bool Planned { set; get; }
 
         public Conference(int id, string name, String date, string edition)
         {
@@ -23,6 +24,14 @@ namespace ConferenceManagement.Model
             Name = name;
             Date = date;
             Edition = edition;
+        }
+
+        public Conference(string name, string date, string edition, bool planned)
+        {
+            Name = name;
+            Date = date;
+            Edition = edition;
+            Planned = planned;
         }
     }
 }

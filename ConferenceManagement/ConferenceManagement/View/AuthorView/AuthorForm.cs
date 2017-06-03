@@ -18,6 +18,7 @@ namespace ConferenceManagement.View
         ClientController ctrl;
         Author author;
         AuthorForm currentAuthorForm;
+        public LoginForm parentForm { set; get; }
 
         public AuthorForm(ClientController ctr,Author au)
         {
@@ -32,6 +33,7 @@ namespace ConferenceManagement.View
         {
             var bindingList = new BindingList<Conference>(ctrl.getAllConferences());
             conferences_dataGridView.DataSource = bindingList;
+            conferences_dataGridView.Columns[4].Visible = false;
         }
 
         /// <summary>
@@ -61,6 +63,13 @@ namespace ConferenceManagement.View
             this.Hide();
            
             addAbstract.Show();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            ctrl.logout(author.Username);
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

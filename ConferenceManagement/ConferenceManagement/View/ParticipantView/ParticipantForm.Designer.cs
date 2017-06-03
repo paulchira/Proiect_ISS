@@ -31,6 +31,7 @@
             this.Conferences_dataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.attendConference_button = new System.Windows.Forms.Button();
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Conferences_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             this.attendConference_button.BackColor = System.Drawing.Color.SkyBlue;
             this.attendConference_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attendConference_button.Location = new System.Drawing.Point(407, 105);
+            this.attendConference_button.Location = new System.Drawing.Point(406, 106);
             this.attendConference_button.Name = "attendConference_button";
             this.attendConference_button.Size = new System.Drawing.Size(152, 39);
             this.attendConference_button.TabIndex = 2;
@@ -65,12 +66,26 @@
             this.attendConference_button.UseVisualStyleBackColor = false;
             this.attendConference_button.Click += new System.EventHandler(this.attendConference_button_Click);
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button_back.Location = new System.Drawing.Point(469, 23);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(89, 33);
+            this.button_back.TabIndex = 8;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // ParticipantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(586, 315);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(570, 316);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.attendConference_button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Conferences_dataGridView);
@@ -87,5 +102,6 @@
         private System.Windows.Forms.DataGridView Conferences_dataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button attendConference_button;
+        private System.Windows.Forms.Button button_back;
     }
 }

@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.noParticpants_textBox = new System.Windows.Forms.TextBox();
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,12 +72,26 @@
             this.noParticpants_textBox.Size = new System.Drawing.Size(100, 20);
             this.noParticpants_textBox.TabIndex = 3;
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button_back.Location = new System.Drawing.Point(432, 12);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(89, 33);
+            this.button_back.TabIndex = 10;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // ParticipantsListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(533, 370);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.noParticpants_textBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -95,5 +110,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox noParticpants_textBox;
+        private System.Windows.Forms.Button button_back;
     }
 }

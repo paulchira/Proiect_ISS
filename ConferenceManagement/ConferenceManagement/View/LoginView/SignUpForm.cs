@@ -17,6 +17,8 @@ namespace ConferenceManagement.View.LoginView
     {
         ClientController ctrl;
         Dictionary<string, int> dict = new Dictionary<string, int>();
+        public LoginForm parentForm { set; get; }
+
         public SignUpForm(ClientController c)
         {
             ctrl = c;
@@ -44,6 +46,12 @@ namespace ConferenceManagement.View.LoginView
                 MessageBox.Show("The passwords don't match!");
             }
             this.Close();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parentForm.Show();
         }
     }
 }

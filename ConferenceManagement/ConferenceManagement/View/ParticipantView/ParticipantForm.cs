@@ -16,7 +16,7 @@ namespace ConferenceManagement.View
     {
         ClientController ctrl;
         Participant participant;
-
+        public LoginForm parentLoginForm { set; get; }
         public ParticipantForm(ClientController ctr,Participant part)
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace ConferenceManagement.View
         {
             var bindingList = new BindingList<Conference>(ctrl.getAllConferences());
             Conferences_dataGridView.DataSource = bindingList;
+            Conferences_dataGridView.Columns[4].Visible = false;
         }
 
         private void attendConference_button_Click(object sender, EventArgs e)
@@ -39,6 +40,9 @@ namespace ConferenceManagement.View
                 DataGridViewRow selectedRow = Conferences_dataGridView.Rows[selectedrowindex];
                 int idConf = Convert.ToInt16(selectedRow.Cells["Id"].Value);
                 ctrl.attendToConference(participant.ID, idConf);
+                //PaymentForm payment = new PaymentForm();
+                //this.Hide();
+                //payment.Show();
                 MessageBox.Show("Succes!");
 
             }
@@ -47,6 +51,13 @@ namespace ConferenceManagement.View
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            ctrl.logout(participant.Username);
+            this.Hide();
+            parentLoginForm.Show();
         }
     }
 }
