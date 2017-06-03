@@ -131,6 +131,12 @@
     <Compile Include="View\ParticipantView\ParticipantForm.Designer.cs">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ParticipantView\PaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ParticipantView\PaymentView.Designer.cs">
+      <DependentUpon>PaymentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PCMemberView\CreateConferenceView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ParticipantView\ParticipantForm.resx">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ParticipantView\PaymentView.resx">
+      <DependentUpon>PaymentView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PCMemberView\CreateConferenceView.resx">
       <DependentUpon>CreateConferenceView.cs</DependentUpon>
