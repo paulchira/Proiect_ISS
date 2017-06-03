@@ -98,6 +98,7 @@ namespace ServerConferenceManagement
         public void addArticle(Article article)
         {
             repoArticle.add(article);
+            notifyAddedArticle(article);
         }
 
         public void addArticleAuthor(int idArticle, int idAuthor)
@@ -176,7 +177,7 @@ namespace ServerConferenceManagement
             }
         }
 
-        private void notifyAddedAarticle(Article article)
+        private void notifyAddedArticle(Article article)
         {
             foreach (IServiceClient client in loggedClients.Values)
             {

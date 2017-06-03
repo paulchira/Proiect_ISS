@@ -41,8 +41,7 @@ namespace ConferenceManagement.View
         /// </summary>
         private void myArticles_button_Click(object sender, EventArgs e)
         {
-            MyArticlesForm myArticlesForm = new MyArticlesForm();
-            myArticlesForm.Ctrl = this.ctrl;
+            MyArticlesForm myArticlesForm = new MyArticlesForm(ctrl);
             myArticlesForm.ParentFormAuthor = this;
             myArticlesForm.Author = author;
             myArticlesForm.initializeAuthorComponents();
