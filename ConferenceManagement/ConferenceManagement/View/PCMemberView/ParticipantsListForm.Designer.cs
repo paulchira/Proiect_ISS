@@ -48,7 +48,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 61);
             this.dataGridView1.Name = "dataGridView1";
@@ -74,7 +75,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
             this.button_back.Location = new System.Drawing.Point(432, 12);
