@@ -33,11 +33,11 @@
             this.richTextBoxConferenceSection = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxConferenceDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxConferenceEdition = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button_back = new System.Windows.Forms.Button();
+            this.textBoxConferenceDate = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -89,13 +89,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Sections";
             // 
-            // textBoxConferenceDate
-            // 
-            this.textBoxConferenceDate.Location = new System.Drawing.Point(159, 113);
-            this.textBoxConferenceDate.Name = "textBoxConferenceDate";
-            this.textBoxConferenceDate.Size = new System.Drawing.Size(269, 20);
-            this.textBoxConferenceDate.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -136,17 +129,25 @@
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // textBoxConferenceDate
+            // 
+            this.textBoxConferenceDate.Location = new System.Drawing.Point(159, 113);
+            this.textBoxConferenceDate.Mask = "00/00/0000";
+            this.textBoxConferenceDate.Name = "textBoxConferenceDate";
+            this.textBoxConferenceDate.Size = new System.Drawing.Size(72, 20);
+            this.textBoxConferenceDate.TabIndex = 10;
+            // 
             // CreateConferenceView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(584, 349);
+            this.Controls.Add(this.textBoxConferenceDate);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxConferenceEdition);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxConferenceDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBoxConferenceSection);
@@ -166,10 +167,10 @@
         private System.Windows.Forms.RichTextBox richTextBoxConferenceSection;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxConferenceDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxConferenceEdition;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.MaskedTextBox textBoxConferenceDate;
     }
 }

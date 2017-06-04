@@ -33,7 +33,7 @@ namespace ConferenceManagement.View.PCMemberView
             {
                 int idConf = int.Parse(e.Data.ToString());
                 List<Conference> listConf = ctrl.getAllPlannedConferences();
-                parentForm.dataGridView2.BeginInvoke(new UpdateListBoxCallback(this.updateListBox), new Object[] {parentForm.dataGridView2, listConf });
+                parentForm.dataGridView2.Invoke(new UpdateListBoxCallback(this.updateListBox), new Object[] {parentForm.dataGridView2, listConf });
             }
         }
 
@@ -57,6 +57,12 @@ namespace ConferenceManagement.View.PCMemberView
 
             string conferenceEdition = textBoxConferenceEdition.Text;
             string sections = richTextBoxConferenceSection.Text;
+
+            if(conferenceName.Equals(String.Empty) || conferenceDate.Equals(String.Empty) || conferenceEdition.Equals(String.Empty) || sections.Equals(String.Empty))
+            {
+                MessageBox.Show("All fields are mandatory!");
+                return;
+            }
 
             ctrl.addConference(new Conference(conferenceName, conferenceDate, conferenceEdition));
 

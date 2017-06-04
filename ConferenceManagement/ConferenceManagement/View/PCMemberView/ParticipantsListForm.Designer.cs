@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.noParticpants_textBox = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
+            this.noParticpants_textBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,13 +66,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Total number of participants:";
             // 
-            // noParticpants_textBox
-            // 
-            this.noParticpants_textBox.Location = new System.Drawing.Point(273, 312);
-            this.noParticpants_textBox.Name = "noParticpants_textBox";
-            this.noParticpants_textBox.Size = new System.Drawing.Size(100, 20);
-            this.noParticpants_textBox.TabIndex = 3;
-            // 
             // button_back
             // 
             this.button_back.BackColor = System.Drawing.Color.PaleTurquoise;
@@ -86,14 +79,24 @@
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // noParticpants_textBox
+            // 
+            this.noParticpants_textBox.AutoSize = true;
+            this.noParticpants_textBox.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noParticpants_textBox.Location = new System.Drawing.Point(242, 309);
+            this.noParticpants_textBox.Name = "noParticpants_textBox";
+            this.noParticpants_textBox.Size = new System.Drawing.Size(50, 23);
+            this.noParticpants_textBox.TabIndex = 11;
+            this.noParticpants_textBox.Text = "label3";
+            // 
             // ParticipantsListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(533, 370);
-            this.Controls.Add(this.button_back);
             this.Controls.Add(this.noParticpants_textBox);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -110,7 +113,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox noParticpants_textBox;
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Label noParticpants_textBox;
     }
 }

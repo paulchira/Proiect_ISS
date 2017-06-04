@@ -20,7 +20,7 @@ namespace ConferenceManagement.View.PCMemberView
         {
             InitializeComponent();
             ctrl = ctr;
-            conferenceName_textBox.Text = name;
+            conferenceName_text.Text = name;
             dataGridView1.DataSource = ctrl.getUnreviewedArticles(id);
             reviewerList_comboBox.DataSource = ctrl.getAvailableReviewers();
             reviewerList_comboBox.DisplayMember="FirstName";
@@ -30,12 +30,26 @@ namespace ConferenceManagement.View.PCMemberView
 
         private void requireReview_button_Click(object sender, EventArgs e)
         {
-            int idReviewer = (int)reviewerList_comboBox.SelectedValue;
-            string sidArticle = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            int idArticle = Int16.Parse(sidArticle);
-            
-            ctrl.addReview(new Review(idArticle, idReviewer));
-            MessageBox.Show("Succesfully added User " + reviewerList_comboBox.Text + " to review article " + dataGridView1.CurrentRow.Cells[1].Value.ToString());
+            try
+            {
+                if (dataGridView1.RowCount == 0)
+                {
+                    MessageBox.Show("There's no  article!");
+                    return;
+                }
+
+                int idReviewer = (int)reviewerList_comboBox.SelectedValue;
+
+                string sidArticle = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                int idArticle = Int16.Parse(sidArticle);
+
+                ctrl.addReview(new Review(idArticle, idReviewer));
+                MessageBox.Show("Succesfully added User " + reviewerList_comboBox.Text + " to review article " + dataGridView1.CurrentRow.Cells[1].Value.ToString());
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button_back_Click(object sender, EventArgs e)

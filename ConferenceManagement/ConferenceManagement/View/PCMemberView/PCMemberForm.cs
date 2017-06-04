@@ -27,6 +27,12 @@ namespace ConferenceManagement.View.PCMemberView
             dataGridView1.DataSource = ctrl.getAllConferences();
             dataGridView2.Columns[4].Visible = false;
             dataGridView1.Columns[4].Visible = false;
+            this.FormClosing += PCMemberForm_FormClosing;
+        }
+
+        private void PCMemberForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ctrl.logout(pcMember.Username);
         }
 
         // Opens the window with the list of the articles for this conference.
@@ -79,5 +85,7 @@ namespace ConferenceManagement.View.PCMemberView
             this.Hide();
             parentForm.Show();
         }
+
+
     }
 }
