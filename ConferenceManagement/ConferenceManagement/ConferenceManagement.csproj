@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Miha\AppData\Local\Temp\vsEB33.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\IoanaC\AppData\Local\Temp\vsBBDD.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Miha\AppData\Local\Temp\vsEB33.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\IoanaC\AppData\Local\Temp\vsBBDD.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -179,6 +179,12 @@
     <Compile Include="View\ReviewerView\ReviewsList.Designer.cs">
       <DependentUpon>ReviewsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SectionsView\SectionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SectionsView\SectionsForm.Designer.cs">
+      <DependentUpon>SectionsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ReviewerView\ReviewsList.resx">
       <DependentUpon>ReviewsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SectionsView\SectionsForm.resx">
+      <DependentUpon>SectionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

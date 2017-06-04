@@ -36,6 +36,7 @@
             this.Participants_button = new System.Windows.Forms.Button();
             this.createConference = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             // 
             this.Participants_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.Participants_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Participants_button.Location = new System.Drawing.Point(400, 308);
+            this.Participants_button.Location = new System.Drawing.Point(400, 297);
             this.Participants_button.Name = "Participants_button";
             this.Participants_button.Size = new System.Drawing.Size(174, 64);
             this.Participants_button.TabIndex = 5;
@@ -129,12 +130,25 @@
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(400, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "View Sections";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // PCMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(601, 535);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.createConference);
             this.Controls.Add(this.Participants_button);
@@ -162,5 +176,6 @@
         private System.Windows.Forms.Button Participants_button;
         private System.Windows.Forms.Button createConference;
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Button button1;
     }
 }

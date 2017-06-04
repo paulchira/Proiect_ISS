@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConferenceManagement.Client;
 using ConferenceManagement.Model;
+using ConferenceManagement.View.SectionsView;
 
 namespace ConferenceManagement.View.PCMemberView
 {
@@ -86,6 +81,25 @@ namespace ConferenceManagement.View.PCMemberView
             parentForm.Show();
         }
 
-
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount == 0)
+            {
+                MessageBox.Show("There's no conference!");
+                return;
+            }
+            try
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                int idConf = Convert.ToInt16(selectedRow.Cells["Id"].Value);
+                SectionsForm sectionsForm = new SectionsForm(ctrl, idConf);
+                sectionsForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

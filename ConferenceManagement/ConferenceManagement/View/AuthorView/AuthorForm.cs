@@ -2,14 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConferenceManagement.Client;
 using ConferenceManagement.Model;
+using ConferenceManagement.View.SectionsView;
 
 namespace ConferenceManagement.View
 {
@@ -78,6 +74,27 @@ namespace ConferenceManagement.View
             ctrl.logout(author.Username);
             this.Hide();
             parentForm.Show();
+        }
+
+        private void btnSections_Click(object sender, EventArgs e)
+        {
+            if (conferences_dataGridView.RowCount == 0)
+            {
+                MessageBox.Show("There's no conference!");
+                return;
+            }
+            try
+            {
+                int selectedrowindex = conferences_dataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = conferences_dataGridView.Rows[selectedrowindex];
+                int idConf = Convert.ToInt16(selectedRow.Cells["Id"].Value);
+                SectionsForm sectionsForm = new SectionsForm(ctrl, idConf);
+                sectionsForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

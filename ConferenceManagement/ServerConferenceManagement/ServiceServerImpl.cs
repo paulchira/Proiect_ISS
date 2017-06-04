@@ -191,5 +191,14 @@ namespace ServerConferenceManagement
             
         }
 
+        public List<string> getSectionsByConference(int idConf)
+        {
+            List<Section> sections = repoSection.getAll().ToList();
+            List<string> rez = new List<string>();
+            foreach (Section s in sections)
+                if (s.IdConference == idConf)
+                    rez.Add(s.SectionName);
+            return rez;
+        }
     }
 }

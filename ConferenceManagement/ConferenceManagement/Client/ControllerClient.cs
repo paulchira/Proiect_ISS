@@ -170,5 +170,10 @@ namespace ConferenceManagement.Client
             return serviceServer.getAllReviews(idReviewer,idArticle);
 
         }
+
+        public List<String> getSectionsByConference(int idConf)
+        {
+            return serviceServer.getSectionsByConference(idConf);
+        }
     }
 }

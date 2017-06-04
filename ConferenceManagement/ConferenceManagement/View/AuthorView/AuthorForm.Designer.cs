@@ -33,6 +33,7 @@
             this.submitArticle_button = new System.Windows.Forms.Button();
             this.myArticles_button = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
+            this.btnSections = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.conferences_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,12 +94,25 @@
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // btnSections
+            // 
+            this.btnSections.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSections.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSections.Location = new System.Drawing.Point(434, 165);
+            this.btnSections.Name = "btnSections";
+            this.btnSections.Size = new System.Drawing.Size(127, 35);
+            this.btnSections.TabIndex = 9;
+            this.btnSections.Text = "Sections";
+            this.btnSections.UseVisualStyleBackColor = false;
+            this.btnSections.Click += new System.EventHandler(this.btnSections_Click);
+            // 
             // AuthorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(573, 370);
+            this.Controls.Add(this.btnSections);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.myArticles_button);
             this.Controls.Add(this.submitArticle_button);
@@ -119,5 +133,6 @@
         private System.Windows.Forms.Button submitArticle_button;
         private System.Windows.Forms.Button myArticles_button;
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Button btnSections;
     }
 }

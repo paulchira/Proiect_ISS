@@ -58,5 +58,6 @@ namespace ConferenceManagement.Service
 
         List<Review> getAllReviews(int idReviewer,int idArticol);
 
+        List<String> getSectionsByConference(int idConf);
     }
 }
