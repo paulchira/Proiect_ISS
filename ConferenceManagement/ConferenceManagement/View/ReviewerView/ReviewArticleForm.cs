@@ -39,10 +39,18 @@ namespace ConferenceManagement.View.ReviewerView
             if (checkBox6.Checked) calificativ = 6;
             if (checkBox7.Checked) calificativ = 7;
 
-            ctrl.insertReview(reviewer.ID, article.IdArticle, richTextBox1.Text, calificativ);
-            MessageBox.Show("Your vote has been recorded!");
+            if (calificativ == 0 || richTextBox1.Text.Equals(String.Empty))
+            {
+                MessageBox.Show("All fields are mandatory!");
+                return;
+            }
+            else {
+                ctrl.insertReview(reviewer.ID, article.IdArticle, richTextBox1.Text, calificativ);
 
 
+                MessageBox.Show("Your vote has been recorded!");
+
+            }
         }
 
         private void ReviewArticleForm_Load(object sender, EventArgs e)
