@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Channels.Tcp;
 using ConferenceManagement.Persistance;
 using ConferenceManagement.Model;
 using ConferenceManagement.Model.Tests;
+using UnitTests.Controller;
 
 namespace ServerConferenceManagement
 {
@@ -15,6 +16,8 @@ namespace ServerConferenceManagement
         {
             PCMemberTests tests = new PCMemberTests();
             tests.RunAllTests(); // call all tests 
+
+           
 
 
             RepositoryConference repoConf = new RepositoryConference();
@@ -40,10 +43,16 @@ namespace ServerConferenceManagement
             ChannelServices.RegisterChannel(channel, false);
 
             RemotingServices.Marshal(serviceServer, "Conference");
+            //Controller tests
+            ControllerTest ctrTest = new ControllerTest();
+            //ctrTest.getConferenceIdFromNameTest();
+            ctrTest.RunAll();
 
             Console.WriteLine("Server started ...");
             Console.WriteLine("Press <enter> to exit...");
             Console.ReadLine();
+
+           
         }
     }
 }
