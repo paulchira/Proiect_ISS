@@ -49,7 +49,7 @@
             // 
             // conferences_dataGridView
             // 
-            this.conferences_dataGridView.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.conferences_dataGridView.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.conferences_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.conferences_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.conferences_dataGridView.Location = new System.Drawing.Point(33, 93);
@@ -59,7 +59,7 @@
             // 
             // submitArticle_button
             // 
-            this.submitArticle_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.submitArticle_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.submitArticle_button.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitArticle_button.Location = new System.Drawing.Point(45, 324);
             this.submitArticle_button.Name = "submitArticle_button";
@@ -71,7 +71,7 @@
             // 
             // myArticles_button
             // 
-            this.myArticles_button.BackColor = System.Drawing.Color.SkyBlue;
+            this.myArticles_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.myArticles_button.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myArticles_button.Location = new System.Drawing.Point(434, 93);
             this.myArticles_button.Name = "myArticles_button";
@@ -83,7 +83,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_back.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button_back.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.SystemColors.MenuText;
             this.button_back.Location = new System.Drawing.Point(460, 17);
@@ -96,7 +96,7 @@
             // 
             // btnSections
             // 
-            this.btnSections.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSections.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSections.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSections.Location = new System.Drawing.Point(434, 165);
             this.btnSections.Name = "btnSections";

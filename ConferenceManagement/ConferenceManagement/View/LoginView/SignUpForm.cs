@@ -2,12 +2,6 @@
 using ConferenceManagement.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ConferenceManagement.View.LoginView
@@ -33,19 +27,39 @@ namespace ConferenceManagement.View.LoginView
 
         private void button_signUp_Click(object sender, EventArgs e)
         {
-            if(textBox_pass.Text == textBox_pass2.Text)
+            string role = (string)comboBox_roles.SelectedItem;
+            if (textBox_firstName.Text.Equals(String.Empty) 
+                || textBox_lastName.Text.Equals(String.Empty)
+                || textBox_pass.Text.Equals(String.Empty) 
+                || textBox_pass2.Text.Equals(String.Empty)
+                || textBox_userName.Text.Equals(String.Empty)
+                || role.Equals(String.Empty)
+                )
             {
-                User u = new Model.User(textBox_firstName.Text, textBox_lastName.Text, textBox_userName.Text, textBox_pass.Text);
+                MessageBox.Show("All fields are mandatory!");
+                return;
+            }
+            try
+            {
+                if (textBox_pass.Text.Equals( textBox_pass2.Text))
+                {
+                    User u = new Model.User(textBox_firstName.Text, textBox_lastName.Text, textBox_userName.Text, textBox_pass.Text);
 
-                int idRole = dict[(string)comboBox_roles.SelectedItem];
-                ctrl.signUp(u, idRole);
-                MessageBox.Show("The account was created!");
+                    int idRole = dict[(string)comboBox_roles.SelectedItem];
+                    ctrl.signUp(u, idRole);
+                    MessageBox.Show("The account was created!");
+                }
+                else
+                {
+                    MessageBox.Show("The passwords don't match!");
+                }
+                this.Hide();
+                parentForm.Show();
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("The passwords don't match!");
+                MessageBox.Show(ex.Message);
             }
-            this.Close();
         }
 
         private void button_back_Click(object sender, EventArgs e)
