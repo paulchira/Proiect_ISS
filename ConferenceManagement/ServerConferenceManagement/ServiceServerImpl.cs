@@ -185,5 +185,11 @@ namespace ServerConferenceManagement
             }
         }
 
+        public List<Review> getAllReviews(int idReviewer,int idArticol)
+        {
+            return repoReviewer.getAllReviews(idReviewer,idArticol).ToList();
+            
+        }
+
     }
 }

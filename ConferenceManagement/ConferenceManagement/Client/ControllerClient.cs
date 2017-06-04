@@ -165,5 +165,10 @@ namespace ConferenceManagement.Client
             serviceServer.logout(username, this);
         }
 
+        public List<Review> getAllReviews(int idReviewer,int idArticle)
+        {
+            return serviceServer.getAllReviews(idReviewer,idArticle);
+
+        }
     }
 }

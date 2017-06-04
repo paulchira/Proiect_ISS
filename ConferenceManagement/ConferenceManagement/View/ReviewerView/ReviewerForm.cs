@@ -48,6 +48,9 @@ namespace ConferenceManagement.View
             Article a = new Article(Int16.Parse(idArticle),articleTitle,articleAbstract,articleText,upload,Int16.Parse(sectionId));
 
             ReviewArticleForm f2 = new ReviewArticleForm(ctrl,reviewer,a);
+            //ReviewsList f3 = new ReviewsList(ctrl,reviewer,a);
+            // ReviewsList f3 = new ReviewsList(ctrl,rev);
+            //f3.parentForm = this;
             f2.parentForm = this;
             this.Owner = f2;
             this.Hide();
@@ -62,9 +65,17 @@ namespace ConferenceManagement.View
 
         private void button_back_Click(object sender, EventArgs e)
         {
+            LoginForm f = new LoginForm(ctrl);
             ctrl.logout(reviewer.Username);
             this.Hide();
-            parentForm.Show();
+            // parentForm.Show();
+            f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

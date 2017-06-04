@@ -56,5 +56,7 @@ namespace ConferenceManagement.Service
 
         void addReview(Review r);
 
+        List<Review> getAllReviews(int idReviewer,int idArticol);
+
     }
 }

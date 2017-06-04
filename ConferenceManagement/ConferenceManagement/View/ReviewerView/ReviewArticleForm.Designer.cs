@@ -42,6 +42,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button_back = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             // 
             this.SubmitReview_button.BackColor = System.Drawing.Color.PaleTurquoise;
             this.SubmitReview_button.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitReview_button.Location = new System.Drawing.Point(380, 438);
+            this.SubmitReview_button.Location = new System.Drawing.Point(67, 440);
             this.SubmitReview_button.Name = "SubmitReview_button";
             this.SubmitReview_button.Size = new System.Drawing.Size(170, 38);
             this.SubmitReview_button.TabIndex = 4;
@@ -193,12 +194,25 @@
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button1.Font = new System.Drawing.Font("Segoe Print", 11.25F);
+            this.button1.Location = new System.Drawing.Point(319, 438);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 40);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "See reviews";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ReviewArticleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(566, 499);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -232,5 +246,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Button button1;
     }
 }

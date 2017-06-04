@@ -17,6 +17,7 @@ namespace ConferenceManagement.View.ReviewerView
         ClientController ctrl;
         Article article;
         Reviewer reviewer;
+        
         public ReviewerForm parentForm { set; get; }
         public ReviewArticleForm(ClientController ctr, Reviewer reviewer, Article article)
         {
@@ -39,6 +40,9 @@ namespace ConferenceManagement.View.ReviewerView
             if (checkBox7.Checked) calificativ = 7;
 
             ctrl.insertReview(reviewer.ID, article.IdArticle, richTextBox1.Text, calificativ);
+            MessageBox.Show("Your vote has been recorded!");
+
+
         }
 
         private void ReviewArticleForm_Load(object sender, EventArgs e)
@@ -50,6 +54,15 @@ namespace ConferenceManagement.View.ReviewerView
         {
             this.Hide();
             parentForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReviewsList f3 = new ReviewsList(ctrl, reviewer,article);
+            //f3.parentForm = this;
+            this.Owner = f3;
+            this.Hide();
+            f3.Show();
         }
     }
 }

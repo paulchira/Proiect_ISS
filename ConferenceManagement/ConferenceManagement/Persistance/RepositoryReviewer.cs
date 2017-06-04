@@ -22,9 +22,6 @@ namespace ConferenceManagement.Persistance
                 paramIdR.ParameterName = "idReviewer";
                 paramIdR.Value = idReviewer;
                 comm.Parameters.Add(paramIdR);
-
-           
-
                 using (var dataR = comm.ExecuteReader())
                 {
                     while (dataR.Read())
@@ -41,6 +38,42 @@ namespace ConferenceManagement.Persistance
                 }
             }
             return articles;
+
+        }
+
+        public IEnumerable<Review> getAllReviews(int idReviewer,int idArticle)
+        {
+            IDbConnection connection = DatabaseConnection.getConnection();
+            IList<Review> reviewes = new List<Review>();
+
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "select * from Reviewer_Article where idUser != @idReviewer and idArticle = @idArticle";
+                var paramIdR = comm.CreateParameter();
+                paramIdR.ParameterName = "idReviewer";
+                paramIdR.Value = idReviewer;
+                comm.Parameters.Add(paramIdR);
+
+                var paramIdA = comm.CreateParameter();
+                paramIdA.ParameterName = "idArticle";
+                paramIdA.Value = idArticle;
+                comm.Parameters.Add(paramIdA);
+
+                using (var dataR = comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        int idA = dataR.GetInt16(0);
+                        int idUser = dataR.GetInt16(1);
+                        string comment= dataR.GetString(2);
+                        int calificativ = dataR.GetInt16(3);
+                       
+                        Review a = new Review(idUser, idA,calificativ,comment);
+                        reviewes.Add(a);
+                    }
+                }
+            }
+            return reviewes;
 
         }
 
