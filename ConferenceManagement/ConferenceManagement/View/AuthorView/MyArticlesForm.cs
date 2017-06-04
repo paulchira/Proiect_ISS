@@ -18,11 +18,29 @@ namespace ConferenceManagement.View.AuthorView
         private AuthorForm parentFormAuthor;
         private ClientController ctrl;
         private Author author;
-
-        public MyArticlesForm()
+        public delegate void UpdateListBoxCallback(ListBox list, List<string> data);
+        public MyArticlesForm(ClientController ctr)
         {
             InitializeComponent();
+            ctrl = ctr;
+            Ctrl.updateEvent += Ctrl_updateEvent;
         }
+
+        private void Ctrl_updateEvent(object sender, ClientEvents e)
+        {
+            if (e.UserEvent == UserEvent.newArticle)
+            {
+                List<string> listArticle = getAllArticlesforAuthor();
+                listBox_myArticles.BeginInvoke(new UpdateListBoxCallback(this.updateListBox), new Object[] { listBox_myArticles, listArticle });
+            }
+        }
+
+        private void updateListBox(ListBox list, List<string> newData)
+        {
+            list.DataSource = null;
+            list.DataSource = newData;
+        }
+
 
         public void initializeAuthorComponents()
         {

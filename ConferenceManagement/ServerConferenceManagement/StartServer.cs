@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using ConferenceManagement.Persistance;
 using ConferenceManagement.Model;
+using ConferenceManagement.Model.Tests;
 
 namespace ServerConferenceManagement
 {
@@ -12,6 +13,10 @@ namespace ServerConferenceManagement
     {
         static void Main(string[] args)
         {
+            PCMemberTests tests = new PCMemberTests();
+            tests.RunAllTests(); // call all tests 
+
+
             RepositoryConference repoConf = new RepositoryConference();
             //repoConf.add(new Conference("nume1", DateTime.Now, "ed1"));
             //repoConf.add(new Conference("nume2", DateTime.Now, "ed1"));

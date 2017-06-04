@@ -77,6 +77,7 @@ namespace ServerConferenceManagement
         public void attendToConference(int idUser, int idConference)
         {
             repoUser.attendToCoference(idUser, idConference);
+            notifyAddedParticipant(idConference);
         }
 
         public void addConference(Conference conf)
@@ -97,6 +98,7 @@ namespace ServerConferenceManagement
         public void addArticle(Article article)
         {
             repoArticle.add(article);
+            notifyAddedArticle(article);
         }
 
         public void addArticleAuthor(int idArticle, int idAuthor)
@@ -164,6 +166,22 @@ namespace ServerConferenceManagement
             foreach(IServiceClient client in loggedClients.Values)
             {
                 Task.Run(() => client.conferenceAdded(conference));
+            }
+        }
+
+        private void notifyAddedParticipant(int idConf)
+        {
+            foreach (IServiceClient client in loggedClients.Values)
+            {
+                Task.Run(() => client.participantAdded(idConf));
+            }
+        }
+
+        private void notifyAddedArticle(Article article)
+        {
+            foreach (IServiceClient client in loggedClients.Values)
+            {
+                Task.Run(() => client.articleAdded(article));
             }
         }
 

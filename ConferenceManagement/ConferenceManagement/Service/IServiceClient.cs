@@ -11,6 +11,6 @@ namespace ConferenceManagement.Service
     {
         void conferenceAdded(Conference conference);
         void articleAdded(Article article);
-        void participantAdded(User user);
+        void participantAdded(int idConf);
     }
 }
