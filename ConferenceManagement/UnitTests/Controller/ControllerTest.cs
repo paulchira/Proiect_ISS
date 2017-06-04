@@ -72,6 +72,7 @@ namespace UnitTests.Controller
             }
         }
 
+        [TestMethod()]
         public static void addArticleTest()
         {
             BinaryServerFormatterSinkProvider serverProv = new BinaryServerFormatterSinkProvider();
@@ -102,6 +103,7 @@ namespace UnitTests.Controller
             }
         }
 
+        [TestMethod()]
         public static void getAllConferenceTest()
         {
             BinaryServerFormatterSinkProvider serverProv = new BinaryServerFormatterSinkProvider();
