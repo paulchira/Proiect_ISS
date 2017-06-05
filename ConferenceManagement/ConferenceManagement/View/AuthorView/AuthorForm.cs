@@ -27,7 +27,7 @@ namespace ConferenceManagement.View
 
         private void setDataGrid()
         {
-            var bindingList = new BindingList<Conference>(ctrl.getAllConferences());
+            var bindingList = new BindingList<Conference>(ctrl.getAllPlannedConferences());
             conferences_dataGridView.DataSource = bindingList;
             conferences_dataGridView.Columns[4].Visible = false;
         }
