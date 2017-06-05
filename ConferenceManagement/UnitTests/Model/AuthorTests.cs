@@ -12,9 +12,33 @@ namespace ConferenceManagement.Model.Tests
     public class AuthorTests
     {
         [TestMethod()]
-        public void AuthorTest()
+        public void TestGetAuthor()
         {
-            Assert.Fail();
+            Author autor = new Author(1, "Nex", "Copilu'", "nex", "***");
+            Assert.AreEqual(autor.ID, 1);
+            Assert.AreEqual(autor.FirstName, "Nex");
+            Assert.AreEqual(autor.LastName, "Copilu'");
+            Assert.AreEqual(autor.Username, "nex");
+            Assert.AreEqual(autor.Password, "***");
+            Console.WriteLine("All tests passed from get functions of Author");
         }
+
+        [TestMethod]
+        public void TestSetAuthor()
+        {
+            Author autor = new Author(1, "Nex", "Copilu'", "nex", "***");
+            autor.ID = 2;
+            Assert.AreEqual(autor.ID, 2);
+            autor.FirstName = "Lolec";
+            Assert.AreEqual(autor.FirstName, "Lolec");
+            autor.LastName = "123";
+            Assert.AreEqual(autor.LastName, "123");
+            autor.Username = "abc";
+            Assert.AreEqual(autor.Username, "abc");
+            autor.Password = "abcc";
+            Assert.AreEqual(autor.Password, "abcc");
+            Console.WriteLine("All tests passed from set functions of Author");
+        }
+
     }
 }
