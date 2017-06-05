@@ -51,33 +51,38 @@ namespace ConferenceManagement.View.PCMemberView
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string conferenceName = textBoxConferenceName.Text;
-            string conferenceDate = textBoxConferenceDate.Text;
-
-            string conferenceEdition = textBoxConferenceEdition.Text;
-            string sections = richTextBoxConferenceSection.Text;
-
-            if(conferenceName.Equals(String.Empty) || conferenceDate.Equals(String.Empty) || conferenceEdition.Equals(String.Empty) || sections.Equals(String.Empty))
+            try
             {
-                MessageBox.Show("All fields are mandatory!");
-                return;
+                string conferenceName = textBoxConferenceName.Text;
+                string conferenceDate = textBoxConferenceDate.Text;
+
+                string conferenceEdition = textBoxConferenceEdition.Text;
+                string sections = richTextBoxConferenceSection.Text;
+
+                if (conferenceName.Equals(String.Empty) || conferenceDate.Equals(String.Empty) || conferenceEdition.Equals(String.Empty) || sections.Equals(String.Empty))
+                {
+                    MessageBox.Show("All fields are mandatory!");
+                    return;
+                }
+
+                ctrl.addConference(new Conference(conferenceName, conferenceDate, conferenceEdition));
+
+
+                int ID = ctrl.getConferenceIdFromName(conferenceName);
+
+                string[] stringSeparators = new string[] { "," };
+                string[] lines = sections.Split(stringSeparators, StringSplitOptions.None);
+                foreach (string s in lines)
+                {
+                    Section section = new Section(s, ID);
+                    ctrl.addSection(section);
+                }
+                MessageBox.Show("Conference created!");
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-
-            ctrl.addConference(new Conference(conferenceName, conferenceDate, conferenceEdition));
-
             
-            int ID = ctrl.getConferenceIdFromName(conferenceName);
-
-            string[] stringSeparators = new string[] { "," };
-            string[] lines = sections.Split(stringSeparators, StringSplitOptions.None);
-            foreach (string s in lines)
-            {
-                Section section = new Section(s, ID);
-                ctrl.addSection(section);
-            }
-            MessageBox.Show("Conference created!");
-           // this.Close();
 
         }
 

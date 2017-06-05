@@ -19,8 +19,22 @@ namespace ConferenceManagement.View.ParticipantView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Succes!");
-            this.Close();
+            try
+            {
+                if (textBox1.Text.Equals(String.Empty) ||
+                    comboBox1.SelectedItem.ToString().Equals(String.Empty)
+                    || comboBox2.SelectedItem.ToString().Equals(String.Empty)
+                    || textBox2.Text.Equals(string.Empty))
+                {
+                    MessageBox.Show("All fields are mandatory!");
+                    return;
+                }
+                MessageBox.Show("Succes!");
+                this.Close();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

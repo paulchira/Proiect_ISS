@@ -83,6 +83,11 @@ namespace ConferenceManagement.View.AuthorView
         private void button_upload_Click(object sender, EventArgs e)
         {
             String textArticle = richTextBox_upload.Text;
+            if (textArticle.Equals(string.Empty))
+            {
+                MessageBox.Show("Article is empty!");
+                return;
+            }
             Article newA = new Article();
             newA.IdArticle = article.IdArticle;
             newA.ArticleTitle = article.ArticleTitle;

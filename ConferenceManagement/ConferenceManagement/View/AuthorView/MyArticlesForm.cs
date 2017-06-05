@@ -31,7 +31,7 @@ namespace ConferenceManagement.View.AuthorView
             if (e.UserEvent == UserEvent.newArticle)
             {
                 List<string> listArticle = getAllArticlesforAuthor();
-                listBox_myArticles.BeginInvoke(new UpdateListBoxCallback(this.updateListBox), new Object[] { listBox_myArticles, listArticle });
+                listBox_myArticles.Invoke(new UpdateListBoxCallback(this.updateListBox), new Object[] { listBox_myArticles, listArticle });
             }
         }
 
@@ -112,30 +112,36 @@ namespace ConferenceManagement.View.AuthorView
 
         private void uploadArticle_button_Click(object sender, EventArgs e)
         {
-            MyArticleFormUpload myarticle = new MyArticleFormUpload();
+            try
+            {
+                MyArticleFormUpload myarticle = new MyArticleFormUpload();
 
-            if (listBox_myArticles.SelectedItem == null)
-            {
-                MessageBox.Show("Please select an article");
-                return;
-            }
-            String selectedArticle = (String)listBox_myArticles.SelectedItem;
-            if (selectedArticle != null)
-            {
-                String[] upload_val = selectedArticle.Split(' ');
-                if (upload_val[2].Equals("yes") || upload_val[2].Equals("YES"))
+                if (listBox_myArticles.SelectedItem == null)
                 {
-                    MessageBox.Show("Article is uploaded");
+                    MessageBox.Show("Please select an article");
                     return;
                 }
-                myarticle.Article = ctrl.findOneArticle(Convert.ToInt16(upload_val[0]));
-                myarticle.IdAuthor = author.ID;
-                myarticle.ListBox = listBox_myArticles; 
-            }
-            myarticle.Ctrl = this.ctrl;
-            myarticle.initializeUploadComponents();
+                String selectedArticle = (String)listBox_myArticles.SelectedItem;
+                if (selectedArticle != null)
+                {
+                    String[] upload_val = selectedArticle.Split(' ');
+                    if (upload_val[2].Equals("yes") || upload_val[2].Equals("YES"))
+                    {
+                        MessageBox.Show("Article is uploaded");
+                        return;
+                    }
+                    myarticle.Article = ctrl.findOneArticle(Convert.ToInt16(upload_val[0]));
+                    myarticle.IdAuthor = author.ID;
+                    myarticle.ListBox = listBox_myArticles;
+                }
+                myarticle.Ctrl = this.ctrl;
+                myarticle.initializeUploadComponents();
 
-            myarticle.Show();
+                myarticle.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

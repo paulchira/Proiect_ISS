@@ -130,10 +130,18 @@ namespace ConferenceManagement.View.AuthorView
                 string articleAbastract = richTextBox_abstract.Text;
                 string section = (string)comboBox_section.SelectedItem;
                 Article article = new Article(-1,articleTitle,articleAbastract,getIdSection(section));
-                ctrl.addArticle(article);
-                
-                ctrl.addArticleAuthor(getIdArticle(articleTitle), author.ID);
-                MessageBox.Show("Abstract Article succesfully added");
+                if (articleTitle.Equals(String.Empty) || articleAbastract.Equals(string.Empty)
+                    || section.Equals(string.Empty))
+                {
+                    MessageBox.Show("All fields are mandatory!");
+                    return;
+                }
+                else
+                {
+                    ctrl.addArticle(article);
+                    ctrl.addArticleAuthor(getIdArticle(articleTitle), author.ID);
+                    MessageBox.Show("Abstract Article succesfully added");
+                }
             }catch(Exception e)
             {
                 MessageBox.Show(e.Message);
